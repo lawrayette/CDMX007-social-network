@@ -1,0 +1,22 @@
+{
+  "name": "pointsteam",
+  "version": "1.0.0",
+  "description": "Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes\r sociales han invadido nuestras vidas. Las amamos y/u odiamos, y muchos no podemos vivir sin ellas.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaurinu/CDMX007-social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaurinu/CDMX007-social-network/issues"
+  },
+  "homepage": "https://github.com/jaurinu/CDMX007-social-network#readme"
+}
