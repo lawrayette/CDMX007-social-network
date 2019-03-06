@@ -1,0 +1,71 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: inline-block;
+    margin-top: 17%;
+}
+
+header {
+
+    width: 100%;
+    background: black;
+    height: 62px;
+}
+p {
+    text-align: center;
+    padding: 3%;
+}
+#logo {
+    background-image: url(./logo.png);
+    width: 106%;
+    height: 86%;
+    margin-top: 3%;
+    background-size: 36%;
+    background-repeat: no-repeat;
+    margin-left: 6%;
+
+}
+
+.image-event {
+    width: 93%;
+    margin-left: 3%;
+
+}
+
+article {
+    margin: 1%;
+}
+
+body {
+    background-color: rgb(219, 208, 219);
+}
+
+h1,
+h2 {
+    text-align: center;
+    padding: 4%;
+}
+
+#steam {
+    background-color: #0da2a7;
+}
+
+#arduino {
+  background-color: #66adaf;
+}
+#lunar{
+ background-color:#ad539f;
+}
+#arsgames {
+ background-color: #946bce;
+}
+.fixed {
+    position: fixed;
+}
+footer {
+    background-color: black;
+}
