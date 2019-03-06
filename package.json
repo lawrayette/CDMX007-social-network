@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/jaurinu/CDMX007-social-network/issues"
   },
-  "homepage": "https://github.com/jaurinu/CDMX007-social-network#readme"
+  "homepage": "https://github.com/jaurinu/CDMX007-social-network#readme",
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "jest": "^24.1.0"
+  }
 }
