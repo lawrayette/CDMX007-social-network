@@ -1,10 +1,14 @@
+  var app_fireBase = {};
+  (  function () {
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAjxYY5jihmvzA27LHIN82pK-zFA-O6nV8",
-    authDomain: "steam-3c167.firebaseapp.com",
-    databaseURL: "https://steam-3c167.firebaseio.com",
-    projectId: "steam-3c167",
-    storageBucket: "steam-3c167.appspot.com",
-    messagingSenderId: "390319558820"
+    apiKey: "AIzaSyB2K5qOAHgPS6FYXd_8L2EGNqiC8Lu3k0s",
+    authDomain: "steam2.firebaseapp.com",
+    databaseURL: "https://steam2.firebaseio.com",
+    projectId: "steam2",
+    storageBucket: "",
+    messagingSenderId: "800477145491"
   };
   firebase.initializeApp(config);
+  app_fireBase = firebase;
+}) ()
