@@ -1,0 +1,20 @@
+{
+  "name": "pointsteam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.spec.js",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1",
+    "jest": "^23.6.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
