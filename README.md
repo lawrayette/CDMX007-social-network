@@ -1,5 +1,13 @@
 # Creando una Red Social
 
+
+## Definición del producto
+
+**Punto Steam** es una red social que tiene como objetivo ser un punto de encuentro
+entre todos los f
+
+
+
 ## Preámbulo
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
