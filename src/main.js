@@ -1,3 +1,4 @@
+
 let mainApp = {};
 
 (function(){
@@ -18,3 +19,5 @@ let mainApp = {};
     }
     mainApp.logOut = logOut;
 })()
+
+
