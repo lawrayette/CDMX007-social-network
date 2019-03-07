@@ -1,3 +1,46 @@
+# Point Steam
+
+- [Introducción](#introducción)
+- [Descripción](#descripción)
+- [Historias de usuario](#historias-de-usuario)
+- [Consideraciones técnicas](#consideraciones-técnicas)
+- [Hecho con](#hecho-con)
+
+# Introducción
+
+Para finales del 2017, el número de internautas en el país era de 79.1 millones de usuarios; según datos 
+de la AMIPCI ( Asociación de Interner México). En México, los dispositivos más usados son: 
+
+1.- Smartphone 89%
+2.- Laptop 49%
+3.- PC 34%
+4.- Tablet 23%...
+
+Dentro de las actividades más realizadas por parte de los usuarios, se encuentran: 
+
+Uso de Redes Sociales 89%
+Uso de correo electrónico 84%
+Mensajería instantánea 83%
+Búsqueda de información 82%
+
+Por otro lado, las redes sociales más usadas son: 
+Facebook 98%
+WhatsApp 91%
+Youtube 82%
+Instagram 57%
+Twitter 49%
+
+Un usuario usa en promedio 5 redes sociales, mientras que el 1% de la población 
+con acceso a internet no usa red social alguna.
+
+## STEM a STEAM
+
+En la década de los 90 en los países de primer mundo comenzaron a pensar de 
+la forma en la cual llevar las llamadas ciencias duras a las aulas, de una forma diferente. 
+Al paso de los años, se le commienza a agregar la A al STEM, pasando a ser STEAM, esto
+para agregar las artes como una forma para hacer más disruptiva la educción.
+
+
 # Creando una Red Social
 
 
