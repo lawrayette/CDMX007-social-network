@@ -28,12 +28,12 @@ header{
     border-radius: 14px; */
 }
 
-/* .inicia-sesion{
+.inicia-sesion{
     color: #5A6978;
     text-align: center;
     border-top: 100px;
     margin: 40% auto;
-} */
+}
 
 .texto-azul{
    color: #6247AA;
@@ -53,4 +53,12 @@ header{
 .mdl-button--primary.mdl-button--primary {
     color: #6247AA;
 }
+@media (min-width: 767px) and (max-width: 1100px) {
 
+header{
+  height:15%;  
+}
+
+
+
+}

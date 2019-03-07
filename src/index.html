@@ -5,17 +5,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image" href="./favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <title>Point STEAM </title>
 
-    <header id="index" class="fixed">
-        <div id="logo"></div>
-        <div class="login">
-            <button id="start" class="login">Login</button>
-        </div>
-    </header>
+
+
+
+    <div class ="container-nav-index">
+        <nav class="navbar navbar-light" style="background-color: #181717">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/logo.png" alt="" id="logo">
+        </a>
+          <button class="btn btn-info my-2 my-sm-0" style="background-color: #AD29B6" id="start" type="submit">Login</button>
+      </nav>
+</div>
+
     <section>
         <h1>Próximos Eventos</h1>
 
@@ -62,7 +70,38 @@
     </article>
 
     </section>
-
+    <footer>
+        <div class="footer-container">
+          <div class="footer-main">
+            <div class="footer-column">
+             <div id="logo-footer-two"></div>
+              <span>  Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.  </span>
+            </div>
+            <div class="footer-column">
+              <h3></h3>
+              <span><i class="fas fa-map-marker-alt"></i>
+                Tonalá 10, Roma Sur, 06700, CDMX.
+              </span> <br>
+              <span><i class="fas fa-phone"></i>
+                01 800 314 159 265...
+              </span> <br>
+              <span><i class="far fa-envelope"></i> info@point-steam.com</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="footer-copy-redes">
+          <div class="main-copy-redes">
+            <div class="footer-copy">
+              &copy; .STEAM, 2019. <br> Todos los derechos reservados</div>
+            <div class="footer-redes">
+              <a href="#" class="fab fa-twitter"></a>
+              <a href="#" class="fab fa-instagram"></a>
+              <a href="https://github.com/jaurinu/CDMX007-social-network" class="fab fa-github"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
     <script src="./app.js"></script>
 </head>
 
