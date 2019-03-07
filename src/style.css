@@ -12,7 +12,7 @@ section {
 header {
 
     width: 100%;
-    background: black;
+    background: #181717;
     height: 62px;
 }
 p {
@@ -20,7 +20,7 @@ p {
     padding: 3%;
 }
 #logo {
-    background-image: url(./logo.png);
+    background-image: url(./assets/logo.png);
     width: 106%;
     height: 86%;
     margin-top: 3%;
@@ -67,5 +67,5 @@ h2 {
     position: fixed;
 }
 footer {
-    background-color: black;
+    background-color: #181717;
 }

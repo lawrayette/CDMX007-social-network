@@ -3,22 +3,22 @@
     margin: 0;
     padding: 0;
 }
-
 body{
-    background-color: #E1F8D5;
+    background-color: white;
 }
+
 header{
-    background: #2B5571;
-    border-bottom-left-radius: 50% 55%;
-    border-bottom-right-radius: 50% 55%;
-    padding: 34px;
+    background: #181717;
+    /* border-bottom-left-radius: 50% 55%;
+    border-bottom-right-radius: 50% 55%; */
+    padding: 26px 1px;
     height: 30%;
 }
 
 .logo-login{
     width: 200px;
     display: block;
-    margin: 35% auto 10%;
+    margin: 27% auto 10%;
 }
 
 .firebaseui-idp-list {
@@ -28,43 +28,29 @@ header{
     border-radius: 14px; */
 }
 
-.inicia-sesion{
+/* .inicia-sesion{
     color: #5A6978;
     text-align: center;
     border-top: 100px;
     margin: 40% auto;
-}
+} */
 
 .texto-azul{
-   color: #00A6FF;
+   color: #6247AA;
     text-align: center;
     border-top: 100px;
 }
 
 .firebaseui-container {
-    background-color: #E1F8D5;
+    background-color: white;
 }
 
 .mdl-button--raised.mdl-button--colored {
-    background: #A0DA81;
+    background: #6247AA;
     color: #fff;
 } 
 
 .mdl-button--primary.mdl-button--primary {
-    color: #589A34;
+    color: #6247AA;
 }
 
-/* .firebaseui-auth-container{
-
-    width: 80%;
-} */
-
-/* @media (max-width: 480px)
-.firebaseui-container {
-    /* box-shadow: none;
-    max-width: none; 
-    background-color: beige;
-    border: 1px solid gray;
-    width: 80%;
-    border-radius: 14px;
-} */
