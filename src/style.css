@@ -1,67 +1,79 @@
 * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 section {
-    display: inline-block;
-    margin-top: 17%;
+  display: inline-block;
+  margin-top: 17%;
 }
 
 header {
-
-    width: 100%;
-    background: #181717;
-    height: 62px;
+  width: 100%;
+  background: #181717;
+  height: 62px;
+  position: fixed;
 }
+
 p {
-    text-align: center;
-    padding: 3%;
+  text-align: center;
+  padding: 3%;
 }
-#logo {
-    background-image: url(./assets/logo.png);
-    width: 106%;
-    height: 86%;
-    margin-top: 3%;
-    background-size: 36%;
-    background-repeat: no-repeat;
-    margin-left: 6%;
 
+#logo {
+ background-image: url(./assets/logo.png);
+  width: 42%;
+  display: inline-block;
+  height: 86%;
+  margin-top: 3%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 6%;
+}
+
+.login {
+  display: inline-block;
+  float: right;
+  margin-right: 3%;
+  padding: 5%;
+  font-size: 103%;
 }
 
 .image-event {
-    width: 93%;
-    margin-left: 3%;
+  width: 93%;
+  margin-left: 3%;
 
 }
 
 article {
-    margin: 1%;
+  margin: 1%;
 }
 
 body {
-    background-color: rgb(219, 208, 219);
+  background-color: rgb(219, 208, 219);
 }
 
 h1,
 h2 {
-    text-align: center;
-    padding: 4%;
+  text-align: center;
+  padding: 4%;
 }
 
 #steam {
-    background-color: #0da2a7;
+  background-color: #89dbde;
 }
 
 #arduino {
   background-color: #66adaf;
 }
-#lunar{
- background-color:#ad539f;
+
+#lunar {
+  background-color: #bb8ab3;
 }
+
 #arsgames {
- background-color: #946bce;
+  background-color: #c3afe0;
 }
 .fixed {
     position: fixed;
