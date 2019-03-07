@@ -1,0 +1,126 @@
+
+#logo-nav{
+  width: 54%;
+  margin-top: 4%;
+  padding: 7%;
+  position: relative;
+  right: 7%;
+  background-size: 23%;
+  background-repeat: no-repeat;
+}
+
+.forum-container{
+  min-height: 450px;
+}
+
+footer {
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .footer-container {
+    width: 100%;
+    background-color: #181717;
+    color: white;
+  }
+
+  #logo-footer{
+    background-image: url(./logo.png);
+    width: 98%;
+    height: 25%;
+    margin-top: 21%;
+    background-size: 34%;
+    background-repeat: no-repeat;
+    margin-left: 32%;
+}
+  
+  
+  .footer-main {
+    width: 88%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  
+  .footer-main .footer-column {
+    width: 98%;
+    text-align: center;
+  }
+  
+  .footer-main .footer-column  {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 6px;
+    padding: 12px 12px;
+  
+  }
+  
+  .footer-main .footer-column span {
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    font-size:12px;
+  }
+  
+  .footer-copy-redes {
+    width: 100%;
+    background: white;
+    border-top: 2px solid royalblue;
+  
+  }
+  
+  .main-copy-redes {
+    width: 83%;
+    max-width: 1000px;
+    padding:0px 0;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  
+  .main-copy-redes{
+    widows:100%;
+    text-align: center;
+    font-size: 12px;
+    width: 70%;
+    color:#6247AA;
+    margin-bottom: 15px;
+  
+  }
+  .footer-copy {
+    text-align: center;
+    position: relative;
+    left: 19%;
+    padding: 3%;;
+  }
+
+
+
+
+  .main-copy-redes .footer-redes {
+    width: 70%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .main-copy-redes .footer-redes a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    background:#AD29B6;
+    color: white;
+    text-align: center;
+  }
+  
