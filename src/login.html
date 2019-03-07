@@ -8,15 +8,21 @@
     
 <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<link rel="stylesheet" href="style.css" class="rel">
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-
+<link href="login.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <!-- The surrounding HTML is left untouched by FirebaseUI.
     Your app may use that space for branding, controls and other customizations.-->
-<h1>Welcome to My Awesome App</h1>
+    <!-- <div id="logo-login"></div> -->
+    <header>
+    <a href="#"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></a>
+    <!-- <div class="logo-login"></div> -->
+    </header>
 <div id="firebaseui-auth-container"></div>
 <div id="loader">Loading...</div>
+<div class="inicia-sesion">¿Ya tienes cuenta? <span class="texto-azul">Inicia sesión</span></div>
     
     <script src="fireBase.js"></script>
     <script src="login.js"></script>
