@@ -1,3 +1,18 @@
+
+#logo-nav{
+  width: 54%;
+  margin-top: 4%;
+  padding: 7%;
+  position: relative;
+  right: 7%;
+  background-size: 23%;
+  background-repeat: no-repeat;
+}
+
+.forum-container{
+  min-height: 450px;
+}
+
 footer {
     width: 100%;
     font-family: 'Ubuntu', sans-serif;
@@ -5,56 +20,63 @@ footer {
   
   .footer-container {
     width: 100%;
-    background: black;
-    background-color: #4c4177;
-background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+    background-color: #181717;
     color: white;
   }
+
+  #logo-footer{
+    background-image: url(./logo.png);
+    width: 98%;
+    height: 25%;
+    margin-top: 21%;
+    background-size: 34%;
+    background-repeat: no-repeat;
+    margin-left: 32%;
+}
+  
   
   .footer-main {
-    width: 98%;
+    width: 88%;
     max-width: 1000px;
     margin: auto;
-    padding: 50px 0;
     display: flex;
     flex-wrap: wrap;
   
   }
   
   .footer-main .footer-column {
-    width: calc(100% / 2);
-    text-align: justify;
+    width: 98%;
+    text-align: center;
   }
   
-  .footer-main .footer-column h3 {
-  
-    margin-left: 30px;
-    font-size: 20px;
+  .footer-main .footer-column  {
+    text-align: center;
+    font-size: 15px;
     color: white;
-    margin-bottom: 20px;
-  
+    margin-bottom: 6px;
+    padding: 12px 12px;
   
   }
   
   .footer-main .footer-column span {
-    display: inline block;
-    margin-left: 30px;
+    display: block;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
-    line-height: 2
+    line-height: 1.5;
+    font-size:12px;
   }
   
   .footer-copy-redes {
     width: 100%;
     background: white;
-    border-top: 2px solid #FFDE00;
+    border-top: 2px solid royalblue;
   
   }
   
   .main-copy-redes {
-    width: 98%;
+    width: 83%;
     max-width: 1000px;
-    padding: 15px 0;
+    padding:0px 0;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -63,14 +85,28 @@ background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
     align-items: center;
   }
   
-  .main-copy-redes .footer-copy {
+  .main-copy-redes{
+    widows:100%;
+    text-align: center;
+    font-size: 12px;
     width: 70%;
-    color: black;
+    color:#6247AA;
+    margin-bottom: 15px;
   
   }
-  
+  .footer-copy {
+    text-align: center;
+    position: relative;
+    left: 19%;
+    padding: 3%;;
+  }
+
+
+
+
   .main-copy-redes .footer-redes {
-    width: 30%;
+    width: 70%;
+    margin:auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -83,7 +119,7 @@ background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
     height: 45px;
     line-height: 45px;
     border-radius: 50%;
-    background:black;
+    background:#AD29B6;
     color: white;
     text-align: center;
   }
