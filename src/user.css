@@ -13,6 +13,16 @@
   min-height: 450px;
 }
 
+button{
+  float: right;
+}
+#div-area{
+  display: inline-block;
+  margin-left: 8%;
+  margin-top: 3%;
+  border-style: ridge;
+  padding: 2%;
+}
 footer {
     width: 100%;
     font-family: 'Ubuntu', sans-serif;
