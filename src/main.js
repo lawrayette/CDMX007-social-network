@@ -7,7 +7,7 @@ let mainApp = {};
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
-          uid = user.id;
+          uid = user.uid;
         }else{
             //redirect to login page
             uid = null;
