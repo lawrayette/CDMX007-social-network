@@ -10,9 +10,8 @@ section {
 }
 
 header {
-
   width: 100%;
-  background: black;
+  background: #181717;
   height: 62px;
   position: fixed;
 }
@@ -23,7 +22,7 @@ p {
 }
 
 #logo {
-  background-image: url(./logo.png);
+ background-image: url(./assets/logo.png);
   width: 42%;
   display: inline-block;
   height: 86%;
@@ -75,4 +74,10 @@ h2 {
 
 #arsgames {
   background-color: #c3afe0;
+}
+.fixed {
+    position: fixed;
+}
+footer {
+    background-color: #181717;
 }
