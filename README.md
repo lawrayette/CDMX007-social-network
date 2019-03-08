@@ -9,7 +9,7 @@
 # Introducción
 
 Para finales del 2017, el número de internautas en el país era de 79.1 millones de usuarios; según datos 
-de la AMIPCI ( Asociación de Interner México). En México, los dispositivos más usados son: 
+de la AMIPCI ( Asociación de Internet México). En México, los dispositivos más usados son: 
 
 1.- Smartphone 89%
 2.- Laptop 49%
@@ -43,12 +43,50 @@ para agregar las artes como una forma para hacer más disruptiva la educción.
 
 # Creando una Red Social
 
-
 ## Definición del producto
 
-**Punto Steam** es una red social que tiene como objetivo ser un punto de encuentro
-entre todos los f
+**Punto Steam** 
 
+Es una red social que surge como iniciativa para integrar a docentes, investigadores o profesionales de centros educativos interesados en la cultura STEAM y MAKER para que puedan crear una comunidad interdisciplinar que comparta estrategias, eventos, procesos de enseñanza-aprendizaje e interrelacione contenidos de las materias de ciencias, tecnología, ingeniería, matemáticas y arte.
+En **Punto STEAM** deseamos incluir en un solo lugar foros, redes sociales, escuelas, museos, ONG, listas de correo electrónico para colaborar, compartir resultados e iterar para alcanzar nuevos niveles de desempeño.
+
+**Punto STEAM** es una red social dirigida a mujeres y hombres de entre 25-50 años que desean tener un punto de encuentro, conectar, intercambiar metodologías, métodos de enseñanza.
+Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, innovar, compartir, jugar participar y apoyar, cambiar.
+
+## Historias de usuario
+
+1. Yo como usuario quiero una plataforma en dónde pueda encontrar personas que realizan actividades afines a las mías.
+2. Yo como usuario quiero tener un perfil visible y conocer el perfil de otros.
+3. Yo como usuario quiero compartir contenido, eventos, artículos, talleres.
+4. Yo como usuario quiero que la plataforma sea mobile first con opción responsive.
+
+## Sketch
+
+![Sketch](imagenesReadMe/Sketch.jpg)
+
+## Diagrama de flujo alta fidelidad
+
+![Diagrama de flujo](imagenesReadMe/flowmap.png)
+
+## Autores
+
+- Andrea
+- Karen
+- Jazmin
+- Janet Urbina Núñez
+
+## Herramientas
+
+- Vanilla Javascript
+- Firebase
+- Html5
+- CSS3
+- Boostrap
+- Marvel
+
+## Agradecimientos
+
+A nuestras compañeras, couches y staff por el apoyo.
 
 
 ## Preámbulo
