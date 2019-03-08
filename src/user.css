@@ -9,20 +9,32 @@
   background-repeat: no-repeat;
 }
 
+.button-logOut{
+  background-color: royalblue;
+  color:white;
+  padding: 4px 4px;
+  border-radius: 4px;
+}
+
 .forum-container{
   min-height: 450px;
 }
 
-button{
+
+.button-send-input{
   float: right;
+  background-color: #AD29B6;
+  color:white;
 }
 #div-area{
   display: inline-block;
   margin-left: 8%;
-  margin-top: 3%;
+  margin-top: 10%;
   border-style: ridge;
   padding: 2%;
 }
+
+
 footer {
     width: 100%;
     font-family: 'Ubuntu', sans-serif;
@@ -35,7 +47,7 @@ footer {
   }
 
   #logo-footer{
-    background-image: url(./logo.png);
+    background-image: url(./assets/logo.png);
     width: 98%;
     height: 25%;
     margin-top: 21%;
@@ -133,4 +145,89 @@ footer {
     color: white;
     text-align: center;
   }
+  @media (min-width: 767px) and (max-width: 1380px) {
+
+    .forum-container{
+      min-height: 700px;
+    }
+    #button-search-on-user{
+      padding: 3px 22px;
+      position:relative;
+      right:9%;
+    }
+#button-user{
+  padding:4px 10px;
+  position:relative;
+  left:3%;
+}
+
+  #logo-footer{
+    background-image: url(./assets/logo.png);
+    height:25%;
+    margin-top: 41%;
+    background-size: 27%;
+    margin-left: 32%;
+    position: relative;
+    bottom:121px;
+  }
   
+  .footer-about{
+    position: relative;
+    bottom: 110px;
+    text-align: center;
+    font-family:  'Roboto', sans-serif;
+    font-size: 20px;
+
+  
+  }
+
+  .contact{
+    position:relative;
+    top:82px;
+  }
+  .footer-main .footer-column{
+    width:calc(100%/2);
+    text-align: justify;
+  }
+  
+  .main-copy-redes {
+  
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-copy-redes .footer-redes {
+    width: 27%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    left:15%;
+  }
+  
+  .footer-copy {
+    text-align: center;
+    position: relative;
+    left: 4%;
+    padding: 1%;
+  }
+
+  #div-area {
+    margin-left: 34%;
+    margin-top: 13%;
+    padding:4%;
+  }
+  .form-control {
+    display: block;
+    width: 50%;
+  
+  }
+
+  .button-logOut{
+  
+    padding: 4px 12px;
+ 
+  }
+}
