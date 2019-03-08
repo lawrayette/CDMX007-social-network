@@ -13,9 +13,6 @@
     crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
     <title>Document</title>
-
-
-
 </head>
 
 
@@ -28,15 +25,19 @@
 
         </a>
           <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
-          <button class="btn btn-info my-2 my-sm-0  ml-7" style="background-color: #AD29B6"  type="submit"><i class="fas fa-search"></i></button>
-          <button class="btn btn-light my-2 my-sm-0  ml-7" type="submit"><i class="fas fa-user-astronaut"></i></button>
-          <button onclick="mainApp.logOut()">logOut</button>
+          <button class="btn btn-info my-2 my-sm-0  ml-7" style="background-color: #AD29B6"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
+          <button class="btn btn-light my-2 my-sm-0  ml-7" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
+          <button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
         </div>
       </nav></div>
 
 <main class="forum-container">
-  
 
+<div id="div-area">
+  
+  <div><textarea name="textarea" id="input" cols="40" rows="4" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+  <div><button class="button-send-input">Enviar</button></div>
+</div>
 
 
 
@@ -47,17 +48,17 @@
               <div class="footer-main">
                 <div class="footer-column">
                  <div id="logo-footer"></div>
-                  <span>  Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.  </span>
+                  <span class="footer-about">  Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.  </span>
                 </div>
                 <div class="footer-column">
                   <h3></h3>
-                  <span><i class="fas fa-map-marker-alt"></i>
+                  <span class ="contact"><i class="fas fa-map-marker-alt"></i>
                     Tonalá 10, Roma Sur, 06700, CDMX.
                   </span> <br>
-                  <span><i class="fas fa-phone"></i>
+                  <span class ="contact"><i class="fas fa-phone"></i>
                     01 800 314 159 265...
                   </span> <br>
-                  <span><i class="far fa-envelope"></i> info@point-steam.com</span>
+                  <span class ="contact"><i class="far fa-envelope"></i> info@point-steam.com</span>
                 </div>
               </div>
             </div>
@@ -74,6 +75,7 @@
               </div>
             </div>
           </footer>
+          <script src="./app.js"></script>
           <script  src="fireBase.js"></script>
           <script  src="main.js"></script>
 </body>
