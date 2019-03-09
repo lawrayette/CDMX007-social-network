@@ -67,6 +67,29 @@ function deleteData(id) {
   });  
 }
 
+// 
+function editState(id,state) {
+  document.getElementById('input').value = state;
+  let editButton = document.getElementById('sendButton');
+  editButton.innerHTML = "Editar";
 
+  editButton.onclick = function () {
+    var washingtonRef = db.collection("state").doc(id);
+
+    let textInput = document.getElementById('input').value;
+      return washingtonRef.update({
+      first: textInput,
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+        let textInput = document.getElementById('input').value = '';
+        editButton.innerHTML = "Enviar";
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+    }
+  }
  
 
