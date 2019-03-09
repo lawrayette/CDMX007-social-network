@@ -58,4 +58,15 @@ db.collection("state").onSnapshot((querySnapshot) => {
 });
 
 
+//
+function deleteData(id) {
+  db.collection("state").doc(id).delete().then(function() {
+    console.log("Document successfully deleted!");
+  }).catch(function(error) {
+    console.error("Error removing document: ", error);
+  });  
+}
+
+
+ 
 
