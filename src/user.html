@@ -33,11 +33,15 @@
 
 <main class="forum-container">
 
-<div id="div-area">
+  <div id="div-area">
   
-  <div><textarea name="textarea" id="input" cols="40" rows="4" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-  <div><button class="button-send-input">Enviar</button></div>
-</div>
+    <div><textarea name="textarea" class="form-control" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+    <div><button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
+  </div>
+  <table id ="table-state"class="table my-2">
+    <tbody>
+    </tbody>
+  </table>
 
 
 
