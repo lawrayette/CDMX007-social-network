@@ -145,7 +145,7 @@ footer {
     color: white;
     text-align: center;
   }
-  @media (min-width: 767px) and (max-width: 1380px) {
+  @media (min-width: 767px){
 
     .forum-container{
       min-height: 700px;
