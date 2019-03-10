@@ -25,6 +25,8 @@
   "homepage": "https://github.com/jaurinu/CDMX007-social-network#readme",
   "devDependencies": {
     "eslint": "^5.15.1",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1",
     "jest": "^24.1.0"
   }
 }
