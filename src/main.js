@@ -11,7 +11,7 @@ let mainApp = {};
         }else{
             //redirect to login page
             uid = null;
-            window.location.replace("login.html");
+            window.location.replace("index.html");
         }
       });
     function logOut(){
