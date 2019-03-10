@@ -53,7 +53,7 @@ header{
 .mdl-button--primary.mdl-button--primary {
     color: #6247AA;
 }
-@media (min-width: 767px) and (max-width: 1100px) {
+@media (min-width: 767px)  {
 
 header{
   height:15%;  
