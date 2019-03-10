@@ -59,13 +59,14 @@ db.collection("state").onSnapshot((querySnapshot) => {
 
 
 function deleteData(id) {
-  db.collection("state").doc(id).delete()
-  if (!confirm ('¿Realmente desea eliminar tu mensaje?')){
-  (function() {
+  if (confirm ('¿Realmente deseas eliminar tu mensaje?')){
+  db.collection("state").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
   }).catch(function(error) {
     console.error("Error removing document: ", error);
   });  
+}else{
+  return false;
 }
 }
 
@@ -93,6 +94,6 @@ function editState(id,state) {
         console.error("Error updating document: ", error);
     });
     }
-}
+  }
  
 
