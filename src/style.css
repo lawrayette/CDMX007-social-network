@@ -200,9 +200,7 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 767px) and (max-width: 1380px) {
-
-
+@media (min-width: 767px) {
 
   #start {
     position: relative;

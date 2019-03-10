@@ -37,39 +37,39 @@ ui.start('#firebaseui-auth-container', uiConfig);
 })()
 
 
-const observador = () => {
-  firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-          console.log(user)
-          show(user)
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          console.log(user.emailVerified)
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          // ...
-      } else {
-          // User is signed out.
-          // ...
-          console.log('Not user found')
-      }
-  });
-}
+// const observador = () => {
+//   firebase.auth().onAuthStateChanged(function (user) {
+//       if (user) {
+//           console.log(user)
+//           show(user)
+//           // User is signed in.
+//           var displayName = user.displayName;
+//           var email = user.email;
+//           console.log(user.emailVerified)
+//           var emailVerified = user.emailVerified;
+//           var photoURL = user.photoURL;
+//           var isAnonymous = user.isAnonymous;
+//           var uid = user.uid;
+//           var providerData = user.providerData;
+//           // ...
+//       } else {
+//           // User is signed out.
+//           // ...
+//           console.log('Not user found')
+//       }
+//   });
+// }
 
-observador()
+// observador()
 
 
-const show = (user) => {
-  var user = user;
-  let access = document.getElementById('access');
-  if(user.emailVerified){
-  access.innerHTML = `
-  <p> Bienvenido a STEAM </p>
-  <button onclick ="signOut()"> Cerrar sesión</button>
-  `
-}
-}
+// const show = (user) => {
+//   var user = user;
+//   let access = document.getElementById('access');
+//   if(user.emailVerified){
+//   access.innerHTML = `
+//   <p> Bienvenido a STEAM </p>
+//   <button onclick ="signOut()"> Cerrar sesión</button>
+//   `
+// }
+// }

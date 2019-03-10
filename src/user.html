@@ -25,19 +25,23 @@
 
         </a>
           <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
-          <button class="btn btn-info my-2 my-sm-0  ml-7" style="background-color: #AD29B6"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
-          <button class="btn btn-light my-2 my-sm-0  ml-7" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
+          <button class="btn-purple"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
+          <button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
           <button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
         </div>
       </nav></div>
 
 <main class="forum-container">
 
-<div id="div-area">
+  <div id="div-area">
   
-  <div><textarea name="textarea" id="input" cols="40" rows="4" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-  <div><button class="button-send-input">Enviar</button></div>
-</div>
+    <div><textarea name="textarea" class="form-control-textarea" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+    <div><button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
+  </div>
+  <table id ="table-state"class="table my-2">
+    <tbody>
+    </tbody>
+  </table>
 
 
 
