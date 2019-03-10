@@ -44,7 +44,7 @@ let table = document.getElementById('table-state');
 db.collection("state").onSnapshot((querySnapshot) => {
   table.innerHTML = '';
   querySnapshot.forEach((doc) => {
-     console.log(`${doc.id} => ${doc.data().first}`);
+    console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
     <tr>
       <td>${doc.data().first}</td>
@@ -57,22 +57,21 @@ db.collection("state").onSnapshot((querySnapshot) => {
   });
 });
 
-
 function deleteData(id) {
-  if (confirm ('¿Realmente deseas eliminar tu mensaje?')){
-  db.collection("state").doc(id).delete().then(function() {
-    console.log("Document successfully deleted!");
-  }).catch(function(error) {
-    console.error("Error removing document: ", error);
-  });  
-}else{
-  return false;
+  if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
+    db.collection("state").doc(id).delete().then(function () {
+      console.log("Document successfully deleted!");
+    }).catch(function (error) {
+      console.error("Error removing document: ", error);
+    });
+  } else {
+    return false;
+  }
 }
-}
 
 
 
-function editState(id,state) {
+function editState(id, state) {
   document.getElementById('input').value = state;
   let editButton = document.getElementById('sendButton');
   editButton.innerHTML = "Editar";
@@ -81,19 +80,28 @@ function editState(id,state) {
     var washingtonRef = db.collection("state").doc(id);
 
     let textInput = document.getElementById('input').value;
-      return washingtonRef.update({
-      first: textInput,
-    })
-    .then(function() {
+    return washingtonRef.update({
+        first: textInput,
+      })
+      .then(function () {
         console.log("Document successfully updated!");
         let textInput = document.getElementById('input').value = '';
         editButton.innerHTML = "Enviar";
-    })
-    .catch(function(error) {
+      })
+      .catch(function (error) {
         // The document probably doesn't exist.
         console.error("Error updating document: ", error);
-    });
-    }
+      });
   }
- 
+}
 
+
+
+
+
+
+//See User
+const userProfile = document.getElementById('button-user')
+userProfile.addEventListener("click", () => {
+  window.location = 'profile.html';
+})
