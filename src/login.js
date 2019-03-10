@@ -36,11 +36,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start('#firebaseui-auth-container', uiConfig);
 })()
 
-/*
+
 const observador = () => {
   firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-          console.log('User found')
+          console.log(user)
           show(user)
           // User is signed in.
           var displayName = user.displayName;
@@ -72,4 +72,4 @@ const show = (user) => {
   <button onclick ="signOut()"> Cerrar sesión</button>
   `
 }
-}*/
+}
