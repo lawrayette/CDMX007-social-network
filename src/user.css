@@ -1,7 +1,6 @@
-*{
+* {
   font-family: 'Roboto', sans-serif;
 }
-
 
 #logo-nav {
   width: 54%;
@@ -12,12 +11,14 @@
   background-size: 23%;
   background-repeat: no-repeat;
 }
-.form-control{
+
+.form-control {
   display: block;
-    width: 60%;
-    position: relative;
-    bottom: 4px;
+  width: 60%;
+  position: relative;
+  bottom: 4px;
 }
+
 .button-logOut {
   background-color: royalblue;
   color: white;
@@ -25,7 +26,7 @@
   padding: 3px;
   position: relative;
   border-radius: 6px;
-  bottom:3px;
+  bottom: 3px;
 
 }
 
@@ -46,7 +47,7 @@
   position: relative;
   border-radius: 6px;
   padding: 0px 9px;
-  bottom:3px;
+  bottom: 3px;
 }
 
 
@@ -209,10 +210,11 @@ footer {
     border-radius: 5px;
 
   }
+
   .button-send-input {
     top: 30px;
   }
-  
+
 
   #logo-footer {
     background-image: url(./assets/logo.png);
