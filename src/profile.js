@@ -13,8 +13,6 @@ vidMembers.addEventListener("click", ()=>{
 })
 
 
-
-
 const saveProfile = document.getElementById('saveProfile')
 
 saveProfile.addEventListener("click", () => {
@@ -29,15 +27,16 @@ saveProfile.addEventListener("click", () => {
      contactEmail: contact
     }).then( (docRef)=>{
         console.log('Document written with ID:', docRef.id);
-        document.getElementById ('name').value = '';
+        document.getElementById ('name').value ='';
         document.getElementById('lastName').value ='';
         document.getElementById('interestArea').value = '';
         document.getElementById('contact').value ='';
     }).catch((error)=>{
         console.log('Error adding document:', error);
+    }).then (()=>{
+        window.location = 'members.html';
     })
 
 })
-
 
 
