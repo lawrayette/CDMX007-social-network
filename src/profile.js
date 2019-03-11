@@ -13,10 +13,7 @@ vidMembers.addEventListener("click", ()=>{
 })
 
 
-
-
-const saveProfile = document.getElementById('saveProfile')
-
+const saveProfile = document.getElementById('saveProfile');
 saveProfile.addEventListener("click", () => {
     let name = document.getElementById('name').value;
     let lastName = document.getElementById('lastName').value;
@@ -29,15 +26,21 @@ saveProfile.addEventListener("click", () => {
      contactEmail: contact
     }).then( (docRef)=>{
         console.log('Document written with ID:', docRef.id);
-        document.getElementById ('name').value = '';
+        document.getElementById ('name').value ='';
         document.getElementById('lastName').value ='';
         document.getElementById('interestArea').value = '';
         document.getElementById('contact').value ='';
     }).catch((error)=>{
         console.log('Error adding document:', error);
+    }).then (()=>{
+    
+       let cardName = document.getElementById ('cardName');
+       let cardInterest = document.getElementById ('cardInterest');
+       let cardContact = document.getElementById ('cardContact');
+       cardName.innerHTML =`${name} ${lastName}`;
+       cardInterest.innerHTML = `${interestArea}`;
+       cardContact.innerHTML = `${contact}`;
     })
 
 })
-
-
 

@@ -70,7 +70,7 @@ Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, in
 
 ## Autores
 
-- Andrea
+- Andrea Velázquez Hidalgo
 - Karen
 - Jazmin
 - Janet Urbina Núñez

@@ -96,10 +96,6 @@ function editState(id, state) {
 }
 
 
-
-
-
-
 //See User
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {

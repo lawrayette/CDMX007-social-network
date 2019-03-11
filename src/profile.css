@@ -1,0 +1,20 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.cont-purple{
+    background-color:  #AD29B6;
+}
+
+.cardProfile{
+    position: relative;
+    top:50px;
+    min-height: 150px;
+}
+@media (min-width: 767px) {
+
+.cardProfile{
+    position: relative;
+   left:70%;
+}
+}
