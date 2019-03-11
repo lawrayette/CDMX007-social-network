@@ -6,6 +6,11 @@ firebase.initializeApp({
 });
 
  db = firebase.firestore();
+   
+
+
+
+
     let table = document.getElementById('table');
     //datos de usuarios
     db.collection("members").get().then((querySnapshot) => {
@@ -22,7 +27,6 @@ firebase.initializeApp({
         });
     });
   
-    
 
 
 
