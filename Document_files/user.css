@@ -49,9 +49,6 @@ footer {
   padding: 2%;
 }
 
-.forum-container{
-  margin: 5%;
-}
 .form-control {
   display: block;
   width: 60%;
@@ -195,25 +192,12 @@ footer {
   color: white;
   text-align: center;
 }
-.applause-clase {
-  height:32px;
-  width:32px;
-  
-}
-#applause-container {
-  display: inline-block;
-  width: 40px;
-  padding-left: 20px;
-  padding-bottom: 5px;
-  padding-top: 10px;
-}
-
 
 /*----Desktop----*/
 @media (min-width: 767px) {
 
   .forum-container {
-    min-height: 1500px;
+    min-height: 700px;
   }
 
   .btn-purple {
@@ -256,24 +240,16 @@ footer {
     bottom: 121px;
   }
 
-  .footer-main .footer-column span {
-    
-    font-family: 'Roboto', sans-serif;;
-    line-height: 2;
-    font-size: 15px;
-  }
   .footer-about {
     position: relative;
     bottom: 110px;
     text-align: center;
-
     font-size: 20px;
-
 
 
   }
 
-  .eMail {
+  .contact {
     position: relative;
     top: 82px;
   }
