@@ -47,15 +47,18 @@ db.collection("state").onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
     <tr>
-      <td>${doc.data().first}</td>
+      <td>${doc.data().first}</td> 
+      <div id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></div>
+
       <p>
       <button class = "btn btn-danger" onclick = "deleteData('${doc.id}')"> Eliminar </button>
       <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}' )"> Editar </button>
      </p>
      </tr>
-    `
+    `;
   });
 });
+
 
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {

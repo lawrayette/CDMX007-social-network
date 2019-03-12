@@ -183,6 +183,19 @@ footer {
   color: white;
   text-align: center;
 }
+.applause-clase {
+  height:32px;
+  width:32px;
+  
+}
+#applause-container {
+  display: inline-block;
+  width: 40px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
 
 @media (min-width: 767px) {
 
