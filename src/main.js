@@ -120,7 +120,6 @@ userProfileShow = () => {
           console.log("  Name: " + profile.displayName);
           console.log("  Email: " + profile.email);
           console.log("  Photo URL: " + profile.photoURL);
-
           /* prueba2.innerHTML = "";
            let profileUser = `<div>
            <img src="${profile.photoURL}">
