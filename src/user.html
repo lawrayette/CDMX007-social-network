@@ -39,6 +39,12 @@
 
       <div><textarea name="textarea" class="form-control-textarea" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
       <div><button id="sendButton" class="button-send-input" onclick="send()"> Enviar </button></div>
+      <div>
+          <select name="select">
+              <option id="public-message" class="option-selected" value="public">Público</option> 
+              <option id="private-message" class="option-selected" value="private">Solo yo</option>
+          </select>
+      </div>
     </div>
     <table id="table-state" class="table my-2">
       <tbody>
