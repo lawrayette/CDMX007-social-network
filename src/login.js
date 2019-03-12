@@ -27,6 +27,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
           //firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
+        
         // Terms of service url.
         tosUrl: 'user.html',
         // Privacy policy url.

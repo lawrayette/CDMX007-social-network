@@ -13,12 +13,13 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
     crossorigin="anonymous">
-
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-    <title>Document</title>
-
+    <!--applause button-->
+    <link rel="stylesheet" href="applause_button.css">
+  <script src="applause_button.js"></script>
+ <title>Document</title>
 
 </head>
 
@@ -59,9 +60,10 @@
     <div id="div-area">
 
       <div><textarea name="textarea" class="form-control-textarea" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-      <div><button id="sendButton" class="button-send-input" onclick="send()"> Enviar </button></div>
+      <div><button id="sendButton" class="button-send-input" onclick="send()"> Enviar </button>
+      </div>
     </div>
-    <table id="table-state" class="table my-2">
+    <table id="table-state" class="table my-2" >
       <tbody>
       </tbody>
     </table>
