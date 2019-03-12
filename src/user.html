@@ -13,8 +13,13 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
     crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-  <title>Document</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <title>Document</title>
+
+
 </head>
 
 
@@ -24,14 +29,30 @@
       <a class="navbar-brand" href="#">
         <img src="./assets/logo.png" alt="" id="logo-nav">
 
-      </a>
-      <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
-      <button class="btn-purple" type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
-      <button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
-      <button class="button-logOut" onclick="mainApp.logOut()">Salir</button>
+
+<main class="forum-container">
+    <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
+  <div id="div-area">
+
+      <div id="inputs">
+      <input id = "name-input" type="text" placeholder="Nombre">
+      <select id="area-select">
+          <option value="Science">Science</option>
+          <option value="Techology">Technology</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Arts">Arts</option>
+          <option value="Math">Math</option>
+        </select>
+     
+      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+    <div>
+      <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
   </div>
-  </nav>
+  <div id= "state-user">
+     
+    
   </div>
+  
 
   <main class="forum-container">
 
