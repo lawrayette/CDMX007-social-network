@@ -16,7 +16,7 @@ vidMembers.addEventListener("click", () => {
 const saveProfile = document.getElementById('saveProfile');
 saveProfile.addEventListener("click", () => {
     let name = document.getElementById('name').value;
-    let lastName = document.getElementById('lastName').value; 
+    let lastName = document.getElementById('lastName').value;
     let userName = document.getElementById('userName').value;
     let interestArea = document.getElementById('interestArea').value;
     let eMail = document.getElementById('eMail').value;
@@ -33,7 +33,7 @@ saveProfile.addEventListener("click", () => {
             console.log('Document written with ID:', docRef.id);
             document.getElementById('name').value = '';
             document.getElementById('lastName').value = '';
-            document.getElementById ('userName').value = '';
+            document.getElementById('userName').value = '';
             document.getElementById('interestArea').value = '';
             document.getElementById('eMail').value = '';
         }).catch((error) => {
@@ -49,4 +49,10 @@ saveProfile.addEventListener("click", () => {
             cardContact.innerHTML = `${eMail}`;
         })
     }
+
 })
+
+
+
+
+

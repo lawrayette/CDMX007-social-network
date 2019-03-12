@@ -23,6 +23,13 @@ let mainApp = {};
   mainApp.logOut = logOut;
 })()
 
+
+
+
+
+
+
+
 function send() {
   let textInput = document.getElementById('input').value;
   db.collection("state").add({
@@ -100,4 +107,27 @@ function editState(id, state) {
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
-})
+});
+
+
+userProfileShow = () => {
+  let user = firebase.auth().currentUser;
+  //const prueba2 = document.getElementById('prueba2')
+  if (user != null) {
+      user.providerData.forEach(function (profile) {
+          console.log("Sign-in provider: " + profile.providerId);
+          console.log("  Provider-specific UID: " + profile.uid);
+          console.log("  Name: " + profile.displayName);
+          console.log("  Email: " + profile.email);
+          console.log("  Photo URL: " + profile.photoURL);
+
+          /* prueba2.innerHTML = "";
+           let profileUser = `<div>
+           <img src="${profile.photoURL}">
+           <p>${profile.displayName}</p>
+           <p>${profile.email}</p>
+           </div>`
+           profileUser.insertAdjacentHTML('beforeend', profileUser);*/
+      })
+  }
+}
