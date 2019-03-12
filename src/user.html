@@ -29,7 +29,13 @@
     <nav class="navbar navbar-light" style="background-color: #181717;">
       <a class="navbar-brand" href="#">
         <img src="./assets/logo.png" alt="" id="logo-nav">
-
+       </a>
+               <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
+               <button class="btn-purple"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
+               <button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
+               <button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
+             </div>
+           </nav></div>
 
 <main class="forum-container">
     <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
@@ -48,25 +54,19 @@
       <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
     <div>
       <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
+  
+  <div>
+      <select name="select">
+          <option id="public-message" class="option-selected" value="public">Público</option> 
+          <option id="private-message" class="option-selected" value="private">Solo yo</option>
+      </select>
   </div>
+</div>
   <div id= "state-user">
      
     
   </div>
-  
-
-  <main class="forum-container">
-
-    <div id="div-area">
-
-      <div><textarea name="textarea" class="form-control-textarea" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-      <div><button id="sendButton" class="button-send-input" onclick="send()"> Enviar </button>
-      </div>
-    </div>
-    <table id="table-state" class="table my-2" >
-      <tbody>
-      </tbody>
-    </table>
+   
   </main>
   <footer>
     <div class="footer-container">
