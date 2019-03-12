@@ -8,9 +8,6 @@ firebase.initializeApp({
  db = firebase.firestore();
    
 
-
-
-
     let table = document.getElementById('table');
     //datos de usuarios
     db.collection("members").get().then((querySnapshot) => {
@@ -21,6 +18,7 @@ firebase.initializeApp({
             <tr>
             <td>${doc.data().first}</td>
             <td>${doc.data().last}</td>
+            <td>${doc.data().user}</td>
             <td>${doc.data().interest}</td>
             <td>${doc.data().contactEmail}</td>
           </tr>`
