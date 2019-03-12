@@ -1,12 +1,13 @@
 
-
 firebase.initializeApp({
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
     authDomain: "steam-3b4ca.firebaseapp.com",
     projectId: "steam-3b4ca",
 });
 
-let db = firebase.firestore();
+ db = firebase.firestore();
+   
+
     let table = document.getElementById('table');
     //datos de usuarios
     db.collection("members").get().then((querySnapshot) => {
@@ -17,10 +18,21 @@ let db = firebase.firestore();
             <tr>
             <td>${doc.data().first}</td>
             <td>${doc.data().last}</td>
+            <td>${doc.data().user}</td>
             <td>${doc.data().interest}</td>
             <td>${doc.data().contactEmail}</td>
           </tr>`
         });
     });
-      
+  
 
+
+
+
+
+    
+    /*
+const uploadProfileimage = ()=>{
+
+}
+*/
