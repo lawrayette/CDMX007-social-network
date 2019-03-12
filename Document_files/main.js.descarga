@@ -33,13 +33,13 @@ function send() {
       area: areaInput,
       name: nameInput,
       first: textInput,
-
+      
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       let textInput = document.getElementById('input').value = '';
       let nametInput = document.getElementById('name-input').value = '';
-
+      
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
@@ -59,7 +59,7 @@ db.collection("state").onSnapshot((querySnapshot) => {
       <li>${doc.data().area}</li>
       <p>
       <button class = "btn btn-danger" onclick = "deleteData('${doc.id}')"> Eliminar </button>
-      <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"> Editar </button>
+      <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}''${doc.data().name}''${doc.data().area}')"> Editar </button>
      </p>
      </div>
     `
@@ -79,10 +79,8 @@ function deleteData(id) {
 }
 
 //Edita los datos
-function editState(id, state,name) {
+function editState(id, state) {
   document.getElementById('input').value = state;
-  document.getElementById('name-input').value = name;
-
   let editButton = document.getElementById('sendButton');
   editButton.innerHTML = "Editar";
 
@@ -90,16 +88,13 @@ function editState(id, state,name) {
     var washingtonRef = db.collection("state").doc(id);
 
     let textInput = document.getElementById('input').value;
-    let nameInput = document.getElementById('name-input').value;
-
     return washingtonRef.update({
         first: textInput,
-        name: nameInput,
       })
       .then(function () {
         console.log("Document successfully updated!");
         let textInput = document.getElementById('input').value = '';
-        editButton.innerHTML = "Guardar";
+        editButton.innerHTML = "Enviar";
       })
       .catch(function (error) {
         // The document probably doesn't exist.
