@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
     crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <title>Document</title>
 </head>
 
@@ -32,16 +35,28 @@
       </nav></div>
 
 <main class="forum-container">
-
+    <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
   <div id="div-area">
-  
-    <div><textarea name="textarea" class="form-control-textarea" id="input" cols="40" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-    <div><button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
+
+      <div id="inputs">
+      <input id = "name-input" type="text" placeholder="Nombre">
+      <select id="area-select">
+          <option value="Science">Science</option>
+          <option value="Techology">Technology</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Arts">Arts</option>
+          <option value="Math">Math</option>
+        </select>
+     
+      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+    <div>
+      <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
   </div>
-  <table id ="table-state"class="table my-2">
-    <tbody>
-    </tbody>
-  </table>
+  <div id= "state-user">
+     
+    
+  </div>
+  
 
 
 
@@ -83,4 +98,5 @@
           <script  src="fireBase.js"></script>
           <script  src="main.js"></script>
 </body>
+
 </html>

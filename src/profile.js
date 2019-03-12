@@ -17,7 +17,7 @@ vidMembers.addEventListener("click", ()=>{
 
 const saveProfile = document.getElementById('saveProfile')
 
-saveProfile.addEventListener("click", () => {
+ saveProfile.addEventListener("click", () => {
     let name = document.getElementById('name').value;
     let lastName = document.getElementById('lastName').value;
     let interestArea = document.getElementById('interestArea').value;
@@ -38,6 +38,4 @@ saveProfile.addEventListener("click", () => {
     })
 
 })
-
-
 
