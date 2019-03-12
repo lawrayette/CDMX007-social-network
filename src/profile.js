@@ -13,8 +13,10 @@ vidMembers.addEventListener("click", () => {
 })
 
 
+
 const saveProfile = document.getElementById('saveProfile');
 saveProfile.addEventListener("click", () => {
+
     let name = document.getElementById('name').value;
     let lastName = document.getElementById('lastName').value;
     let userName = document.getElementById('userName').value;
@@ -51,8 +53,4 @@ saveProfile.addEventListener("click", () => {
     }
 
 })
-
-
-
-
 
