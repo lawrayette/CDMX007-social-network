@@ -37,8 +37,7 @@ footer {
 }
 
 #state-user {
-  margin-left: 9%;
-  margin-top: 5%;
+ margin-top: 5%;
 }
 
 #div-area {
@@ -68,6 +67,11 @@ footer {
   border-radius: 6px;
   bottom: 3px;
 
+}
+.alert-info {
+  color: #000202;
+  background-color: #00526f17;
+  border-color: #ffffff;
 }
 
 .forum-container {
