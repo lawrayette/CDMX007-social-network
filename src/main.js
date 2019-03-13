@@ -1,5 +1,6 @@
-let table = document.getElementById('state-user');
+const table = document.getElementById('state-user');
 let db = firebase.firestore();
+const image = document.getElementById('input.image');
 let mainApp = {};
 
 
@@ -28,16 +29,19 @@ function send() {
   let textInput = document.getElementById('input').value;
   let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
+  let imageInput = document.getElementById('input-image').value;
   db.collection("state").add({
       area: areaInput,
       name: nameInput,
       first: textInput,
+      image: imageInput,
 
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       let textInput = document.getElementById('input').value = '';
       let nametInput = document.getElementById('name-input').value = '';
+      let imageInput = document.getElementById('input-image').value = '';
 
     })
     .catch(function (error) {
@@ -55,6 +59,7 @@ db.collection("state").onSnapshot((querySnapshot) => {
     <div class="card  text-center alert alert-info">
        <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
+      <p>${doc.data().image}</p>
       <li>${doc.data().area}</li>
       <p>
       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
@@ -116,3 +121,10 @@ userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
 })
 
+// 
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
+
+// Create a storage reference from our storage service
+var storageRef = storage.ref();
+var imagesRef = storageRef.child('images');
