@@ -53,7 +53,7 @@ db.collection("state").onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
     <div class="card  text-center alert alert-info">
-      <p>${doc.data().name}</p>
+       <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
       <li>${doc.data().area}</li>
       <p>
@@ -64,12 +64,10 @@ db.collection("state").onSnapshot((querySnapshot) => {
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
      </p>
     </div>
-
     `
   });
 });
 // elimina los datos del muro
-
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
     db.collection("state").doc(id).delete().then(function () {
@@ -112,10 +110,9 @@ function editState(id, state, name) {
   }
 }
 
-
 //See User
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
-
 })
+
