@@ -23,7 +23,6 @@ let mainApp = {};
   mainApp.logOut = logOut;
 })()
 
-
 // Crea los datos y los manda a Firestote
 function send() {
   let textInput = document.getElementById('input').value;
@@ -181,5 +180,7 @@ function editState(id, state,name) {
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
-})
+
+});
+
 
