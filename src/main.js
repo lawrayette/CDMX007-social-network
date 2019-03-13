@@ -31,7 +31,7 @@ function send() {
   db.collection("state").add({
       area: areaInput,
       name: nameInput,
-      first: textInput,
+      first: textInput,  
 
     })
     .then(function (docRef) {

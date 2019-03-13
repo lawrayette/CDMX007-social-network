@@ -12,7 +12,32 @@ vidMembers.addEventListener("click", () => {
     window.location = 'members.html';
 })
 
+//--------------------------trae datos de inicio de sesion ---------------------------//
 
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+           // User is signed in.
+           localStorage.setItem('user', JSON.stringify(user))
+           let printPhoto = document.getElementById('print-photo')
+           
+           
+         let name = document.getElementById('name').value = user.displayName
+         let eMail = document.getElementById('eMail').value = user.email
+         let photo = user.photoURL
+         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 30%; border-radius:40%"></img>`
+
+           console.log(user)
+           
+        } else {
+            // No user is signed in.
+            console.log('no hay usuario')
+        }
+    });
+    
+  
+
+
+//----------------------Guarda datos------------------------------------//
 
 const saveProfile = document.getElementById('saveProfile');
 saveProfile.addEventListener("click", () => {
@@ -30,7 +55,8 @@ saveProfile.addEventListener("click", () => {
             last: lastName,
             user: userName,
             interest: interestArea,
-            contactEmail: eMail
+            contactEmail: eMail,
+            user: uid
         }).then((docRef) => {
             console.log('Document written with ID:', docRef.id);
             document.getElementById('name').value = '';
