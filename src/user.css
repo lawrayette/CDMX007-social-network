@@ -16,6 +16,16 @@ footer {
   padding: 2%;
 }
 
+#applause-container {
+  display: inline-block;
+  width: 59px;
+  border: 0;
+  background-color: transparent;
+  padding-left: 1px;
+  padding-bottom: 0px;
+  padding-top: -1px;
+}
+
 #logo-nav {
   width: 54%;
   margin-top: 4%;
@@ -37,7 +47,6 @@ footer {
 }
 
 #state-user {
-  margin-left: 9%;
   margin-top: 5%;
 }
 
@@ -49,9 +58,10 @@ footer {
   padding: 2%;
 }
 
-.forum-container{
+.forum-container {
   margin: 5%;
 }
+
 .form-control {
   display: block;
   width: 60%;
@@ -70,8 +80,19 @@ footer {
 
 }
 
+.alert-info {
+  color: #000202;
+  background-color: #356a8838;
+  border-color: #ffffff;
+}
+
 .forum-container {
   min-height: 800px;
+}
+
+.applause-clase {
+  height: 29px;
+  width: 30px;
 }
 
 .btn-purple {
@@ -200,11 +221,13 @@ footer {
   color: white;
   text-align: center;
 }
+
 .applause-clase {
-  height:32px;
-  width:32px;
-  
+  height: 32px;
+  width: 32px;
+
 }
+
 #applause-container {
   display: inline-block;
   width: 40px;
@@ -213,6 +236,10 @@ footer {
   padding-top: 10px;
 }
 
+.photo-perfil{
+  width: 30%;
+  border-radius: 30%;
+}
 
 /*----Desktop----*/
 @media (min-width: 767px) {
@@ -250,7 +277,8 @@ footer {
     margin-left: 22%;
     margin-top: 4%;
     padding: 3%;
-}
+  }
+
   #logo-footer {
     background-image: url(./assets/logo.png);
     height: 25%;
@@ -262,11 +290,13 @@ footer {
   }
 
   .footer-main .footer-column span {
-    
-    font-family: 'Roboto', sans-serif;;
+
+    font-family: 'Roboto', sans-serif;
+    ;
     line-height: 2;
     font-size: 15px;
   }
+
   .footer-about {
     position: relative;
     bottom: 110px;
