@@ -6,33 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+   <link rel="stylesheet" href="profile.css" class="rel">
 <!--Firestore-->
+
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
     <title>Hello, world!</title>
   </head>
   <body>
-      <div class="containerProfile">
-    <h1>Mi perfil</h1>
-   <input type="text" id ="name" placeholder ="nombre" class ="form-control my-4">
-   <input type="text" id ="lastName" placeholder="apellido" class="form-control my-4">
-   <input type="text" id="interestArea" placeholder="intereses" class="form-control my-4">
-   <input type="text" id="contact" placeholder="contacto" class="form-control my-4">
-   <button class="btn btn-info" id="saveProfile">Guardar</button>
 
-  <button id="vid-members">Ver otros miembros</button>
-</div>
-<div id="my-profile">
-  
+      <div class="container-fluid text-center py-5 cont-purple">
+        <div class ="container text-white">
+    <h2 class ="display-4"><b>Mi perfil</b></h2>
+    <p class ="lead">Personaliza tu perfil y permite que la comunidad te conozca</p>
+      </div></div>
 
-</div>
+      <form class="container id="form">
+        <div class="form-row my-4">
+          <div class="col-md-4 mb-3">
+            <label>Nombre</label>
+            <input type="text" id="name" class="form-control" >
+          </div>
+          <div class="col-md-4 mb-3">
+            <label> Apellido</label>
+            <input type="text" id ="lastName" class="form-control" >
+          </div>
+          <div class="col-md-4 mb-3">
+            <label> Nombre de usuario</label>
+            <div class="input-group">
+              <input type="text" id="userName" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-row my-4">
+          <div class="col-md-6 mb-3">
+            <label>Área(s) de interés STEAM</label>
+            <input type="text" id="interestArea" class="form-control" >
+          </div>
+          <div class="col-md-3 mb-3">
+            <label>Correo electrónico</label>
+            <input type="text" id="eMail" class="form-control">
+          </div>
+        </div>
+      </form>
+     <button class="btnProfile" type="submit" id="saveProfile">Guardar</button>
+ <button id="vid-members" class="btnMembers">Conoce a otros miembros</button>
+   <div class="card bg-light mb-3 cardProfile" style="max-width: 18rem;">
+      <div class="card-header" id ="cardName"></div>
+      <div class="card-body">
+        <h2 class ="card-title" id="cardUser"></h2>
+        <h5 class="card-title" id="cardInterest"></h5>
+        <p class="card-text" id="cardContact"></p>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
     <script src="profile.js"></script>
     <script src ="members.js"></script>
 </body>

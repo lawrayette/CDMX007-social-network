@@ -17,15 +17,11 @@ let mainApp = {};
     }
   });
 
- function logOut() {
+  function logOut() {
     firebase.auth().signOut();
   }
   mainApp.logOut = logOut;
 })()
-
-
-
-
 
 // Crea los datos y los manda a Firestote
 function send() {
@@ -57,20 +53,23 @@ db.collection("state").onSnapshot((querySnapshot) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
     <div class="card  text-center alert alert-info">
-       <p>${doc.data().name}</p>
+      <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
       <li>${doc.data().area}</li>
       <p>
       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
       <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" />
- </a></p>
+     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+     <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+     </p>
     </div>
+
     `
   });
 });
 // elimina los datos del muro
+
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
     db.collection("state").doc(id).delete().then(function () {
@@ -118,5 +117,5 @@ function editState(id, state, name) {
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
-})
 
+})
