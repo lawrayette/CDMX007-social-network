@@ -1,5 +1,6 @@
-let table = document.getElementById('state-user');
+const table = document.getElementById('state-user');
 let db = firebase.firestore();
+const image = document.getElementById('input.image');
 let mainApp = {};
 
 
@@ -28,16 +29,19 @@ function send() {
   let textInput = document.getElementById('input').value;
   let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
+  let imageInput = document.getElementById('input-image').value;
   db.collection("state").add({
       area: areaInput,
       name: nameInput,
-      first: textInput,  
+      first: textInput,
+      image: imageInput,
 
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       let textInput = document.getElementById('input').value = '';
       let nametInput = document.getElementById('name-input').value = '';
+      let imageInput = document.getElementById('input-image').value = '';
 
     })
     .catch(function (error) {
@@ -52,24 +56,23 @@ db.collection("state").onSnapshot((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
-
-    <div>
+    <div class="card  text-center alert alert-info">
        <p>${doc.data().name}</p>
-      <td>${doc.data().first}</td>
+      <p>${doc.data().first}</p>
+      <p>${doc.data().image}</p>
       <li>${doc.data().area}</li>
-      <div id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></div>
-
       <p>
-      <button class = "btn btn-danger" onclick = "deleteData('${doc.id}')"> Eliminar </button>
-      <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"> Editar </button>
+      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+     <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+     <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
      </p>
-
-     </div>
+    </div>
     `
   });
 });
 // elimina los datos del muro
-
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
     db.collection("state").doc(id).delete().then(function () {
@@ -83,7 +86,7 @@ function deleteData(id) {
 }
 
 //Edita los datos
-function editState(id, state,name) {
+function editState(id, state, name) {
   document.getElementById('input').value = state;
   document.getElementById('name-input').value = name;
 
@@ -112,11 +115,11 @@ function editState(id, state,name) {
   }
 }
 
-
 //See User
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
+})
 
-});
-
+// 
+// Get a reference to the storage service, which is used to create references in your storage bucket
