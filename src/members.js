@@ -24,6 +24,21 @@ firebase.initializeApp({
           </tr>`
         });
     });
+
+
+    //Función para imprimir data 
+    printData= (table)=>{
+        querySnapshot.forEach((doc)=>{
+            `tr>
+            <td>${doc.data().first}</td>
+            <td>${doc.data().last}</td>
+            <td>${doc.data().user}</td>
+            <td>${doc.data().interest}</td>
+            <td>${doc.data().contactEmail}</td>
+          </tr>`
+          printData.insertAdjacentHtml(beforeend, table)
+        })
+    }
   
 
 
