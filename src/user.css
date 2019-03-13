@@ -103,6 +103,11 @@ footer {
   bottom: 3px;
 }
 
+/*lista desplegable de opciones de busqueda*/
+#area-search{
+  display: none;
+}
+
 .btn-user {
   background-color: white;
   position: relative;
