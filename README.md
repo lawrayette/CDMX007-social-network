@@ -70,7 +70,7 @@ Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, in
 
 ## Autores
 
-- Andrea
+- Andrea 
 - Karen
 - Jazmin
 - Janet Urbina Núñez
@@ -482,25 +482,25 @@ Otras:
 
 ### Creación de cuenta (sign up)
 
-* [ ] Permite crear cuenta.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [ x] Permite crear cuenta.
+* [ x] Valida email.
+* [ x] Valida password.
+* [ x] Muestra mensajes de error.
 
 ### Inicio de sesión (sign in)
 
-* [ ] Permite iniciar sesión.
-* [ ] Valida email.
-* [ ] Valida password.
-* [ ] Muestra mensajes de error.
+* [ x] Permite iniciar sesión.
+* [ x] Valida email.
+* [ x] Valida password.
+* [ x] Muestra mensajes de error.
 
 ### Muro (wall/feed)
 
-* [ ] Muestra _muro_, o lista de publicaciones.
-* [ ] Permite hacer nuevas publicaciones.
-* [ ] Permite eliminar publicaciones.
-* [ ] Pide confirmación antes de borrar publicación.
-* [ ] Permite editar publicación en el mismo lugar (in place).
+* [ x] Muestra _muro_, o lista de publicaciones.
+* [ x] Permite hacer nuevas publicaciones.
+* [ x] Permite eliminar publicaciones.
+* [ x] Pide confirmación antes de borrar publicación.
+* [ x] Permite editar publicación en el mismo lugar (in place).
 * [ ] Permite filtrar publicaciones por público/privado.
 * [ ] Permite marcar publicaciones como _gustados_ (like, corazón, estrella,
   etc...).
