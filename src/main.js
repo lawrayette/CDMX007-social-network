@@ -56,7 +56,7 @@ db.collection("state").onSnapshot((querySnapshot) => {
     <div>
        <p>${doc.data().name}</p>
       <td>${doc.data().first}</td>
-      <li>${doc.data().area}</li>
+      <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       <div id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></div>
 
       <p>
@@ -66,8 +66,71 @@ db.collection("state").onSnapshot((querySnapshot) => {
 
      </div>
     `
-  });
+  });  
 });
+
+
+//imprime los datos del filtro
+const printData = (querySnapshot) => {
+  table.innerHTML = "";
+  querySnapshot.forEach((doc) => {
+    table.innerHTML += `
+    <div>
+       <p>${doc.data().name}</p>
+      <td>${doc.data().first}</td>
+      <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+      <div id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></div>
+
+      <p>
+      <button class = "btn btn-danger" onclick = "deleteData('${doc.id}')"> Eliminar </button>
+      <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"> Editar </button>
+     </p>
+
+     </div>
+    `
+	});
+};						
+
+
+//filtra por tipo de contenido al dar click en el li del área impresa
+let searchGlass = document.getElementById("button-search-on-user");
+let areaSelection= document.getElementsByClassName('area-name');
+let listContainer= document.getElementById("area-search");
+
+searchGlass.addEventListener('click', ()=>{
+  listContainer.style.display="block";
+  for (let i = 0; i < areaSelection.length; i++) {
+    areaSelection[i].addEventListener('click', () => {
+    let areaClicked = areaSelection[i].id;
+    console.log(areaClicked);
+    listContainer.style.display="none";
+
+    db.collection("state").where("area", "==", areaClicked).get().then(printData);
+    })}
+  
+
+})
+  
+
+  //searchByAreaInput.addEventListener("keyup", () => {
+   // let searchValue = searchInput.value;
+    //console.log(searchValue);
+  //})
+
+//db.collection("state").where("userId", "==", user.Id).get().then(printData)
+
+
+
+
+
+
+
+
+
+
+
+
+
 // elimina los datos del muro
 
 function deleteData(id) {
@@ -119,4 +182,5 @@ userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
 
 });
+
 

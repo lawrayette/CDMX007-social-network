@@ -31,27 +31,39 @@
         <img src="./assets/logo.png" alt="" id="logo-nav">
        </a>
                <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
-               <button class="btn-purple"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i></button>
+               <button class="btn-purple"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i> </button>
+                <div id="area-search">
+                <ul>
+                  <li> <a id="Science" class="area-name" href="#">Science</a></li>
+                  <li> <a id="Technology" class="area-name" href="#">Technology</a></li>
+                  <li> <a id="Engineering" class="area-name" href="#">Engineering</a></li>
+                  <li> <a id="Arts" class="area-name" href="#">Arts</a></li>
+                  <li> <a id="Math" class="area-name" href="#">Math</a></li>
+                </ul>
+              </div>
+             
                <button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
                <button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
              </div>
            </nav></div>
 
+           
 <main class="forum-container">
-    <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
+   
   <div id="div-area">
-
+    <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
       <div id="inputs">
       <input id = "name-input" type="text" placeholder="Nombre">
       <select id="area-select">
           <option value="Science">Science</option>
-          <option value="Techology">Technology</option>
+          <option value="Technology">Technology</option>
           <option value="Engineering">Engineering</option>
           <option value="Arts">Arts</option>
           <option value="Math">Math</option>
         </select>
+      </div>
      
-      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea>
     <div>
       <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
   
@@ -63,11 +75,10 @@
   </div>
 </div>
   <div id= "state-user">
-     
-    
   </div>
 
   </main>
+  
   <footer>
     <div class="footer-container">
       <div class="footer-main">
