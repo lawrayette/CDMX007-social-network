@@ -10,7 +10,7 @@ applause-button svg g.outline{visibility:visible}
 applause-button.clapped svg g.flat{visibility:visible}
 applause-button.clapped svg g.outline{visibility:hidden}
 applause-button .count-container{position:absolute;top:-40%;width:100%;color:gray;user-select:none}
-applause-button .count-container .count{margin-left:10%;transform:translateX(50%);width:100%;text-align:center; transform:translateY(-30%)}
+applause-button .count-container .count{margin-left:10%;transform:tr78anslateX(50%);width:100%;text-align:center; transform:translateY(-30%)}
 applause-button g.sparkle circle{opacity:0;stroke-width:0}
 applause-button g.sparkle g:nth-child(1){transform:rotate(0deg) translateX(10px)}
 applause-button g.sparkle g:nth-child(2){transform:rotate(72deg) translateX(10px)}
