@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
    <link rel="stylesheet" href="profile.css" class="rel">
@@ -15,6 +14,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
+
       <div class="container-fluid text-center py-5 cont-purple">
         <div class ="container text-white">
     <h2 class ="display-4"><b>Mi perfil</b></h2>
@@ -25,32 +25,69 @@
         <div class="form-row my-4">
           <div class="col-md-4 mb-3">
             <label>Nombre</label>
-            <input type="text" id="name" class="form-control" >
+            <input type="text" id="name" class="form-control" required ="required" >
           </div>
           <div class="col-md-4 mb-3">
             <label> Apellido</label>
-            <input type="text" id ="lastName" class="form-control" >
+            <input type="text" id ="lastName" class="form-control"  required ="required" >
           </div>
           <div class="col-md-4 mb-3">
             <label> Nombre de usuario</label>
             <div class="input-group">
-              <input type="text" id="userName" class="form-control">
+              <input type="text" id="userName" class="form-control"  required ="required">
             </div>
           </div>
         </div>
         <div class="form-row my-4">
           <div class="col-md-6 mb-3">
             <label>Área(s) de interés STEAM</label>
-            <input type="text" id="interestArea" class="form-control" >
+            <input type="text" id="interestArea" class="form-control" required ="required" >
           </div>
           <div class="col-md-3 mb-3">
             <label>Correo electrónico</label>
-            <input type="text" id="eMail" class="form-control">
+            <input type="text" id="eMail" class="form-control"  required ="required">
           </div>
         </div>
       </form>
-     <button class="btnProfile" type="submit" id="saveProfile">Guardar</button>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="saveProfile" data-toggle="modal" data-target="#myModal">
+  Guardar Perfil
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cardName"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="cardUser"> Usuario : </p>
+        <p id ="cardInterest"> Intereses : </p>
+        <p id ="cardContact"> correo electrónico : </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
  <button id="vid-members" class="btnMembers">Conoce a otros miembros</button>
+<!--
+     <button class="btnProfile" type="submit" id="saveProfile">Guardar</button>
+
    <div class="card bg-light mb-3 cardProfile" style="max-width: 18rem;">
       <div class="card-header" id ="cardName"></div>
       <div class="card-body">
@@ -58,8 +95,8 @@
         <h5 class="card-title" id="cardInterest"></h5>
         <p class="card-text" id="cardContact"></p>
       </div>
-    </div>
-<div id="prueba"></div>
+    </div>-->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

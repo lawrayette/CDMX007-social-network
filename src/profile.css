@@ -10,13 +10,17 @@
     position: relative;
     top: 50px;
     min-height: 150px;
+    left: 10%;
 }
+
 
 .btnMembers {
     background-color: #212529;
     color: white;
     padding: 5px 12px;
     border-radius: 7%;
+    position:relative;
+    left:10%;
 }
 
 .btnProfile {
@@ -24,14 +28,20 @@
     color: white;
     padding: 5px 12px;
     border-radius: 7%;
+    position:relative;
+    left:8%;
 }
+:required  {  
+    background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
+    background-position:right top;
+   }
 
 
 @media (min-width: 767px) {
 
     .cardProfile {
         position: relative;
-        left: 70%;
+        left: 40%;
     }
 
     .btnProfile {

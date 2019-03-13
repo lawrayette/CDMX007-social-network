@@ -1,3 +1,5 @@
+/*----Estilos Generales*/
+
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -9,8 +11,6 @@ body{
 
 header{
     background: #181717;
-    /* border-bottom-left-radius: 50% 55%;
-    border-bottom-right-radius: 50% 55%; */
     padding: 26px 1px;
     height: 30%;
 }
@@ -53,12 +53,13 @@ header{
 .mdl-button--primary.mdl-button--primary {
     color: #6247AA;
 }
+
+/*----Desktop----*/
+
 @media (min-width: 767px)  {
 
 header{
   height:15%;  
 }
-
-
 
 }
