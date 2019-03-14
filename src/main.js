@@ -3,6 +3,15 @@ let db = firebase.firestore();
 const image = document.getElementById('input.image');
 let mainApp = {};
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var options = document.querySelectorAll('option');
+  var instances = M.FormSelect.init(elems, options);
+  });
+
+
+      
+
 
 (function () {
   let firebase = app_fireBase;
@@ -56,14 +65,14 @@ db.collection("state").onSnapshot((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     table.innerHTML += `
-    <div class="card  text-center alert alert-info">
+    <div class="card  text-center alert alert-info light-blue lighten-5">
        <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
       <p>${doc.data().image}</p>
       <li>${doc.data().area}</li>
       <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <button class = "btn-floating btn-small  red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button class = "btn-floating btn-small purple accent-3" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>

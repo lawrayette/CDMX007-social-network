@@ -13,8 +13,13 @@ footer {
   margin-right: 2%;
   margin-top: 3%;
   border-style: ridge;
+  border-color:#aa00ff;
   padding: 2%;
 }
+.input-field label {
+  color:#0091ea ;
+}
+
 
 #applause-container {
   display: inline-block;
@@ -49,14 +54,14 @@ footer {
 #state-user {
   margin-top: 5%;
 }
-
+/**
 #div-area {
   display: inline-block;
   margin-left: 2%;
   margin-top: 3%;
   border-style: ridge;
   padding: 2%;
-}
+}*/
 
 .forum-container {
   margin: 5%;
@@ -264,12 +269,7 @@ footer {
     top: 30px;
   }
 
-  #div-area {
-    margin-left: 22%;
-    margin-top: 4%;
-    padding: 3%;
-  }
-
+  
   #logo-footer {
     background-image: url(./assets/logo.png);
     height: 25%;
@@ -333,12 +333,12 @@ footer {
     padding: 1%;
   }
 
-  #div-area {
+ /* #div-area {
     margin-left: 34%;
     margin-top: 6%;
     padding: 4%;
   }
-
+*/
   .form-control {
     display: block;
     width: 50%;
