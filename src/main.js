@@ -89,7 +89,6 @@ db.collection("state").onSnapshot((querySnapshot) => {
     <div class="card  text-center alert alert-info">
        <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
-      <p>${doc.data().image}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
 
       <p>
