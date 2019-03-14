@@ -31,17 +31,18 @@
         <img src="./assets/logo.png" alt="" id="logo-nav">
        </a>
                <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
-               <button class="btn-purple"  type="submit" id="button-search-on-user"><i class="fas fa-search"></i> </button>
-                <div id="area-search">
-                <ul>
-                  <li> <a id="Science" class="area-name" href="#">Science</a></li>
-                  <li> <a id="Technology" class="area-name" href="#">Technology</a></li>
-                  <li> <a id="Engineering" class="area-name" href="#">Engineering</a></li>
-                  <li> <a id="Arts" class="area-name" href="#">Arts</a></li>
-                  <li> <a id="Math" class="area-name" href="#">Math</a></li>
-                </ul>
-              </div>
-             
+               <div class="dropdown">
+                <button class="btn btn-secondary btn-purple dropdown-toggle "  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i> </button>
+                   <div id="area-search" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <ul>
+                      <a id="Science" class="area-name dropdown-item" href="#">Science</a>
+                      <a id="Technology" class="area-name dropdown-item" href="#">Technology</a>
+                      <a id="Engineering" class="area-name dropdown-item" href="#">Engineering</a>
+                      <a id="Arts" class="area-name dropdown-item" href="#">Arts</a>
+                      <a id="Math" class="area-name dropdown-item" href="#">Math</a>
+                    </ul>
+                  </div>
+                </div>
                <button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
                <button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
              </div>
@@ -62,8 +63,8 @@
           <option value="Math">Matemáticas</option>
         </select>
         <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-        <input type="file" id="input-image">
-        <progress value="0" max ="100" id="uploader"></progress>
+        <!--<input type="file" id="input-image">
+        <progress value="0" max ="100" id="uploader"></progress>-->
         <div>
 
       <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
@@ -76,6 +77,9 @@
   </div>
 </div>
   <div id= "state-user">
+  </div>
+
+  <div id= "state-user-filter">
   </div>
 
   </main>
@@ -113,6 +117,9 @@
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="fireBase.js"></script>
   <script src="main.js"></script>
 </body>
