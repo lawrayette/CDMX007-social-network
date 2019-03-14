@@ -47,6 +47,7 @@ saveProfile.addEventListener("click", () => {
     let userName = document.getElementById('userName').value;
     let interestArea = document.getElementById('interestArea').value;
     let eMail = document.getElementById('eMail').value;
+
     if (name === "" || lastName === "" || userName === "" || interestArea === "" || eMail === "") {
         alert('Por favor, completa todos los campos del formulario');
           
@@ -57,7 +58,7 @@ saveProfile.addEventListener("click", () => {
             user: userName,
             interest: interestArea,
             contactEmail: eMail,
-            user: uid
+          //  user: uid
         }).then((docRef) => {
             console.log('Document written with ID:', docRef.id);
             document.getElementById('name').value = '';
