@@ -29,19 +29,19 @@ function send() {
   let textInput = document.getElementById('input').value;
   let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
-  let imageInput = document.getElementById('input-image').value;
+
   db.collection("state").add({
       area: areaInput,
       name: nameInput,
       first: textInput,
-      image: imageInput,
+      
 
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       let textInput = document.getElementById('input').value = '';
       let nametInput = document.getElementById('name-input').value = '';
-      let imageInput = document.getElementById('input-image').value = '';
+     
 
     })
     .catch(function (error) {
