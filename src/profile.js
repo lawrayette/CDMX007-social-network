@@ -56,7 +56,7 @@ saveProfile.addEventListener("click", () => {
             user: userName,
             interest: interestArea,
             contactEmail: eMail,
-            user: uid
+            //user: uid
         }).then((docRef) => {
             console.log('Document written with ID:', docRef.id);
             document.getElementById('name').value = '';
