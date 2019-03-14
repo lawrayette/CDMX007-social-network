@@ -108,6 +108,11 @@ footer {
   bottom: 3px;
 }
 
+/*lista desplegable de opciones de busqueda*/
+#area-search{
+  display: none;
+}
+
 .btn-user {
   background-color: white;
   position: relative;
@@ -236,6 +241,10 @@ footer {
   padding-top: 10px;
 }
 
+.photo-perfil{
+  width: 30%;
+  border-radius: 30%;
+}
 
 /*----Desktop----*/
 @media (min-width: 767px) {

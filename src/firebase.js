@@ -12,5 +12,4 @@ let app_fireBase = {};
   firebase.initializeApp(config);
 
 app_fireBase = firebase;
-
 })()

@@ -42,17 +42,8 @@ ui.start('#firebaseui-auth-container', uiConfig);
 //   firebase.auth().onAuthStateChanged(function (user) {
 //       if (user) {
 //           console.log(user)
-//           show(user)
-//           // User is signed in.
-//           var displayName = user.displayName;
-//           var email = user.email;
-//           console.log(user.emailVerified)
-//           var emailVerified = user.emailVerified;
-//           var photoURL = user.photoURL;
-//           var isAnonymous = user.isAnonymous;
-//           var uid = user.uid;
-//           var providerData = user.providerData;
-//           // ...
+//           localStorage.setItem('user', JSON.stringify(user))
+                   
 //       } else {
 //           // User is signed out.
 //           // ...
