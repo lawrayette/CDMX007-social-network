@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image" href="./assets/favicon.png">
+    <!-- Compiled and minified CSS materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Firebase-->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="login.css">
+</head>
+<body>
+
+     <!-- Navbar -->
+     <nav>
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo center"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></a>
+            </div>
+    </nav>
+<!-- Firebase -->
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <script src="fireBase.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
