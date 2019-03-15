@@ -24,7 +24,7 @@ vidMembers.addEventListener("click", () => {
          let name = document.getElementById('name').value = user.displayName
          let eMail = document.getElementById('eMail').value = user.email
          let photo = user.photoURL
-         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 30%; border-radius:40%"></img>`
+         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:40%"></img>`
 
            console.log(user)
            
