@@ -35,6 +35,7 @@ function send() {
       area: areaInput,
       name: nameInput,
       first: textInput,
+      private: true,
       
 
     })
