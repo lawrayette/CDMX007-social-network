@@ -72,7 +72,7 @@ Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, in
 
 - Andrea Velázquez Hidalgo
 - Alma Karen Molina
-- Jazmin Dominguez Perex
+- Jazmin Domínguez Pérez
 - Janet Urbina Núñez
 
 ## Herramientas
