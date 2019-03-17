@@ -1,4 +1,3 @@
-
 (function (window, document) {
     'use strict';
     const init = function () {
@@ -6,7 +5,7 @@
             framework = null,
             routes = {},
             controllers = {},
-            controller,
+            ctrlCurrent = null,
             library = {
                 getId: function (id) {
                     element = document.getElementById(id);
@@ -25,6 +24,15 @@
                     return this;
                 },
 
+                controller: function (name, ctrl) {
+                    controllers[name] = {
+                        'controller': ctrl
+                    }
+                },
+                getCtrl: function () {
+                    return ctrlCurrent;
+                },
+
                 enroute: function () {
                     framework = element;
                     return this;
@@ -39,16 +47,25 @@
                     return this;
                 },
 
-            
+
                 routeController: function () {
                     let hash = window.location.hash.substring(1) || '/',
-                    destiny = routes[hash],
-                    xhr = new XMLHttpRequest();
+                        destiny = routes[hash],
+                        xhr = new XMLHttpRequest();
 
                     if (destiny && destiny.template) {
+
+                        if (destiny.controller) {
+                            ctrlCurrent = controllers[destiny.controller]
+                        }
                         xhr.addEventListener('load', function () {
                             framework.innerHTML = this.responseText;
-                        }, false)
+                            setTimeout(function () {
+                                if (typeof (destiny.charge) === 'function') {
+                                    destiny.charge();
+                                }
+                            }, 500)
+                        }, false);
 
                         xhr.open('get', destiny.template, true);
                         xhr.send(null);
@@ -65,6 +82,6 @@
         window.addEventListener('load', library.routeController, false);
         window.addEventListener('hashchange', library.routeController, false);
     } else {
-        console.log('Se está llamando la librería nuevamente');
+        console.log('Loading library');
     }
 })(window, document)

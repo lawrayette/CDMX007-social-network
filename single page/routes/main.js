@@ -12,6 +12,7 @@ let mainApp = {};
     if (user) {
       // User is signed in.
       uid = user.uid;
+      
     } else {
       //redirect to login page
       uid = null;
