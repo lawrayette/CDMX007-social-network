@@ -1,0 +1,36 @@
+<div>
+        <main class="forum-container">
+   
+                <div id="div-area">
+                  <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p>
+                    <div id="inputs">
+                    <input id = "name-input" type="text" placeholder="Nombre">
+                    <select id="area-select">
+                        <option value="Science">Ciencia</option>
+                        <option value="Technology">Tecnología</option>
+                        <option value="Engineering">Ingeniería</option>
+                        <option value="Arts">Arte</option>
+                        <option value="Math">Matemáticas</option>
+                      </select>
+                      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
+              
+                      <input type="file" id="input-image">
+                      <progress value="0" max ="100" id="uploader"></progress>--
+              
+                      <div>
+              
+                    <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
+                
+                <div>
+                    <select name="select">
+                        <option id="public-message" class="option-selected" value="public">Público</option> 
+                        <option id="private-message" class="option-selected" value="private">Solo yo</option>
+                    </select>
+                </div>
+              </div>
+                <div id= "state-user">
+                </div>
+              
+                <div id= "state-user-filter">
+                </div>
+</div>
