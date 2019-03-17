@@ -1,4 +1,5 @@
-const table = document.getElementById('state-user');
+const generalTable = document.getElementById('state-user');
+const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 const image = document.getElementById('input.image');
 let mainApp = {};
@@ -50,16 +51,44 @@ function send() {
 
 }
 
+//filtra por tipo de contenido al dar click en el li del área impresa
+let searchGlass = document.getElementById("dropdownMenuButton");
+let areaSelection= document.getElementsByClassName('area-name');
+let listContainer= document.getElementById("area-search");
+//eventos del dom para mostrar y ocultar post
+let principalPrint = document.getElementById('principalPrint');
+let printDataFunction = document.getElementById('printDataFunction');
+
+
+//logo de steam con función de "home"
+let logoSteamHome = document.getElementById("logo-nav");
+logoSteamHome.addEventListener('click', ()=>{
+  console.log ('funciona');
+  filteredTable.style.display = "none";
+  generalTable.style.display= "block";
+})
+
+//da eventos de click a lista de 'areas'
+searchGlass.addEventListener('click', ()=>{
+  listContainer.style.display="block";
+  for (let i = 0; i < areaSelection.length; i++) {
+    areaSelection[i].addEventListener('click', () => {
+    let areaClicked = areaSelection[i].id;
+    console.log(areaClicked);
+    listContainer.style.display="none";
+
+    db.collection("state").where("area", "==", areaClicked).get().then(printData);
+    })}})
+
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
-  table.innerHTML = '';
+ generalTable.innerHTML = '';
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
-    table.innerHTML += `
+    generalTable.innerHTML += `
     <div class="card  text-center alert alert-info">
        <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
-      <p>${doc.data().image}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       <p>
       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
@@ -74,43 +103,34 @@ db.collection("state").onSnapshot((querySnapshot) => {
 });
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
-  table.innerHTML = "";
+  filteredTable.style.display= "block";
+  filteredTable.innerHTML = "";
   querySnapshot.forEach((doc) => {
-    table.innerHTML += `
-    <div>
-       <p>${doc.data().name}</p>
-      <td>${doc.data().first}</td>
-      <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-      <div id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></div>
+    filteredTable.innerHTML += `
+    <div class="card  text-center alert alert-info">
+    <p>${doc.data().name}</p>
+    <p>${doc.data().first}</p>
+    <p>${doc.data().image}</p>
+    <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+      
       <p>
-      <button class = "btn btn-danger" onclick = "deleteData('${doc.id}')"> Eliminar </button>
-      <button class = "btn btn-warning" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"> Editar </button>
+      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+     <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+     <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
      </p>
-     </div>
+    </div>
     `
-	});
+  });
+  generalTable.style.display = "none";
 };						
-//filtra por tipo de contenido al dar click en el li del área impresa
-let searchGlass = document.getElementById("button-search-on-user");
-let areaSelection= document.getElementsByClassName('area-name');
-let listContainer= document.getElementById("area-search");
-searchGlass.addEventListener('click', ()=>{
-  listContainer.style.display="block";
-  for (let i = 0; i < areaSelection.length; i++) {
-    areaSelection[i].addEventListener('click', () => {
-    let areaClicked = areaSelection[i].id;
-    console.log(areaClicked);
-    listContainer.style.display="none";
-    db.collection("state").where("area", "==", areaClicked).get().then(printData);
-    })}
-  
-})
-  
-  //searchByAreaInput.addEventListener("keyup", () => {
-   // let searchValue = searchInput.value;
-    //console.log(searchValue);
-  //})
-//db.collection("state").where("userId", "==", user.Id).get().then(printData)
+
+
+//le funcion de filtrado y el 'back' al hacer el click en el logo steam funciona mostrando y ocultando
+//los divs que contiene los datos
+//nota para pasar a SPA
+
 // elimina los datos del muro
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
