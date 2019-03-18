@@ -47,6 +47,16 @@ ui.start('#firebaseui-auth-container', uiConfig);
 })()
 
 
+
+
+
+
+const loadingBox = document.getElementById('loadingBox');
+const menuOptions = document.getElementById ('menuOptions');
+const hideLoadingshowMenu = ()=>{
+  loadingBox.classList.add('hide');
+  menuOptions.classList.remove('hide');
+}
 /*const uiHide =() => {
   // The widget is rendered.
   // Hide the loader.
@@ -54,7 +64,6 @@ ui.start('#firebaseui-auth-container', uiConfig);
   document.getElementById('firebaseui-auth-container').style.display ='none';
 } 
 uiHide();*/
-
 
 
 

@@ -6,7 +6,7 @@ firebase.initializeApp({
     projectId: "steam-3b4ca",
 });
 
-let db = firebase.firestore();
+db = firebase.firestore();
 
 vidMembers.addEventListener("click", () => {
     window.location = 'members.html';

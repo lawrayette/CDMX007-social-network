@@ -12,11 +12,11 @@ let mainApp = {};
     if (user) {
       // User is signed in.
       uid = user.uid;
-      
+      hideLoadingshowMenu()
     } else {
       //redirect to login page
       uid = null;
-      window.location.replace("index.html");
+      window.location.replace("index.html#");
     }
   });
 
@@ -25,6 +25,8 @@ let mainApp = {};
   }
   mainApp.logOut = logOut;
 })()
+
+
 
 // Crea los datos y los manda a Firestote
 function send() {
