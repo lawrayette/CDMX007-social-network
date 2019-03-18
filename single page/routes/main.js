@@ -1,5 +1,4 @@
 
-
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 const image = document.getElementById('input.image');
@@ -86,10 +85,12 @@ searchGlass.addEventListener('click', ()=>{
     db.collection("state").where("area", "==", areaClicked).get().then(printData);
     })}})
 */
+
+function prueba2 (){
+
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
-window.location='#/forum';
-const generalTable = document.getElementById('state-user');
+  const generalTable = document.getElementById('state-user');
  generalTable.innerHTML = '';
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
@@ -109,6 +110,12 @@ const generalTable = document.getElementById('state-user');
     `
   });  
 });
+}
+
+
+
+
+
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
   filteredTable.style.display= "block";
@@ -176,8 +183,11 @@ function editState(id, state, name) {
       });
   }
 }
+
+
+/*
 //See User
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
-})
+})*/

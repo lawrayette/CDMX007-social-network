@@ -1,11 +1,11 @@
 //vidMembers = document.getElementById('vid-members');
-
+/*
 firebase.initializeApp({
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
     authDomain: "steam-3b4ca.firebaseapp.com",
     projectId: "steam-3b4ca",
 });
-
+*/
 db = firebase.firestore();
 
 //vidMembers.addEventListener("click", () => {
@@ -38,7 +38,7 @@ db = firebase.firestore();
 
 
 //----------------------Guarda datos------------------------------------//
-
+/*
 const saveProfile = document.getElementById('saveProfile');
 saveProfile.addEventListener("click", () => {
 
@@ -84,7 +84,15 @@ saveProfile.addEventListener("click", () => {
 
 })
 
+
+*/
+
+
+
 /*
+
+
+
 
 
 let name = document.getElementById('name').value;

@@ -39,9 +39,9 @@
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo" ><img src="./assets/logo.png" alt="" id ="logo-nav"></a>
          <ul id="menuOptions" class="right hide-on-med-and-down hide" >
-              <li><a href="#/forum">Inicio</a></li>
+              <li><a href="#/forum" onclick="prueba2()">Inicio</a></li>
               <li><a href="#/members">Comunidad Steam</a></li>
-              <li><a href="#/profile" id="button-user"><i class="fas fa-user-astronaut"></i> Mi perfil </a></li>
+              <li><a href="#/profile"><i class="fas fa-user-astronaut"></i> Mi perfil </a></li>
               <li><a href="#/events">Próximos eventos</a></li>
               <li> <a id="button-logOut" onclick="mainApp.logOut()">Salir<i class="material-icons right"></i></a></li>
           </ul>
@@ -99,15 +99,16 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
   <script src="fireBase.js"></script>
   <script src="login.js"></script>
+     <script src="main.js"></script>
+  <script src="members.js"></script>
+<script src="profile.js"></script>
   <script src ="library.js"></script>
 <script src ="routes.js"></script>
 
 
- <script src="main.js"></script>
-<script src="profile.js"></script>
-<script src="members.js"></script>
 </body>
 
 </html>

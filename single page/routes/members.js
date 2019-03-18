@@ -1,16 +1,18 @@
-
+/*
 firebase.initializeApp({
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
     authDomain: "steam-3b4ca.firebaseapp.com",
     projectId: "steam-3b4ca",
 });
 
- db = firebase.firestore();
+ db = firebase.firestore();*/
    
 
-    let table = document.getElementById('table');
+ 
     //datos de usuarios
     db.collection("members").get().then((querySnapshot) => {
+     
+        let table = document.getElementById('table');
         table.innerHTML = "";
         querySnapshot.forEach((doc) => {
             console.log(`${doc.id} => ${doc.data()}`);
@@ -27,7 +29,7 @@ firebase.initializeApp({
 
 
     //Función para imprimir data 
-    printData= (table)=>{
+    const printDataMembers= (table)=>{
         querySnapshot.forEach((doc)=>{
             `tr>
             <td>${doc.data().first}</td>
@@ -36,7 +38,7 @@ firebase.initializeApp({
             <td>${doc.data().interest}</td>
             <td>${doc.data().contactEmail}</td>
           </tr>`
-          printData.insertAdjacentHtml(beforeend, table)
+          printDataMembers.insertAdjacentHtml(beforeend, table)
         })
     }
   
