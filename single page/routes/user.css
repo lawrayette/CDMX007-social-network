@@ -272,6 +272,14 @@ ul, menu, dir {
 /*----Desktop----*/
 @media (min-width: 767px) {
 
+  #logo-nav{
+    width: 38%;
+    margin-top: -5%;
+    padding: 7%;
+    position: relative;
+    right: 2%;
+  }
+
   .forum-container {
     min-height: 1500px;
   }

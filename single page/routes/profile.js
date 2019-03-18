@@ -1,4 +1,4 @@
-vidMembers = document.getElementById('vid-members');
+//vidMembers = document.getElementById('vid-members');
 
 firebase.initializeApp({
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
@@ -8,9 +8,9 @@ firebase.initializeApp({
 
 db = firebase.firestore();
 
-vidMembers.addEventListener("click", () => {
-    window.location = 'members.html';
-})
+//vidMembers.addEventListener("click", () => {
+  //  window.location = 'members.html';
+//})//
 
 //--------------------------trae datos de inicio de sesion ---------------------------//
 

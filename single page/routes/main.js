@@ -1,4 +1,5 @@
-const generalTable = document.getElementById('state-user');
+
+
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 const image = document.getElementById('input.image');
@@ -54,6 +55,8 @@ function send() {
 
 }
 
+
+/*
 //filtra por tipo de contenido al dar click en el li del área impresa
 let searchGlass = document.getElementById("dropdownMenuButton");
 let areaSelection= document.getElementsByClassName('area-name');
@@ -62,7 +65,7 @@ let listContainer= document.getElementById("area-search");
 let principalPrint = document.getElementById('principalPrint');
 let printDataFunction = document.getElementById('printDataFunction');
 
-
+*/
 //logo de steam con función de "home"
 let logoSteamHome = document.getElementById("logo-nav");
 logoSteamHome.addEventListener('click', ()=>{
@@ -70,7 +73,7 @@ logoSteamHome.addEventListener('click', ()=>{
   filteredTable.style.display = "none";
   generalTable.style.display= "block";
 })
-
+/*
 //da eventos de click a lista de 'areas'
 searchGlass.addEventListener('click', ()=>{
   listContainer.style.display="block";
@@ -82,9 +85,11 @@ searchGlass.addEventListener('click', ()=>{
 
     db.collection("state").where("area", "==", areaClicked).get().then(printData);
     })}})
-
+*/
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
+window.location='#/forum';
+const generalTable = document.getElementById('state-user');
  generalTable.innerHTML = '';
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
