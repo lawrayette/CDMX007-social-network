@@ -107,12 +107,7 @@ searchGlass.addEventListener('click', ()=>{
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
-<<<<<<< HEAD:single page/routes/js/main.js
-  const generalTable = document.getElementById('state-user');
- generalTable.innerHTML = '';
-=======
   generalTable.innerHTML = '';
->>>>>>> upstream/master:src/main.js
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     generalTable.innerHTML += `
@@ -121,28 +116,13 @@ db.collection("state").onSnapshot((querySnapshot) => {
       <p>${doc.data().first}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       <p>
-<<<<<<< HEAD:single page/routes/js/main.js
-      <button class = "btn-floating btn-small  red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn-floating btn-small purple accent-3" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
-=======
       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
       <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
->>>>>>> upstream/master:src/main.js
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
      </p>
     </div>
-<<<<<<< HEAD:single page/routes/js/main.js
-    `
-  });  
-});
-
-
-
-
-
-=======
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -196,7 +176,6 @@ db.collection("state").onSnapshot((querySnapshot) => {
 
 
  
->>>>>>> upstream/master:src/main.js
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -211,13 +190,8 @@ const printData = (querySnapshot) => {
     <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       
       <p>
-<<<<<<< HEAD:single page/routes/js/main.js
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
-=======
       <button id="delete-btn"class = "btn btn-danger btn-sm " onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
       <button id="edit-btn"class = "btn btn-warning btn-sm " onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
->>>>>>> upstream/master:src/main.js
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
@@ -246,32 +220,6 @@ function deleteData(id) {
   }
 }
 //Edita los datos
-<<<<<<< HEAD:single page/routes/js/main.js
-function editState(id, state, name) {
-  document.getElementById('input').value = state;
-  document.getElementById('name-input').value = name;
-  let editButton = document.getElementById('sendButton');
-  editButton.innerHTML = "Editar";
-  editButton.onclick = function () {
-    var washingtonRef = db.collection("state").doc(id);
-    let textInput = document.getElementById('input').value;
-    let nameInput = document.getElementById('name-input').value;
-    return washingtonRef.update({
-        first: textInput,
-        name: nameInput,
-      })
-      .then(function () {
-        console.log("Document successfully updated!");
-        let textInput = document.getElementById('input').value = '';
-        editButton.innerHTML = "Guardar";
-      })
-      .catch(function (error) {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-      });
-  }
-}
-=======
 function editState(id, state) {
   let editButton = document.getElementById('save-data');
       document.getElementById('input-edit').value = state;
@@ -295,7 +243,6 @@ function editState(id, state) {
  }
  
 
->>>>>>> upstream/master:src/main.js
 
 
 
