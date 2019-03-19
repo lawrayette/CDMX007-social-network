@@ -5,6 +5,10 @@ window.libreria.getId('vista').enrutar()
 .ruta('/02login', './views/02login.html', 'miControlador', function(){
         libreria.getCtrl().login()
      })
+// .ruta('/forum', './views/forum.html', null, null)
+.ruta('/forum', './views/forum.html', 'miControlador', function(){
+        libreria.getCtrl().forumFunctions()
+     })
 
 // .ruta('/', './views/01index.html', 'miControlador', function(){
 //     libreria.getCtrl().conBoton()
