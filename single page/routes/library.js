@@ -60,11 +60,11 @@
                         }
                         xhr.addEventListener('load', function () {
                             framework.innerHTML = this.responseText;
-                           /* setTimeout(function () {
+                           setTimeout(function () {
                                 if (typeof (destiny.charge) === 'function') {
                                     destiny.charge();
                                 }
-                            }, 500)*/
+                            }, 500)
                         }, false);
 
                         xhr.open('get', destiny.template, true);

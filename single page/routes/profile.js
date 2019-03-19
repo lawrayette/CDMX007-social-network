@@ -1,16 +1,13 @@
-//vidMembers = document.getElementById('vid-members');
 /*
 firebase.initializeApp({
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
     authDomain: "steam-3b4ca.firebaseapp.com",
     projectId: "steam-3b4ca",
 });
-*/
+
 db = firebase.firestore();
 
-//vidMembers.addEventListener("click", () => {
-  //  window.location = 'members.html';
-//})//
+*/
 
 //--------------------------trae datos de inicio de sesion ---------------------------//
 
@@ -24,7 +21,7 @@ db = firebase.firestore();
          let name = document.getElementById('name').value = user.displayName
          let eMail = document.getElementById('eMail').value = user.email
          let photo = user.photoURL
-         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 30%; border-radius:40%"></img>`
+         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:40%"></img>`
 
            console.log(user)
            
@@ -38,9 +35,7 @@ db = firebase.firestore();
 
 
 //----------------------Guarda datos------------------------------------//
-
-const saveProfile = document.getElementById('saveProfile');
-saveProfile.addEventListener("click", () => {
+function saveProfile (){
 
     let name = document.getElementById('name').value;
     let lastName = document.getElementById('lastName').value;
@@ -78,4 +73,5 @@ saveProfile.addEventListener("click", () => {
         })
     }
 
-})
+}
+
