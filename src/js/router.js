@@ -7,7 +7,7 @@ window.libreria.getId('vista').enrutar()
      })
 // .ruta('/forum', './views/forum.html', null, null)
 .ruta('/forum', './views/forum.html', 'miControlador', function(){
-        libreria.getCtrl().forumFunctions()
+        libreria.getCtrl().printPost()
      })
 
 // .ruta('/', './views/01index.html', 'miControlador', function(){
