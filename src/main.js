@@ -161,7 +161,6 @@ db.collection("state").onSnapshot((querySnapshot) => {
 });
 
 
-
  //aparecen botones editar y eliminar
  
 //  const ButtonUnhide = () => {
@@ -264,6 +263,7 @@ function editState(id, state) {
    }
  }
  
+
 
 //See User
 const userProfile = document.getElementById('button-user')
