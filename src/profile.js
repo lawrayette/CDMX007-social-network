@@ -14,27 +14,14 @@ vidMembers.addEventListener("click", () => {
 
 //--------------------------trae datos de inicio de sesion ---------------------------//
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-           // User is signed in.
-           localStorage.setItem('user', JSON.stringify(user))
-           let printPhoto = document.getElementById('print-photo')
-           
-           
-         let name = document.getElementById('name').value = user.displayName
-         let eMail = document.getElementById('eMail').value = user.email
-         let photo = user.photoURL
-         printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:40%"></img>`
-
-           console.log(user)
-           
-        } else {
-            // No user is signed in.
-            console.log('no hay usuario')
-        }
-    });
-    
-  
+const userCurrent = JSON.parse(localStorage.getItem('user'));
+console.log(userCurrent)
+let name = document.getElementById('name').value = userCurrent.displayName
+let eMail = document.getElementById('eMail').value = userCurrent.email
+let printPhoto = document.getElementById('print-photo')
+let photo = userCurrent.photoURL
+let uidCurrent = userCurrent.uid
+printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
 
 
 //----------------------Guarda datos------------------------------------//
@@ -47,6 +34,7 @@ saveProfile.addEventListener("click", () => {
     let userName = document.getElementById('userName').value;
     let interestArea = document.getElementById('interestArea').value;
     let eMail = document.getElementById('eMail').value;
+    let uid = uidCurrent;
     if (name === "" || lastName === "" || userName === "" || interestArea === "" || eMail === "") {
         alert('Por favor, completa todos los campos del formulario')
     } else {
@@ -56,7 +44,7 @@ saveProfile.addEventListener("click", () => {
             user: userName,
             interest: interestArea,
             contactEmail: eMail,
-            //user: uid
+            uid: uidCurrent
         }).then((docRef) => {
             console.log('Document written with ID:', docRef.id);
             document.getElementById('name').value = '';

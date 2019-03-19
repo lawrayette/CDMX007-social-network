@@ -5,19 +5,38 @@ const image = document.getElementById('input.image');
 let mainApp = {};
 
 
+//let nameInput = document.getElementById('name-input')
 (function () {
   let firebase = app_fireBase;
-  let uid = null;
+  //let uid = null;
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+      localStorage.setItem('user', JSON.stringify(user))
+      name = user.displayName;
+      eMail = user.email;
+      photoURL = user.photoURL;
       uid = user.uid;
+
+      let printPhoto = document.getElementById('print-photo')
+      let photo = user.photoURL
+      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 20px; border-radius:50%"></img>`
+     
+      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+     
+      console.log(nameCurrent)
+      console.log(uid)
+      
     } else {
       //redirect to login page
       uid = null;
       window.location.replace("index.html");
     }
   });
+  
+  console.log(name)
+  //console.log(uid)
+
 
   function logOut() {
     firebase.auth().signOut();
@@ -28,14 +47,16 @@ let mainApp = {};
 // Crea los datos y los manda a Firestote
 function send() {
   let textInput = document.getElementById('input').value;
-  let nameInput = document.getElementById('name-input').value;
+  // let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
+  let privateMsgChecked = document.getElementById('private').checked
 
   db.collection("state").add({
       area: areaInput,
-      name: nameInput,
+      name: name,
       first: textInput,
-      private: true,
+      uid:uid,
+     private: privateMsgChecked,
       
 
     })
@@ -69,6 +90,29 @@ logoSteamHome.addEventListener('click', ()=>{
   generalTable.style.display= "block";
 })
 
+//---------------mensajes privados y publicos-------------------//
+let selectPrivacy = document.getElementById('select-Privacy')
+selectPrivacy.addEventListener('change', () => {
+  console.log(selectPrivacy.value)
+if (selectPrivacy.value == 'private') {
+ db.collection("state").where("uid", "==", uid).where("private", "==", true)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }else{
+    console.log('son publicos')
+    db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+});
+//--------------- termina mensajes privados y publicos-------------------//
+
 //da eventos de click a lista de 'areas'
 searchGlass.addEventListener('click', ()=>{
   listContainer.style.display="block";
@@ -83,27 +127,41 @@ searchGlass.addEventListener('click', ()=>{
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
- generalTable.innerHTML = '';
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().first}`);
-    generalTable.innerHTML += `
-    <div class="card  text-center alert alert-info">
-       <p>${doc.data().name}</p>
-      <p>${doc.data().first}</p>
-      <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+  generalTable.innerHTML = '';
+   querySnapshot.forEach((doc) => {
+     console.log(`${doc.id} => ${doc.data().first}`);
+     generalTable.innerHTML += `
+     <div class="card  text-center alert alert-info">
+        <p>${doc.data().name}</p>
+       <p>${doc.data().first}</p>
+       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+       <p>
+       <button class = "btn btn-danger btn-sm hide" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+       <button class = "btn btn-warning btn-sm hide" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+      </p>
+     </div>
+     `
 
-      <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
-     <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-     <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
-     </p>
-    </div>
-    `
-  });  
+
+
+ //aparecen botones editar y eliminar
+ 
+ const ButtonUnhide = () => {
+   
+  if (doc.data().uid == uid) {
+    console.log(doc.data().uid)
+    document.getElementById('delete-btn').classList.remove('hide');
+    document.getElementById('edit-btn').classList.remove('hide');
+  }
+}
+
+
+});  
 });
-
+ 
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -118,8 +176,8 @@ const printData = (querySnapshot) => {
     <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       
       <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <button id="delete-btn"class = "btn btn-danger btn-sm hide" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button id="edit-btn"class = "btn btn-warning btn-sm hide" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
