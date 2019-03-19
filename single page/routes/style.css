@@ -50,7 +50,9 @@ p {
   top: 7px;
   padding: 15 15px;
 }
-
+#view{
+  min-height: 1000px;
+}
 #logo-footer-two {
   background-image: url(./assets/logo.png);
   width: 98%;

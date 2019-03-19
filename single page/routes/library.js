@@ -7,7 +7,7 @@
             controllers = {},
             ctrlCurrent = null,
             library = {
-                getId: function (id) {
+                getID: function (id) {
                     element = document.getElementById(id);
                     return this;
 

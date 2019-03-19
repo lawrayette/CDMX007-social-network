@@ -5,6 +5,13 @@ const image = document.getElementById('input.image');
 let mainApp = {};
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var options = document.querySelectorAll('option');
+  var instances = M.FormSelect.init(elems, options);
+  });
+
+
 (function () {
   let firebase = app_fireBase;
   let uid = null;
@@ -64,7 +71,7 @@ let listContainer= document.getElementById("area-search");
 let principalPrint = document.getElementById('principalPrint');
 let printDataFunction = document.getElementById('printDataFunction');
 
-*/
+
 //logo de steam con función de "home"
 let logoSteamHome = document.getElementById("logo-nav");
 logoSteamHome.addEventListener('click', ()=>{
@@ -72,7 +79,7 @@ logoSteamHome.addEventListener('click', ()=>{
   filteredTable.style.display = "none";
   generalTable.style.display= "block";
 })
-/*
+
 //da eventos de click a lista de 'areas'
 searchGlass.addEventListener('click', ()=>{
   listContainer.style.display="block";
@@ -84,9 +91,9 @@ searchGlass.addEventListener('click', ()=>{
 
     db.collection("state").where("area", "==", areaClicked).get().then(printData);
     })}})
+
 */
 
-function prueba2 (){
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
@@ -100,8 +107,8 @@ db.collection("state").onSnapshot((querySnapshot) => {
       <p>${doc.data().first}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <button class = "btn-floating btn-small  red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button class = "btn-floating btn-small purple accent-3" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
@@ -110,7 +117,7 @@ db.collection("state").onSnapshot((querySnapshot) => {
     `
   });  
 });
-}
+
 
 
 
@@ -150,9 +157,9 @@ const printData = (querySnapshot) => {
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
     db.collection("state").doc(id).delete().then(function () {
-      console.log("Document successfully deleted!");
+      console.log("Post successfully deleted!");
     }).catch(function (error) {
-      console.error("Error removing document: ", error);
+      console.error("Error removing post: ", error);
     });
   } else {
     return false;
