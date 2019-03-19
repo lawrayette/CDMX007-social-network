@@ -142,8 +142,25 @@ db.collection("state").onSnapshot((querySnapshot) => {
       <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
       <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
       </p>
+     </div> 
+
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+          <div class="modal-body">
+          <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
+              </div>
+           <div class="modal-footer">
+             <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
+           </div>
+         </div>
+       </div>
      </div>
-     `
+         `
+       });
+     });
+     
 
 
 
@@ -151,16 +168,59 @@ db.collection("state").onSnapshot((querySnapshot) => {
  
  const ButtonUnhide = () => {
    
-  if (doc.data().uid == uid) {
+  if (`${doc.id}.uid == uid`) {
     console.log(doc.data().uid)
     document.getElementById('delete-btn').classList.remove('hide');
     document.getElementById('edit-btn').classList.remove('hide');
   }
 }
+ButtonUnhide();
+
+// let selectPrivacy = document.getElementById('select-Privacy')
+// selectPrivacy.addEventListener('change', () => {
+//   console.log(selectPrivacy.value)
+// if (selectPrivacy.value == 'private') {
+//  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }else{
+//     console.log('son publicos')
+//     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }
+// });
 
 
-});  
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 //imprime los datos del filtro

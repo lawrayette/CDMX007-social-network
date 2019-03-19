@@ -2,7 +2,9 @@ window.libreria.getId('vista').enrutar()
 .ruta('/', './views/01noticias.html', null, null)
 .ruta('/01noticias', './views/01noticias.html', null, null)
 .ruta('/Steam', './views/Steam.html', null, null)
-.ruta('/02login', './views/02login.html', null, null)
+.ruta('/02login', './views/02login.html', 'miControlador', function(){
+        libreria.getCtrl().login()
+     })
 
 // .ruta('/', './views/01index.html', 'miControlador', function(){
 //     libreria.getCtrl().conBoton()
