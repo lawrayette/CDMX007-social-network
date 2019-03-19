@@ -42,6 +42,7 @@ function saveProfile (){
     let userName = document.getElementById('userName').value;
     let interestArea = document.getElementById('interestArea').value;
     let eMail = document.getElementById('eMail').value;
+    //let uid = uidCurrent;
     if (name === "" || lastName === "" || userName === "" || interestArea === "" || eMail === "") {
         alert('Por favor, completa todos los campos del formulario')
     } else {

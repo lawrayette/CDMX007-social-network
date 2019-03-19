@@ -96,6 +96,11 @@ footer {
   border-radius: 6px;
   position: relative;
   bottom: 3px;
+  padding: 1px 4px;
+}
+/* boton editar y eliminar user */
+.hide{
+  display: none;
 }
 
 /*lista desplegable de opciones de busqueda*/

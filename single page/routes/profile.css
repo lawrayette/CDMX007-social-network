@@ -36,6 +36,10 @@
     background-position:right top;
    }
 
+.button-right {
+    margin-left: 90%;
+}
+
 
 @media (min-width: 767px) {
 

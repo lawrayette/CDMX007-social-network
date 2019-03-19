@@ -1,23 +1,26 @@
-
-const filteredTable = document.getElementById('state-user-filter');
+/*const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 const image = document.getElementById('input.image');
 let mainApp = {};
 
-
+/*
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('select');
   var options = document.querySelectorAll('option');
   var instances = M.FormSelect.init(elems, options);
   });
 
-
+*//*
 (function () {
   let firebase = app_fireBase;
-  let uid = null;
+  //let uid = null;
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+      localStorage.setItem('user', JSON.stringify(user))
+      name = user.displayName;
+      eMail = user.email;
+      photoURL = user.photoURL;
       uid = user.uid;
       hideLoadingshowMenu()
     } else {
@@ -26,6 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.replace("index.html#");
     }
   });
+  
+  console.log(name)
+  //console.log(uid)
+
 
   function logOut() {
     firebase.auth().signOut();
@@ -38,13 +45,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // Crea los datos y los manda a Firestote
 function send() {
   let textInput = document.getElementById('input').value;
-  let nameInput = document.getElementById('name-input').value;
+  // let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
+  let privateMsgChecked = document.getElementById('private').checked
 
   db.collection("state").add({
       area: areaInput,
-      name: nameInput,
+      name: name,
       first: textInput,
+      uid:uid,
+     private: privateMsgChecked,
       
 
     })
@@ -93,7 +103,7 @@ searchGlass.addEventListener('click', ()=>{
     })}})
 
 */
-
+/*
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {

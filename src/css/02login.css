@@ -1,0 +1,64 @@
+/*----Estilos Generales*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+}
+
+header{
+    background: #181717;
+    padding: 26px 1px;
+    height: 30%;
+}
+
+nav{
+    background-color: #212529;
+}
+
+.logo-login{
+    width: 150px;
+    margin-top: 12px;
+}
+
+.firebaseui-card-content {
+    padding: 80px 24px;
+}
+
+.firebaseui-idp-list {
+    margin: 1em 25px;
+    padding: 31px 0 20px;
+ } 
+
+.inicia-sesion{
+    color: #5A6978;
+    text-align: center;
+    border-top: 100px;
+    margin: 40% auto;
+}
+
+.texto-azul{
+   color: #6247AA;
+    text-align: center;
+    border-top: 100px;
+}
+
+.firebaseui-container {
+    background-color: white;
+}
+
+.mdl-button--raised.mdl-button--colored {
+    background: #6247AA;
+    color: #fff;
+} 
+
+.mdl-button--primary.mdl-button--primary {
+    color: #6247AA;
+}
+
+.mdl-button--raised.mdl-button--colored:hover {
+    background-color: #6247AA;
+}
