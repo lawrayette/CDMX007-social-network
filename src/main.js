@@ -20,7 +20,7 @@ let mainApp = {};
 
       let printPhoto = document.getElementById('print-photo')
       let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 20px; border-radius:50%"></img>`
+      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
      
       let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
      
@@ -44,7 +44,7 @@ let mainApp = {};
   mainApp.logOut = logOut;
 })()
 
-// Crea los datos y los manda a Firestote
+// Crea los datos y los manda a Firestore
 function send() {
   let textInput = document.getElementById('input').value;
   // let nameInput = document.getElementById('name-input').value;
@@ -83,12 +83,12 @@ let printDataFunction = document.getElementById('printDataFunction');
 
 
 //logo de steam con función de "home"
-let logoSteamHome = document.getElementById("logo-nav");
-logoSteamHome.addEventListener('click', ()=>{
-  console.log ('funciona');
-  filteredTable.style.display = "none";
-  generalTable.style.display= "block";
-})
+// let logoSteamHome = document.getElementById("logo-nav");
+// logoSteamHome.addEventListener('click', ()=>{
+//   console.log ('funciona');
+//   filteredTable.style.display = "none";
+//   generalTable.style.display= "block";
+// })
 
 //---------------mensajes privados y publicos-------------------//
 let selectPrivacy = document.getElementById('select-Privacy')
