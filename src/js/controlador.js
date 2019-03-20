@@ -1,6 +1,6 @@
 libreria.controlador('miControlador', {
 
-  
+
   login: () => {
     (function () {
       // Initialize the FirebaseUI Widget using Firebase.
@@ -41,7 +41,75 @@ libreria.controlador('miControlador', {
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
   },
+
+
+
   forumFunctions:()=>{
+
+
+
+
+    const generalTable = document.getElementById('state-user');
+
+    let db = firebase.firestore();
+    db.collection("state").onSnapshot((querySnapshot) => {
+      generalTable.innerHTML = '';
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().first}`);
+        generalTable.innerHTML += `
+          <div class="card  text-center alert alert-info">
+             <p>${doc.data().name}</p>
+            <p>${doc.data().first}</p>
+            <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+            <p>
+            <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+            <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+           <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+           <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+           </p>
+          </div>
+          <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+           <div class="modal-body">
+           <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
+               </div>
+            <div class="modal-footer">
+              <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+          `
+      });
+    });
+
+
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
     const generalTable = document.getElementById('state-user');
     const filteredTable = document.getElementById('state-user-filter');
     let db = firebase.firestore();
@@ -135,26 +203,26 @@ libreria.controlador('miControlador', {
     // })
     
     //---------------mensajes privados y publicos-------------------//
-    let selectPrivacy = document.getElementById('select-Privacy')
-    selectPrivacy.addEventListener('change', () => {
-      console.log(selectPrivacy.value)
-    if (selectPrivacy.value == 'private') {
-     db.collection("state").where("uid", "==", uid).where("private", "==", true)
-        .get()
-        .then(printData)
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-      }else{
-        console.log('son publicos')
-        db.collection("state").where("uid", "==", uid).where("private", "==", false)
-        .get()
-        .then(printData)
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-      }
-    });
+    // let selectPrivacy = document.getElementById('select-Privacy')
+    // selectPrivacy.addEventListener('change', () => {
+    //   console.log(selectPrivacy.value)
+    // if (selectPrivacy.value == 'private') {
+    //  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+    //     .get()
+    //     .then(printData)
+    //     .catch(function(error) {
+    //         console.log("Error getting documents: ", error);
+    //     });
+    //   }else{
+    //     console.log('son publicos')
+    //     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    //     .get()
+    //     .then(printData)
+    //     .catch(function(error) {
+    //         console.log("Error getting documents: ", error);
+    //     });
+    //   }
+    // });
     //--------------- termina mensajes privados y publicos-------------------//
     
     //da eventos de click a lista de 'areas'
@@ -170,39 +238,39 @@ libreria.controlador('miControlador', {
         })}})
     
     // imprime los datos en el muro
-    db.collection("state").onSnapshot((querySnapshot) => {
-      generalTable.innerHTML = '';
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().first}`);
-        generalTable.innerHTML += `
-        <div class="card  text-center alert alert-info">
-           <p>${doc.data().name}</p>
-          <p>${doc.data().first}</p>
-          <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-          <p>
-          <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-          <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-         <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-         <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-         <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
-         </p>
-        </div>
-        <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-         <div class="modal-body">
-         <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
-             </div>
-          <div class="modal-footer">
-            <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-        `
-      });
-    });
+    // db.collection("state").onSnapshot((querySnapshot) => {
+    //   generalTable.innerHTML = '';
+    //   querySnapshot.forEach((doc) => {
+    //     console.log(`${doc.id} => ${doc.data().first}`);
+    //     generalTable.innerHTML += `
+    //     <div class="card  text-center alert alert-info">
+    //        <p>${doc.data().name}</p>
+    //       <p>${doc.data().first}</p>
+    //       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
+    //       <p>
+    //       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+    //       <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+    //      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+    //      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+    //      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+    //      </p>
+    //     </div>
+    //     <!-- Modal -->
+    // <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    //   <div class="modal-dialog" role="document">
+    //     <div class="modal-content">
+    //      <div class="modal-body">
+    //      <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
+    //          </div>
+    //       <div class="modal-footer">
+    //         <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    //     `
+    //   });
+    // });
     
     
      //aparecen botones editar y eliminar
@@ -217,26 +285,26 @@ libreria.controlador('miControlador', {
     // }
     // ButtonUnhide();
     
-    let selectPrivacy = document.getElementById('select-Privacy')
-    selectPrivacy.addEventListener('change', () => {
-      console.log(selectPrivacy.value)
-    if (selectPrivacy.value == 'private') {
-     db.collection("state").where("uid", "==", uid).where("private", "==", true)
-        .get()
-        .then(printData)
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-      }else{
-        console.log('son publicos')
-        db.collection("state").where("uid", "==", uid).where("private", "==", false)
-        .get()
-        .then(printData)
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-      }
-    });
+    // let selectPrivacy = document.getElementById('select-Privacy')
+    // selectPrivacy.addEventListener('change', () => {
+    //   console.log(selectPrivacy.value)
+    // if (selectPrivacy.value == 'private') {
+    //  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+    //     .get()
+    //     .then(printData)
+    //     .catch(function(error) {
+    //         console.log("Error getting documents: ", error);
+    //     });
+    //   }else{
+    //     console.log('son publicos')
+    //     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    //     .get()
+    //     .then(printData)
+    //     .catch(function(error) {
+    //         console.log("Error getting documents: ", error);
+    //     });
+    //   }
+    // });
     
     
      
@@ -319,32 +387,32 @@ libreria.controlador('miControlador', {
     // 
     // Get a reference to the storage service, which is used to create references in your storage bucket
     
-    
-  },
+   ,*/ 
+ 
+
+
+
+
+
+
   
 
-
-
-
-
-  //forumFunctions: () => {
-
     //const unhideButtons = document.getElementById('unhideButtons')
-/*
-    const showMenu = () => {
-      //unhideButtons.classList.remove('hide');
-      document.getElementById('hideLogin').style.display = 'none';
-    }
-    showMenu()
-    const filterSteamBtn = document.getElementById('filterSteamBtn');
-    const filterByPrivacyBtn = document.getElementById('filterByPrivacyBtn');
-    const showDropdownButtons = () => {
-      filterSteamBtn.classList.remove('hide');
-      filterByPrivacyBtn.classList.remove('hide');
-    }
-    showDropdownButtons();
+    /*
+        const showMenu = () => {
+          //unhideButtons.classList.remove('hide');
+          document.getElementById('hideLogin').style.display = 'none';
+        }
+        showMenu()
+        const filterSteamBtn = document.getElementById('filterSteamBtn');
+        const filterByPrivacyBtn = document.getElementById('filterByPrivacyBtn');
+        const showDropdownButtons = () => {
+          filterSteamBtn.classList.remove('hide');
+          filterByPrivacyBtn.classList.remove('hide');
+        }
+        showDropdownButtons();
 
-    */
+        */
 
 
 
@@ -360,74 +428,34 @@ libreria.controlador('miControlador', {
          showDropdownButtons();*/
 
 
-  //   const generalTable = document.getElementById('state-user');
 
-  //   let db = firebase.firestore();
-  //   db.collection("state").onSnapshot((querySnapshot) => {
-  //     generalTable.innerHTML = '';
-  //     querySnapshot.forEach((doc) => {
-  //       console.log(`${doc.id} => ${doc.data().first}`);
-  //       generalTable.innerHTML += `
-  //         <div class="card  text-center alert alert-info">
-  //            <p>${doc.data().name}</p>
-  //           <p>${doc.data().first}</p>
-  //           <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-  //           <p>
-  //           <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-  //           <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-  //          <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-  //          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-  //          <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
-  //          </p>
-  //         </div>
-  //         <!-- Modal -->
-  //     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  //       <div class="modal-dialog" role="document">
-  //         <div class="modal-content">
-  //          <div class="modal-body">
-  //          <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
-  //              </div>
-  //           <div class="modal-footer">
-  //             <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //         `
-  //     });
-  //   });
+  printComunity: () => {
+    /*
+          firebase.initializeApp({
+            apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
+            authDomain: "steam-3b4ca.firebaseapp.com",
+            projectId: "steam-3b4ca",
+        });
+        */
+    db = firebase.firestore();
 
 
-  // },
-
-
-  // printComunity: () => {
-  //   /*
-  //         firebase.initializeApp({
-  //           apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
-  //           authDomain: "steam-3b4ca.firebaseapp.com",
-  //           projectId: "steam-3b4ca",
-  //       });
-  //       */
-  //   db = firebase.firestore();
-
-
-  //   let table = document.getElementById('table');
-  //   //datos de usuarios
-  //   db.collection("members").get().then((querySnapshot) => {
-  //     table.innerHTML = "";
-  //     querySnapshot.forEach((doc) => {
-  //       console.log(`${doc.id} => ${doc.data()}`);
-  //       table.innerHTML += `
-  //               <tr>
-  //               <td>${doc.data().first}</td>
-  //               <td>${doc.data().last}</td>
-  //               <td>${doc.data().user}</td>
-  //               <td>${doc.data().interest}</td>
-  //               <td>${doc.data().contactEmail}</td>
-  //             </tr>`
-  //     });
-  //   });
+    let table = document.getElementById('table');
+    //datos de usuarios
+    db.collection("members").get().then((querySnapshot) => {
+      table.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        table.innerHTML += `
+                <tr>
+                <td>${doc.data().first}</td>
+                <td>${doc.data().last}</td>
+                <td>${doc.data().user}</td>
+                <td>${doc.data().interest}</td>
+                <td>${doc.data().contactEmail}</td>
+              </tr>`
+      });
+    });
 
 
 
@@ -439,7 +467,7 @@ libreria.controlador('miControlador', {
 
 
 
-  // }
+  }
 
 
 

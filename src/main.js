@@ -1,8 +1,9 @@
 const generalTable = document.getElementById('state-user');
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
-const image = document.getElementById('input.image');
+// const image = document.getElementById('input.image');//borrar//
 let mainApp = {};
+
 
 //let nameInput = document.getElementById('name-input')
 (function () {
@@ -16,23 +17,28 @@ let mainApp = {};
       eMail = user.email;
       photoURL = user.photoURL;
       uid = user.uid;
-      //---------------Imprime foto y nombre de usuario-------------------//
+
       let printPhoto = document.getElementById('print-photo')
-      let printPhotoPost = document.getElementById('print-photo-post')
       let photo = user.photoURL
       printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
-      printPhotoPost.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
-      let nameCurrent = document.getElementById('name-input').innerHTML = `${name}`
-      let nameCurrentPost = document.getElementById('name-input-post')
-      nameCurrentPost.innerHTML = `${name}`
      
+      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+     
+      console.log(nameCurrent)
+      console.log(uid)
+      
     } else {
       //redirect to login page
       uid = null;
       window.location.replace("index.html");
     }
   });
-   function logOut() {
+  
+  console.log(name)
+  //console.log(uid)
+
+
+  function logOut() {
     firebase.auth().signOut();
   }
   mainApp.logOut = logOut;
@@ -40,50 +46,52 @@ let mainApp = {};
 
 // Crea los datos y los manda a Firestore
 function send() {
-  let userPost = JSON.parse(localStorage.getItem("user"))
   let textInput = document.getElementById('input').value;
+  // let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
-  console.log(areaInput)
   let privateMsgChecked = document.getElementById('private').checked
+
   db.collection("state").add({
-    name: userPost.displayName,
-    area: 'areaInput',
-    first: textInput,
-    uid:userPost.uid,
-    private: privateMsgChecked,
-    
-  })
-  .then(function (docRef) {
-    console.log('llego')
+      area: areaInput,
+      name: name,
+      first: textInput,
+      uid:uid,
+     private: privateMsgChecked,
+      
+
+    })
+    .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
       let textInput = document.getElementById('input').value = '';
       let nametInput = document.getElementById('name-input').value = '';
-  
+     
+
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
+
 }
 
-
 //filtra por tipo de contenido al dar click en el li del área impresa
-let searchGlass = document.getElementById("filterSteamBtn");
+let searchGlass = document.getElementById("dropdownMenuButton");
 let areaSelection= document.getElementsByClassName('area-name');
-let listContainer= document.getElementById("dropdown1");
+let listContainer= document.getElementById("area-search");
+//eventos del dom para mostrar y ocultar post
+let principalPrint = document.getElementById('principalPrint');
+let printDataFunction = document.getElementById('printDataFunction');
 
-searchGlass.addEventListener('click', ()=>{
-  listContainer.style.display="block";
-  for (let i = 0; i < areaSelection.length; i++) {
-    areaSelection[i].addEventListener('click', () => {
-    let areaClicked = areaSelection[i].id;
-    console.log(areaClicked);
-    listContainer.style.display="none";
 
-    db.collection("state").where("area", "==", areaClicked).get().then(printData);
-    })}})
+//logo de steam con función de "home"
+// let logoSteamHome = document.getElementById("logo-nav");
+// logoSteamHome.addEventListener('click', ()=>{
+//   console.log ('funciona');
+//   filteredTable.style.display = "none";
+//   generalTable.style.display= "block";
+// })
 
-    //--------------- filtra mensajes privados y publicos-------------------//
-let selectPrivacy = document.getElementById('dropdown2')
+//---------------mensajes privados y publicos-------------------//
+let selectPrivacy = document.getElementById('select-Privacy')
 selectPrivacy.addEventListener('change', () => {
   console.log(selectPrivacy.value)
 if (selectPrivacy.value == 'private') {
@@ -104,6 +112,18 @@ if (selectPrivacy.value == 'private') {
   }
 });
 //--------------- termina mensajes privados y publicos-------------------//
+
+//da eventos de click a lista de 'areas'
+searchGlass.addEventListener('click', ()=>{
+  listContainer.style.display="block";
+  for (let i = 0; i < areaSelection.length; i++) {
+    areaSelection[i].addEventListener('click', () => {
+    let areaClicked = areaSelection[i].id;
+    console.log(areaClicked);
+    listContainer.style.display="none";
+
+    db.collection("state").where("area", "==", areaClicked).get().then(printData);
+    })}})
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
@@ -139,6 +159,43 @@ db.collection("state").onSnapshot((querySnapshot) => {
     `
   });
 });
+
+
+ //aparecen botones editar y eliminar
+ 
+//  const ButtonUnhide = () => {
+   
+//   if (`${doc.id}.uid == uid`) {
+//     console.log(doc.data().uid)
+//     document.getElementById('delete-btn').classList.remove('hide');
+//     document.getElementById('edit-btn').classList.remove('hide');
+//   }
+// }
+// ButtonUnhide();
+
+// let selectPrivacy = document.getElementById('select-Privacy')
+// selectPrivacy.addEventListener('change', () => {
+//   console.log(selectPrivacy.value)
+// if (selectPrivacy.value == 'private') {
+//  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }else{
+//     console.log('son publicos')
+//     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }
+// });
+
+
+ 
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -206,6 +263,13 @@ function editState(id, state) {
    }
  }
  
+
+
+//See User
+const userProfile = document.getElementById('button-user')
+userProfile.addEventListener("click", () => {
+  window.location = 'profile.html';
+})
 
 
 // 
