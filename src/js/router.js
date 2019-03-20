@@ -26,7 +26,6 @@ window.libreria.getId('vista').enrutar()
 //     libreria.getCtrl().prueba()
 // })
 /*
-
 (function (window, document) {
         library.getID('view').enroute()
             .route('/', 'views/init.html', null, null)

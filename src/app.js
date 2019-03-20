@@ -53,9 +53,9 @@ function send() {
 
   db.collection("state").add({
       area: areaInput,
-      name: name,
+     // name: nameinput,
       first: textInput,
-      uid:uid,
+     // uid:uid,
      private: privateMsgChecked,
       
 
@@ -123,7 +123,6 @@ searchGlass.addEventListener('click', ()=>{
     let areaClicked = areaSelection[i].id;
     console.log(areaClicked);
     listContainer.style.display="none";
-
     db.collection("state").where("area", "==", areaClicked).get().then(printData);
     })}})
 */
@@ -226,12 +225,9 @@ const printData = (querySnapshot) => {
   });
   generalTable.style.display = "none";
 };						
-
-
 //le funcion de filtrado y el 'back' al hacer el click en el logo steam funciona mostrando y ocultando
 //los divs que contiene los datos
 //nota para pasar a SPA
-
 // elimina los datos del muro
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
@@ -244,7 +240,6 @@ function deleteData(id) {
     return false;
   }
 }
-
 //Edita los datos
 function editState(id, state) {
   let editButton = document.getElementById('save-data');
@@ -267,16 +262,10 @@ function editState(id, state) {
        });
    }
  }
- 
-
-
+ /*
 //See User
 const userProfile = document.getElementById('button-user')
 userProfile.addEventListener("click", () => {
   window.location = 'profile.html';
 })
-
-
-// 
-// Get a reference to the storage service, which is used to create references in your storage bucket
-
+*/
