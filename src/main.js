@@ -44,7 +44,7 @@ let mainApp = {};
   mainApp.logOut = logOut;
 })()
 
-// Crea los datos y los manda a Firestote
+// Crea los datos y los manda a Firestore
 function send() {
   let textInput = document.getElementById('input').value;
   // let nameInput = document.getElementById('name-input').value;
