@@ -1,0 +1,280 @@
+/*----Estilos Generales----*/
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  margin: 1%;
+}
+
+body {
+  background-color: rgb(219, 208, 219);
+}
+
+h1,
+h2 {
+  text-align: center;
+  padding: 4%;
+}
+
+section .news-steam {
+  display: inline-block;
+  margin-top: 17%;
+  background-position: center;
+}
+
+header {
+  width: 100%;
+  background: #181717;
+  height: 62px;
+  position: fixed;
+}
+
+footer {
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #181717;
+}
+
+p {
+  text-align: center;
+  padding: 3%;
+}
+
+#start {
+  position: relative;
+  left: 79%;
+  top: 7px;
+  padding: 15 15px;
+}
+
+#logo-footer-two {
+  background-image: url(./assets/logo.png);
+  width: 98%;
+  height: 25%;
+  margin-top: 21%;
+  background-size: 34%;
+  background-repeat: no-repeat;
+  margin-left: 32%;
+}
+
+#logo {
+  background-image: url(./assets/logo.png);
+  width: 51%;
+  display: inline-block;
+  height: 81%;
+  margin-top: 3%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 4%;
+}
+
+#steam {
+  background-color: #89dbde;
+}
+
+#arduino {
+  background-color: #66adaf;
+}
+
+#lunar {
+  background-color: #bb8ab3;
+}
+
+#arsgames {
+  background-color: #c3afe0;
+}
+
+.login {
+  display: inline-block;
+  /*float: right;*/
+  margin-right: 3%;
+  padding: 5%;
+  font-size: 103%;
+}
+
+.image-event {
+  width: 93%;
+  margin-left: 3%;
+
+}
+
+.fixed {
+  position: fixed;
+}
+
+.footer-container {
+  width: 100%;
+  background-color: #181717;
+  color: white;
+}
+
+.footer-main {
+  width: 88%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.footer-main .footer-column {
+  width: 98%;
+  text-align: center;
+}
+
+.footer-main .footer-column {
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  margin-bottom: 6px;
+  padding: 12px 12px;
+
+}
+
+.footer-main .footer-column span {
+  display: block;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+.footer-copy-redes {
+  width: 100%;
+  background: white;
+  border-top: 2px solid royalblue;
+
+}
+
+.main-copy-redes {
+  width: 83%;
+  max-width: 1000px;
+  padding: 0px 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.main-copy-redes {
+  widows: 100%;
+  text-align: center;
+  font-size: 12px;
+  width: 70%;
+  color: #6247AA;
+  margin-bottom: 15px;
+
+}
+
+.footer-copy {
+  text-align: center;
+  position: relative;
+  left: 14%;
+  padding: 3%;
+  ;
+}
+
+
+.main-copy-redes .footer-redes {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-copy-redes .footer-redes a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  background: #AD29B6;
+  color: white;
+  text-align: center;
+}
+
+/*----Desktop----*/
+@media (min-width: 767px) {
+
+  section .news-steam {
+    display: inline-block;
+    margin-top: 45%;
+    width: 30%;
+    background-position: center;
+  }
+
+  #start {
+    position: relative;
+    top: 30px;
+    left: -3%;
+  }
+
+  #logo-footer-two {
+    background-image: url(./assets/logo.png);
+    width: 98%;
+    height: 96%;
+    margin-top: 8%;
+    background-size: 26%;
+    margin-left: 37%;
+    position: relative;
+    bottom: 23px;
+  }
+
+  .image-event {
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: auto;
+    background-position: center;
+  }
+
+
+
+  .footer-about {
+    position: relative;
+    bottom: 80px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+
+  }
+
+  .footer-main .footer-column {
+    width: calc(100%/2);
+    text-align: justify;
+  }
+
+  .main-copy-redes {
+
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-copy-redes .footer-redes {
+    width: 27%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    left: 15%;
+  }
+
+  .footer-copy {
+    text-align: center;
+    position: relative;
+    left: 4%;
+    padding: 1%;
+  }
+
+
+}

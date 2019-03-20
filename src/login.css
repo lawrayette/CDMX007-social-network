@@ -1,0 +1,65 @@
+/*----Estilos Generales*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+}
+
+header{
+    background: #181717;
+    padding: 26px 1px;
+    height: 30%;
+}
+
+.logo-login{
+    width: 200px;
+    display: block;
+    margin: 27% auto 10%;
+}
+
+.firebaseui-idp-list {
+    margin: 1em 25px;
+    padding: 31px 0 20px;
+    /* border: 2px solid #5A6978;
+    border-radius: 14px; */
+}
+
+.inicia-sesion{
+    color: #5A6978;
+    text-align: center;
+    border-top: 100px;
+    margin: 40% auto;
+}
+
+.texto-azul{
+   color: #6247AA;
+    text-align: center;
+    border-top: 100px;
+}
+
+.firebaseui-container {
+    background-color: white;
+}
+
+.mdl-button--raised.mdl-button--colored {
+    background: #6247AA;
+    color: #fff;
+} 
+
+.mdl-button--primary.mdl-button--primary {
+    color: #6247AA;
+}
+
+/*----Desktop----*/
+
+@media (min-width: 767px)  {
+
+header{
+  height:15%;  
+}
+
+}

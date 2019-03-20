@@ -37,7 +37,7 @@ con acceso a internet no usa red social alguna.
 
 En la década de los 90 en los países de primer mundo comenzaron a pensar de 
 la forma en la cual llevar las llamadas ciencias duras a las aulas, de una forma diferente. 
-Al paso de los años, se le comienza a agregar la A al STEM, pasando a ser STEAM, esto
+Al paso de los años, se le commienza a agregar la A al STEM, pasando a ser STEAM, esto
 para agregar las artes como una forma para hacer más disruptiva la educción.
 
 
