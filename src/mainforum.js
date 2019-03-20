@@ -21,7 +21,7 @@ let mainApp = {};
       let printPhotoPost = document.getElementById('print-photo-post')
       let photo = user.photoURL
       printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
-      printPhotoPost.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
+    printPhotoPost.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
       let nameCurrent = document.getElementById('name-input').innerHTML = `${name}`
       let nameCurrentPost = document.getElementById('name-input-post')
       nameCurrentPost.innerHTML = `${name}`
@@ -39,15 +39,18 @@ let mainApp = {};
 })()
 
 // Crea los datos y los manda a Firestore
+
+  
+
 function send() {
   let userPost = JSON.parse(localStorage.getItem("user"))
   let textInput = document.getElementById('input').value;
-  let areaInput = document.getElementById('area-select').value;
-  console.log(areaInput)
+  let areaSelected = document.getElementById('dropdown3').value;
+  console.log (areaSelected)
   let privateMsgChecked = document.getElementById('private').checked
   db.collection("state").add({
     name: userPost.displayName,
-    area: 'areaInput',
+    area: areaSelected,
     first: textInput,
     uid:userPost.uid,
     private: privateMsgChecked,
@@ -83,26 +86,35 @@ searchGlass.addEventListener('click', ()=>{
     })}})
 
     //--------------- filtra mensajes privados y publicos-------------------//
-let selectPrivacy = document.getElementById('dropdown2')
-selectPrivacy.addEventListener('change', () => {
-  console.log(selectPrivacy.value)
-if (selectPrivacy.value == 'private') {
- db.collection("state").where("uid", "==", uid).where("private", "==", true)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }else{
-    console.log('son publicos')
-    db.collection("state").where("uid", "==", uid).where("private", "==", false)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }
-});
+    let filterByPrivacyBtn = document.getElementById("filter-by-privacy-btn");
+let privacySelection= document.getElementsByClassName('privacy-name');
+let listPrivacy = document.getElementById('list-privacy');
+let privacyClicked = null
+filterByPrivacyBtn.addEventListener('click', ()=>{
+    for (let i = 0; i < privacySelection.length; i++) {
+    privacySelection[i].addEventListener('click', () => {
+    privacyClicked = privacySelection[i].id;
+    console.log(privacyClicked);
+  })}})
+
+// if (privacyClicked == 'private') {
+//  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }else{
+//     console.log('son publicos')
+//     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }
+
+
 //--------------- termina mensajes privados y publicos-------------------//
 
 // imprime los datos en el muro
