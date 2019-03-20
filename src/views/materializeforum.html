@@ -1,0 +1,204 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wall Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image" href="./assets/favicon.png"> -->
+    <!-- Compiled and minified CSS materialize-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous"> -->
+    <!-- Firebase-->
+     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script> -->
+    <!--applause button-->
+    <link rel="stylesheet" href="applause_button.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="user.css">
+</head>
+<body> 
+    
+
+    <!-- Dropdown Structure -->
+ <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Configuración</a></li>
+        <li class="divider"></li>
+        <li><a href="02login.html">Cerrar sesión</a></li>
+      </ul>
+        <nav>
+                <div class="nav-wrapper">
+                 <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></i></a>
+                  <ul class="right hide-on-med-and-down">
+                              <li><a href="profile.html"><img src="./assets/usuario_avatar.png" alt="avatar" class="nav-bar-avatar"></i></a></li>
+                              <li><a href="profile.html"><p class="nav-text">${user.displayName}</p></a></li>
+                    <li><a href="members.html"><i class="fas fa-user-friends"></i></a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i></a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i></a></li> 
+                     
+                    
+                
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" style="width:130px"><i class="fas fa-chevron-down"></i></a></li> -->
+                    <li><a href="mobile.html"><i class="fas fa-chevron-down"></i></a></li>
+              </ul>
+                </div>
+              </nav>
+<!-- contenido general -->
+<div>
+    <div class="container">
+        <div class="row">
+            <!-- Aside izquierdo -->
+            <div class="col s12 m4 l3 pull -l1 aside-style">
+                <!-- <ul> -->
+                     <!-- Usuario -->
+                        <div class="chip">
+                                <img src="./assets/usuario_avatar.png" alt="Avatar_Person">
+                                ${user.displayName}
+                        </div>
+                <li><a href="profile.html"><img src="./assets/usuario_avatar.png" alt="avatar" class="nav-bar-avatar"></i></a></li>
+                <li><a href="profile.html"><p class="nav-text">${user.displayName}</p></a></li>
+            </ul> 
+                 <!-- Busqueda -->
+               <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+
+              <div class="chip chip-science">
+                    <img src="./assets/usuario_avatar.png" alt="Ciencia">
+                    Ciencia
+              </div>
+              <a href="main.js" class="chip chip-tech">
+                    <img src="./assets/usuario_avatar.png" alt="Tecnología">
+                    Tecnología
+              </a>
+              <div class="chip chip-engine">
+                    <img src="./assets/usuario_avatar.png" alt="Ingeniería">
+                    Ingeniería
+              </div>
+              <div class="chip chip-art">
+                    <img src="./assets/usuario_avatar.png" alt="Arte">
+                    Arte
+              </div>
+              <div class="chip chip-math">
+                    <img src="./assets/usuario_avatar.png" alt="Matemáticas">
+                    Matemáticas
+              </div>
+         </div><!--Termina aside izquierdo -->
+
+       <!-- Muro noticias -->
+            <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+              <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Crear un post</a>
+
+             <!-- Modal Structure -->
+              <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                   </div>
+                   <div class="modal-footer">
+                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                   </div>
+                  </div><!-- Termina Modal1 -->
+
+                <!-- Publicaciones -->
+            </div>
+            <div id= "state-user">
+               
+              
+            </div>
+
+
+            </div><!-- Termina muro noticias -->
+      
+          </div><!-- Termina row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</main>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="applause_button.js"></script>
+<script src="fireBase.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
+
+
+<!-- original -->
+<div class="container-nav">
+<nav class="navbar navbar-light" style="background-color: #181717;">
+<a class="navbar-brand" href="#">
+<img src="./assets/logo.png" alt="" id="logo-nav">
+</a>
+<input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Buscar">
+<div class="dropdown">
+<button class="btn btn-secondary btn-purple dropdown-toggle "  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i> </button>
+ <div id="area-search" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <ul>
+    <a id="Science" class="area-name dropdown-item" href="#">Science</a>
+    <a id="Technology" class="area-name dropdown-item" href="#">Technology</a>
+    <a id="Engineering" class="area-name dropdown-item" href="#">Engineering</a>
+    <a id="Arts" class="area-name dropdown-item" href="#">Arts</a>
+    <a id="Math" class="area-name dropdown-item" href="#">Math</a>
+  </ul>
+</div>
+</div>
+
+
+<select id="select-Privacy">
+  <option value="" disabled selected>Privacidad</option>
+  <option id="public-message" class="option-selected" value="public">Público</option> 
+  <option id="private-message" class="option-selected" value="private">Solo yo</option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="btn-user" type="submit"><i class="fas fa-user-astronaut" id="button-user"></i></button>
+<button class="button-logOut"onclick="mainApp.logOut()">Salir</button>
+</nav>
+</div>
+
+
+
+
+</nav>
+</div>

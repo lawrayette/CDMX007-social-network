@@ -1,32 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+
 /*----Estilos Generales----*/
+
 * {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*----Materialize----*/
+/* nav{
+  background-color: #212529;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+.logo-login{
+  width: 150px;
+  margin-top: 12px;
+}
+
+.titulo-merriweather-sans{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: .5rem 0 .5rem 0;
+  text-align: center;
+} */
+
+/*----Cards----*/
+
+/* .cc-steam{
+  background-color: aquamarine;
+} */
+
+/*----Estilos Anteriores----*/
+
+
+
+
+
+ article {
+  margin: 1%;
+}
+
+body {
+  background-color: rgb(219, 208, 219);
+}
+
+h1,
+h2 {
+  text-align: center;
+  padding: 4%;
+}
+
+section .news-steam {
+  display: inline-block;
+  margin-top: 17%;
+  background-position: center;
+}
+
+header {
+  width: 100%;
+  background: #181717;
+  height: 62px;
+  position: fixed;
 }
 
 footer {
   width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #181717;
 }
 
-#div-area {
-  display: inline-block;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 3%;
-  border-style: ridge;
-  padding: 2%;
+p {
+  text-align: center;
+  padding: 3%;
 }
 
-#logo-nav {
-  width: 54%;
-  margin-top: 4%;
-  padding: 7%;
+#start {
   position: relative;
-  right: 7%;
-  background-size: 23%;
-  background-repeat: no-repeat;
+  left: 79%;
+  top: 7px;
+  padding: 15 15px;
 }
 
-#logo-footer {
+#logo-footer-two {
   background-image: url(./assets/logo.png);
   width: 98%;
   height: 25%;
@@ -36,67 +94,49 @@ footer {
   margin-left: 32%;
 }
 
-#state-user {
-  margin-left: 9%;
-  margin-top: 5%;
-}
-
-#div-area {
+#logo {
+  background-image: url(./assets/logo.png);
+  width: 51%;
   display: inline-block;
-  margin-left: 2%;
+  height: 81%;
   margin-top: 3%;
-  border-style: ridge;
-  padding: 2%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 4%;
 }
 
-.form-control {
-  display: block;
-  width: 60%;
-  position: relative;
-  bottom: 4px;
+#steam {
+  background-color: #89dbde;
 }
 
-.button-logOut {
-  background-color: royalblue;
-  color: white;
-  font-size: 13px;
-  padding: 3px;
-  position: relative;
-  border-radius: 6px;
-  bottom: 3px;
+#arduino {
+  background-color: #66adaf;
+}
+
+#lunar {
+  background-color: #bb8ab3;
+}
+
+#arsgames {
+  background-color: #c3afe0;
+}
+
+ .login {
+  display: inline-block;
+  /*float: right;*/
+   margin-right: 3%;
+  padding: 5%;
+  font-size: 103%;
+}
+
+.image-event {
+  width: 93%;
+  margin-left: 3%;
 
 }
 
-.forum-container {
-  min-height: 800px;
-}
-
-.btn-purple {
-  background-color: #AD29B6;
-  color: white;
-  border-radius: 6px;
-  position: relative;
-  bottom: 3px;
-}
-
-.btn-user {
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-  padding: 0px 9px;
-  bottom: 3px;
-}
-
-
-.button-send-input {
-  float: right;
-  background-color: #AD29B6;
-  color: white;
-  font-size: 13px;
-  padding: 3px;
-  border-radius: 6px;
-  position: relative;
-  top: 5px;
+.fixed {
+  position: fixed;
 }
 
 .footer-container {
@@ -173,6 +213,7 @@ footer {
   ;
 }
 
+
 .main-copy-redes .footer-redes {
   width: 70%;
   margin: auto;
@@ -191,67 +232,52 @@ footer {
   background: #AD29B6;
   color: white;
   text-align: center;
-}
+} */
 
 /*----Desktop----*/
-@media (min-width: 767px) {
+ @media (min-width: 767px) {
 
-  .forum-container {
-    min-height: 700px;
+  section .news-steam {
+    display: inline-block;
+    margin-top: 45%;
+    width: 30%;
+    background-position: center;
   }
 
-  .btn-purple {
-    padding: 3px 22px;
+  #start {
     position: relative;
-    right: 9%;
-    border-radius: 5px;
-  }
-
-  .btn-user {
-    padding: 3px 22px;
-    position: relative;
-    left: 6%;
-    border-radius: 5px;
-  }
-
-  .button-logOut {
-    padding: 5px 16px;
-    position: relative;
-    border-radius: 5px;
-
-  }
-
-  .button-send-input {
     top: 30px;
+    left: -3%;
   }
 
-  #div-area {
-    margin-left: 22%;
-    margin-top: 4%;
-    padding: 3%;
-}
-  #logo-footer {
+  #logo-footer-two {
     background-image: url(./assets/logo.png);
-    height: 25%;
-    margin-top: 41%;
-    background-size: 27%;
-    margin-left: 32%;
+    width: 98%;
+    height: 96%;
+    margin-top: 8%;
+    background-size: 26%;
+    margin-left: 37%;
     position: relative;
-    bottom: 121px;
+    bottom: 23px;
   }
+
+  .image-event {
+    width: 50%;
+    position: relative;
+    display: block;
+    margin: auto;
+    background-position: center;
+  }
+
+
 
   .footer-about {
     position: relative;
-    bottom: 110px;
+    bottom: 80px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
 
-
-  }
-
-  .contact {
-    position: relative;
-    top: 82px;
   }
 
   .footer-main .footer-column {
@@ -283,21 +309,5 @@ footer {
     padding: 1%;
   }
 
-  #div-area {
-    margin-left: 34%;
-    margin-top: 6%;
-    padding: 4%;
-  }
 
-  .form-control {
-    display: block;
-    width: 50%;
-
-  }
-
-  .form-control-textarea {
-    width: 100%;
-    padding: 5%;
-  }
-
-}
+} 

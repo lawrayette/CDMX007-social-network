@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+
+/*----Estilos Generales----*/
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(219, 208, 219);
+  }
+
+/*----Materialize Navbar----*/
+nav{
+    background-color: #212529;
+}
+
+.logo-login{
+    width: 150px;
+    margin-top: 12px;
+}
+
+.wrapper{
+    width: 20px;
+}
+
+.titulo-merriweather-sans{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: .5rem 0 .5rem 0;
+    text-align: center;
+}
+
+/*----Cards----*/
+
+.card .card-content {
+    padding: 20px;
+    border-radius: 0 0 2px 2px;
+}
+.cc-steam{
+    background-color: #89dbde;
+}
+
+.cc-arduino{
+    background-color: #66adaf;
+}
+
+.cc-lunar{
+    background-color: #bb8ab3;
+}
+
+.cc-arsgames{
+    background-color: #c3afe0;
+}
+
+.titulo-libro{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/*----LoginPage----*/
+
+.firebaseui-card-content {
+    padding: 80px 24px;
+}
+
+.firebaseui-idp-list {
+    margin: 1em 25px;
+    padding: 31px 0 20px;
+ } 
+
+.inicia-sesion{
+    color: #5A6978;
+    text-align: center;
+    border-top: 100px;
+    margin: 40% auto;
+}
+
+.texto-azul{
+   color: #6247AA;
+    text-align: center;
+    border-top: 100px;
+}
+
+.firebaseui-container {
+    background-color: white;
+}
+
+.mdl-button--raised.mdl-button--colored {
+    background: #6247AA;
+    color: #fff;
+} 
+
+.mdl-button--primary.mdl-button--primary {
+    color: #6247AA;
+}
+
+.mdl-button--raised.mdl-button--colored:hover {
+    background-color: #6247AA;
+}
+
+
+/*----Footer----*/
+
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+    background-color: #212529;
+}
+
+.logo-login-footer{
+    width: 100px;
+    margin-top: 12px;
+}
+
+.footer-text{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: .8rem;
+}
+
+
+
+.fab .fa{
+    display: inline-block;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    line-height: 57px;
+    border-radius: 50%;
+    background: #AD29B6;
+    color: white;
+    text-align: center;
+}

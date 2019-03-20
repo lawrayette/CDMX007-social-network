@@ -5,19 +5,38 @@ const image = document.getElementById('input.image');
 let mainApp = {};
 
 
+//let nameInput = document.getElementById('name-input')
 (function () {
   let firebase = app_fireBase;
-  let uid = null;
+  //let uid = null;
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+      localStorage.setItem('user', JSON.stringify(user))
+      name = user.displayName;
+      eMail = user.email;
+      photoURL = user.photoURL;
       uid = user.uid;
+
+      let printPhoto = document.getElementById('print-photo')
+      let photo = user.photoURL
+      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 20px; border-radius:50%"></img>`
+     
+      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+     
+      console.log(nameCurrent)
+      console.log(uid)
+      
     } else {
       //redirect to login page
       uid = null;
       window.location.replace("index.html");
     }
   });
+  
+  console.log(name)
+  //console.log(uid)
+
 
   function logOut() {
     firebase.auth().signOut();
@@ -25,16 +44,19 @@ let mainApp = {};
   mainApp.logOut = logOut;
 })()
 
-// Crea los datos y los manda a Firestote
+// Crea los datos y los manda a Firestore
 function send() {
   let textInput = document.getElementById('input').value;
-  let nameInput = document.getElementById('name-input').value;
+  // let nameInput = document.getElementById('name-input').value;
   let areaInput = document.getElementById('area-select').value;
+  let privateMsgChecked = document.getElementById('private').checked
 
   db.collection("state").add({
       area: areaInput,
-      name: nameInput,
+      name: name,
       first: textInput,
+      uid:uid,
+     private: privateMsgChecked,
       
 
     })
@@ -68,6 +90,29 @@ logoSteamHome.addEventListener('click', ()=>{
   generalTable.style.display= "block";
 })
 
+//---------------mensajes privados y publicos-------------------//
+let selectPrivacy = document.getElementById('select-Privacy')
+selectPrivacy.addEventListener('change', () => {
+  console.log(selectPrivacy.value)
+if (selectPrivacy.value == 'private') {
+ db.collection("state").where("uid", "==", uid).where("private", "==", true)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }else{
+    console.log('son publicos')
+    db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+});
+//--------------- termina mensajes privados y publicos-------------------//
+
 //da eventos de click a lista de 'areas'
 searchGlass.addEventListener('click', ()=>{
   listContainer.style.display="block";
@@ -82,28 +127,75 @@ searchGlass.addEventListener('click', ()=>{
 
 // imprime los datos en el muro
 db.collection("state").onSnapshot((querySnapshot) => {
- generalTable.innerHTML = '';
+  generalTable.innerHTML = '';
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data().first}`);
     generalTable.innerHTML += `
     <div class="card  text-center alert alert-info">
        <p>${doc.data().name}</p>
       <p>${doc.data().first}</p>
-      <p>${doc.data().image}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-
       <p>
       <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
      </p>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-body">
+     <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
+         </div>
+      <div class="modal-footer">
+        <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
     `
-  });  
+  });
 });
 
+
+ //aparecen botones editar y eliminar
+ 
+//  const ButtonUnhide = () => {
+   
+//   if (`${doc.id}.uid == uid`) {
+//     console.log(doc.data().uid)
+//     document.getElementById('delete-btn').classList.remove('hide');
+//     document.getElementById('edit-btn').classList.remove('hide');
+//   }
+// }
+// ButtonUnhide();
+
+// let selectPrivacy = document.getElementById('select-Privacy')
+// selectPrivacy.addEventListener('change', () => {
+//   console.log(selectPrivacy.value)
+// if (selectPrivacy.value == 'private') {
+//  db.collection("state").where("uid", "==", uid).where("private", "==", true)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }else{
+//     console.log('son publicos')
+//     db.collection("state").where("uid", "==", uid).where("private", "==", false)
+//     .get()
+//     .then(printData)
+//     .catch(function(error) {
+//         console.log("Error getting documents: ", error);
+//     });
+//   }
+// });
+
+
+ 
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -118,8 +210,8 @@ const printData = (querySnapshot) => {
     <li class="area" value="${doc.data().area}">${doc.data().area}</li>
       
       <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button class = "btn btn-warning btn-sm" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
+      <button id="delete-btn"class = "btn btn-danger btn-sm " onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+      <button id="edit-btn"class = "btn btn-warning btn-sm " onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-edit"></i></button>
      <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
      <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
      <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
@@ -149,34 +241,29 @@ function deleteData(id) {
 }
 
 //Edita los datos
-function editState(id, state, name) {
-  document.getElementById('input').value = state;
-  document.getElementById('name-input').value = name;
+function editState(id, state) {
+  let editButton = document.getElementById('save-data');
+      document.getElementById('input-edit').value = state;
+      
+   editButton.onclick = function () {
+     var washingtonRef = db.collection("state").doc(id);
+ 
+     let newInput = document.getElementById('input-edit').value;
+        return washingtonRef.update({
+         first: newInput,
+        })
+       .then(function () {
+         console.log("Document successfully updated!");
+        
+             })
+       .catch(function (error) {
+         // The document probably doesn't exist.
+         console.error("Error updating document: ", error);
+       });
+   }
+ }
+ 
 
-  let editButton = document.getElementById('sendButton');
-  editButton.innerHTML = "Editar";
-
-  editButton.onclick = function () {
-    var washingtonRef = db.collection("state").doc(id);
-
-    let textInput = document.getElementById('input').value;
-    let nameInput = document.getElementById('name-input').value;
-
-    return washingtonRef.update({
-        first: textInput,
-        name: nameInput,
-      })
-      .then(function () {
-        console.log("Document successfully updated!");
-        let textInput = document.getElementById('input').value = '';
-        editButton.innerHTML = "Guardar";
-      })
-      .catch(function (error) {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-      });
-  }
-}
 
 //See User
 const userProfile = document.getElementById('button-user')
