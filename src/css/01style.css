@@ -104,6 +104,57 @@ nav{
     background-color: #6247AA;
 }
 
+/*----wall forum----*/
+.nav-bar-avatar {
+    margin-top: 14px;
+  }
+
+  .aside-style{
+    background-color: rgba(97, 71, 170, 0.411);
+  }
+
+.post-wall{
+    background-color: antiquewhite;
+}
+
+.post-text{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+    padding: 0;
+    }
+
+    .photo-post-style{
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .align-content-post{
+        display: inline-block;
+    }
+  
+      .form-control-textarea {
+          border:none;
+        width: 200%;
+    padding: 5%;
+    height: 6rem;
+      }
+
+
+  /*----Colores de chips etiquetas filtros----*/
+  
+  .chip{
+    background-color: rgba(220, 20, 60, 0.404);
+  }
+
+
+
+
+
+
+
+
 
 /*----Footer----*/
 

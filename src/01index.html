@@ -18,18 +18,52 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 <body>
-        <!-- Navbar -->
-        <nav>
-                <div class="nav-wrapper">
-                  <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></a>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars" color=#fffff></i></i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="#/Steam">Steam</a></li>
-                    <li><a href="#/01noticias">Noticias</a></li>
-                    <li><a href="#/02login">Login</a></li>
-                  </ul>
-                </div>
-        </nav>
+<!--Navbar-->
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Ciencia</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Tecnología</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Ingeniería</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Arte</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Matemáticas</a></li>
+  </ul>
+  <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">Público</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Privado</a></li>
+    </ul>
+
+  <nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars" color=#fffff></i></i></a>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a id="filterSteamBtn"class="dropdown-trigger hide " href="#/filterSteam" data-target="dropdown1">Filtro por tema</a></li>
+          <li><a id="filterByPrivacyBtn" class="dropdown-trigger hide" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
+          <li><a href ="#/">Inicio</a></li>
+          <li><a href="#/forum">Foro</a></li>
+          <li><a href ="#/myProfile">Mi perfil</a></li>
+          <li><a href="#/comunity">Comunidad steam</a></li>
+          <li><a href="#/01noticias">Próximos eventos</a></li>
+          <li><a href="#/01noticias">Cerrar sesión</a></li></div>
+         <li><a id ="hideLogin" href="#/02login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+      <li><a href ="#/"><i class="fas fa-home"></i></a></li>
+      <li><a href="#/forum"><i class="fas fa-user-friends"></i></a></li>
+      <li><a href ="#/myProfile"><i class="fas fa-user-astronaut"></i></a></li>
+      <li><a href="#/comunity"><i class="fas fa-user-friends"></i></a></li>
+      <li><a href="#/01noticias"><i class="fas fa-calendar-alt"></i></a></li>
+      <li><a href="#/02login">Cerrar Sesión</a></li>
+    </ul>
         <!-- Termina navbar -->
             
               <ul class="sidenav" id="mobile-demo">
@@ -50,7 +84,7 @@
                     <div class="row">
                       <div class="col l6 s12">
                         <img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login-footer">
-                         <p class="grey-text text-lighten-4">Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.</p>
+                         <p class="grey-text text-lighten-4 footer-text">Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.</p>
                       <br>
                         </div>
                       <div class="col l4 offset-l2 s12">
@@ -82,6 +116,8 @@
     <script src="./firebase.js"></script>
     <script src="./js/libreria.js"></script>
     <script src="./js/controlador.js"></script>
+    <script src="./app.js"></script>
+    <script src="./myProfile.js"></script>
     <script src="./js/router.js"></script>
     
 </body>
