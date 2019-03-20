@@ -130,6 +130,13 @@ nav{
         padding: 15px;
     }
 
+
+    .responsive-img{
+        width: 35%;
+        position: relative;
+        left:10%;
+    }
+
     .align-content-post{
         display: inline-block;
     }
@@ -186,4 +193,25 @@ nav{
     background: #AD29B6;
     color: white;
     text-align: center;
+}
+
+.footer-copyright{
+    position: relative;
+    text-align: center;
+}
+.github-button{
+    background-color: #181717;
+   size: 0ch;
+}
+
+.instagram-button{
+    background-color:#D291FF;
+}
+
+.twitter-button{
+    background-color: #1DA1F2;
+}
+
+.copyright-size{
+    font-size: 12px;
 }

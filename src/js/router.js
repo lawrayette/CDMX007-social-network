@@ -1,5 +1,8 @@
 window.libreria.getId('vista').enrutar()
-.ruta('/', './views/01noticias.html', null, null)
+.ruta('/', './views/news.html', null, null)
+.ruta('/02login', './views/02login.html', 'miControlador', function(){
+        libreria.getCtrl().login()
+     })
 .ruta('/forum', './views/forum.html', 'miControlador', function(){
         libreria.getCtrl().forumFunctions()
      })
@@ -7,10 +10,10 @@ window.libreria.getId('vista').enrutar()
 .ruta('/comunity', './views/comunity.html', 'miControlador', function (){
         libreria.getCtrl().printComunity()
 })
-.ruta('/02login', './views/02login.html', 'miControlador', function(){
-        libreria.getCtrl().login()
-     })
-.ruta('/myProfile', './views/myProfile.html', null, null)     
+
+.ruta('/myProfile', './views/myProfile.html', 'miControlador', function (){
+        libreria.getCtrl().profileFunctions()
+})     
 // .ruta('/forum', './views/forum.html', null, null)
 
 
