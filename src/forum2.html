@@ -20,25 +20,30 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <!--applause button-->
+    <link rel="stylesheet" href="applause_button.css">
+  <script src="applause_button.js"></script>
  
 </head>
 <body>
     
         <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Ciencia</a></li>
+                <li><a id="Science" class="area-name" href="#!">Ciencia</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Tecnología</a></li>
+                <li><a id="Technology" class="area-name" href="#!">Tecnología</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Ingeniería</a></li>
+                <li><a id="Engineering" class="area-name" href="#!">Ingeniería</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Arte</a></li>
+                <li><a id="Arts" class="area-name" href="#!">Arte</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Matemáticas</a></li>
+                <li><a id="Math" class="area-name" href="#!">Matemáticas</a></li>
               </ul>
               <ul id="dropdown2" class="dropdown-content">
-                  <li><a href="#!">Público</a></li>
+                 <li><a value="public" href="#!">Todas</a></li>
+                 <li class="divider"></li>
+                  <li><a value="public" href="#!">Público</a></li>
                   <li class="divider"></li>
-                  <li><a href="#!">Privado</a></li>
+                  <li><a value="private"href="#!">Privado</a></li>
                 </ul>
             
               <nav>
@@ -47,16 +52,14 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars" color=#fffff></i></i></a>
                     <ul class="right hide-on-med-and-down">
                       <!-- Dropdown Trigger -->
-                      <li><a id="filterSteamBtn"class="dropdown-trigger hide " href="#/filterSteam" data-target="dropdown1">Filtro por tema</a></li>
-                      <li><a id="filterByPrivacyBtn" class="dropdown-trigger hide" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
+                      <li><a id="filterSteamBtn"class="dropdown-trigger" href="#/filterSteam" data-target="dropdown1">Filtro por tema</a></li>
+                      <li><a id="filterByPrivacyBtn" class="dropdown-trigger" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
                       <li><a href ="#/">Inicio</a></li>
                       <li><a href="#/forum">Foro</a></li>
                       <li><a href ="#/myProfile">
-                        <div id="print-photo nav-bar-avatar" >foto aqui</div>
-                        <!-- <p id="name-input"></p> -->
-                            </a></li>
-                        
-
+                           <div id="print-photo" class="nav-bar-avatar">foto aqui</div></a></li>
+                      <li><a href ="#/myProfile">
+                           <p id="name-input"></p></a></li>
                       <li><a href="#/comunity">Comunidad steam</a></li>
                       <li><a href="#/01noticias">Próximos eventos</a></li>
                       <li><a href="#/01noticias">Cerrar sesión</a></li></div>
@@ -77,15 +80,15 @@
 
 <!-- Crear post -->
 
-<div class="container"> 
-        <div class="row"> 
-    
 
-          <div class="col s12 m8 l8 offset -l4 post-wall"> <!-- Note that "m8 l9" was added -->
+<div class="container"> 
+ 
+        <div class="row"> 
+              <div class="col s12 m8 l8 post-wall">
                      <div class="card">
                       <div class=" grey lighten-4">
-                            <div id="print-photo" class="photo-post-style" >foto aqui</div>
-                            <p id="name-input" class="post-text"></p>
+                            <div id="print-photo-post" class="nav-bar-avatar">foto aqui</div></a></li>
+                            <p id="name-input-post" class="post-text"></p>
                           <p class="post-text">Crea un post</p>
                           </div>
                        <div  id="inputs">
@@ -93,40 +96,44 @@
                                <textarea name="textarea" id="input" cols="30" rows="10" class="form-control-textarea" placeholder="¿Qué nos quieres compartir hoy?"></textarea>
                            </div>
                            <div class="grey lighten-4">
-                           <p><label><input type="checkbox" /><span>Solo yo</span></label></p>   
-                            
-                           <div class="chip">Ciencia<i class="close material-icons"></i></div>
-                           <div class="chip">Tecnología<i class="close material-icons"></i></div>
-                           <div class="chip">Ingeniería<i class="close material-icons"></i></div>
-                           <div class="chip">Arte<i class="close material-icons"></i></div>
-                           <div class="chip">Matemáticas<i class="close material-icons"></i></div>
-                                                  <!-- Dropdown Trigger -->
-   <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Tema</a>
-  <!-- Dropdown Structure -->
+                           <p><label><input id="private" type="checkbox" name="private" /><span>Solo yo</span></label></p>   
+                                         
+                           <select id="area-select">
+                             <h1>hola</h1>
+                              <option value="Science">Ciencia</option>
+                              <option value="Technology">Tecnología</option>
+                              <option value="Engineering">Ingeniería</option>
+                              <option value="Arts">Arte</option>
+                              <option value="Math">Matemáticas</option>
+                            </select>
+
+
+                           <!-- <div >
+                             <h1>hola</h1>
+                              <a class="btn-floating btn-large red">
+                                <i  class="large material-icons">mode_edit</i>
+                              </a>
+                              <ul id = "area-select">
+                                <li><a value="Science" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                                <li><a value="Technology" class="btn-floating blue"><i class="material-icons">format_quote</i></a></li>
+                                <li><a value="Engineering" class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                                <li><a value="Arts" class="btn-floating yellow darken-1"><i class="material-icons">attach_file</i></a></li>
+                                <li><a value="Math" class="btn-floating orange"><i class="material-icons">attach_file</i></a></li>
+                              </ul>
+                            </div> -->
+
+  <!-- Dropdown Structure
+     <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Tema</a>
   <ul  id='dropdown3' class='dropdown-content'>
-        <option value="Science">Ciencia</option>
+        <option value="Science">Ciencia</option>F
         <option value="Technology">Tecnología</option>
         <option value="Engineering">Ingeniería</option>
         <option value="Arts">Arte</option>
         <option value="Math">Matemáticas</option>
-    </ul>
+    </ul>-->
+    <button id="sendButton" class="btn waves-effect waves-light" onclick ="send()" type="button" name="action">Compartir
+            </button> 
                             
-
-      <!-- <ul id='dropdown3' class='dropdown-content'>
-            <li><a href="#!">Ciencia</a></li>
-           <li><a href="#!">Tecnología</a></li>
-             <li><a href="#!">Ingeniería</a></li>
-             <li><a href="#!">Arte</a></li>
-             <li><a href="#!">Matemáticas</a></li>
-    </ul> -->
-
-
-
-
-
-
-
-
 
                         </div>
                   </div>
@@ -134,13 +141,14 @@
         </div>
     </div>
 
+
    <!-- Post  -->
    <div id= "state-user">
     </div>
   
     <div id= "state-user-filter">
     </div>
-  
+</div>
     </main>
 
 
