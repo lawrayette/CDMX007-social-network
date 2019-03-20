@@ -1,6 +1,6 @@
 libreria.controlador('miControlador', {
 
-  
+
   login: () => {
     (function () {
       // Initialize the FirebaseUI Widget using Firebase.
@@ -41,7 +41,10 @@ libreria.controlador('miControlador', {
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
   },
-  /*forumFunctions:()=>{
+
+
+
+  forumFunctions:()=>{
     const generalTable = document.getElementById('state-user');
     const filteredTable = document.getElementById('state-user-filter');
     let db = firebase.firestore();
@@ -321,30 +324,38 @@ libreria.controlador('miControlador', {
     
     
   },*/
-  
 
 
 
 
 
-  forumFunctions: () => {
+
+  firstPage: () => {
+
+    const menuButtons = document.getElementById('menuButtons')
+
+    showbuttons = () => {
+      menuButtons.classList.add('hide')
+    }
+    showbuttons()
+
 
     //const unhideButtons = document.getElementById('unhideButtons')
-/*
-    const showMenu = () => {
-      //unhideButtons.classList.remove('hide');
-      document.getElementById('hideLogin').style.display = 'none';
-    }
-    showMenu()
-    const filterSteamBtn = document.getElementById('filterSteamBtn');
-    const filterByPrivacyBtn = document.getElementById('filterByPrivacyBtn');
-    const showDropdownButtons = () => {
-      filterSteamBtn.classList.remove('hide');
-      filterByPrivacyBtn.classList.remove('hide');
-    }
-    showDropdownButtons();
+    /*
+        const showMenu = () => {
+          //unhideButtons.classList.remove('hide');
+          document.getElementById('hideLogin').style.display = 'none';
+        }
+        showMenu()
+        const filterSteamBtn = document.getElementById('filterSteamBtn');
+        const filterByPrivacyBtn = document.getElementById('filterByPrivacyBtn');
+        const showDropdownButtons = () => {
+          filterSteamBtn.classList.remove('hide');
+          filterByPrivacyBtn.classList.remove('hide');
+        }
+        showDropdownButtons();
 
-    */
+        */
 
 
 
