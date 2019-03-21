@@ -44,7 +44,7 @@ libreria.controlador('miControlador', {
 
 
 
-  forumFunctions:()=>{
+  forumFunctions: () => {
 
     const generalTable = document.getElementById('state-user');
 
@@ -54,59 +54,50 @@ libreria.controlador('miControlador', {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
         generalTable.innerHTML += `
-          <div class="card  text-center alert alert-info">
-             <p>${doc.data().name}</p>
-            <p>${doc.data().first}</p>
-            <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-            <p>
-            <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-            <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-           <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-           <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
-           </p>
+        <div class="row white">
+          <blockquote >
+          <div class="section">
+          <p class="flow-text">${doc.data().first}</p>
+          <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
           </div>
-          <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-           <div class="modal-body">
-           <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
-               </div>
-            <div class="modal-footer">
-              <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
-            </div>
+            <div class="section">
+              <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+              <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+              <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+                <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+                <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+                </div>
+          </blockquote>
           </div>
-        </div>
-      </div>
           `
       });
     });
 
-// Función para guardar datos de usuario logueado en imprimirlas en el foro
-(function () {
-  let firebase = app_fireBase;
-  //let uid = null;
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      localStorage.setItem('user', JSON.stringify(user))
-      name = user.displayName;
-      eMail = user.email;
-      photoURL = user.photoURL;
-      uid = user.uid;
+    // Función para guardar datos de usuario logueado en imprimirlas en el foro
+    (function () {
+      let firebase = app_fireBase;
+      //let uid = null;
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          localStorage.setItem('user', JSON.stringify(user))
+          name = user.displayName;
+          eMail = user.email;
+          photoURL = user.photoURL;
+          uid = user.uid;
 
-      let printPhoto = document.getElementById('print-photo')
-      let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
-     
-      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
-     
-      console.log(nameCurrent)
-      console.log(uid)
-    }
-    });
-})()
+          let printPhoto = document.getElementById('print-photo')
+          let photo = user.photoURL
+          printPhoto.innerHTML = `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
+
+          let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+
+          console.log(nameCurrent)
+          console.log(uid)
+        }
+      });
+    })()
 
 
 
@@ -123,7 +114,7 @@ libreria.controlador('miControlador', {
 
 
   printComunity: () => {
-       db = firebase.firestore();
+    db = firebase.firestore();
 
     let table = document.getElementById('table');
     //datos de usuarios
@@ -141,55 +132,56 @@ libreria.controlador('miControlador', {
       });
     });
   },
-  profileFunctions:()=>{
+  profileFunctions: () => {
 
-db = firebase.firestore();
+    db = firebase.firestore();
 
 
-//--------------------------trae datos de inicio de sesion ---------------------------//
+    //--------------------------trae datos de inicio de sesion ---------------------------//
 
-const userCurrent = JSON.parse(localStorage.getItem('user'));
-console.log(userCurrent)
-let name = document.getElementById('name').value = userCurrent.displayName;
+    const userCurrent = JSON.parse(localStorage.getItem('user'));
+    console.log(userCurrent)
+    let name = document.getElementById('name').value = userCurrent.displayName;
 
-console.log (name)
-let eMail = document.getElementById('eMail').value = userCurrent.email;
-let printPhoto = document.getElementById('print-photo');
-let photo = userCurrent.photoURL;
-let uidCurrent = userCurrent.uid;
-printPhoto.innerHTML =  `<div><img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img></div>`
+    console.log(name)
+    let eMail = document.getElementById('eMail').value = userCurrent.email;
+    let printPhoto = document.getElementById('print-photo');
+    let photo = userCurrent.photoURL;
+    let uidCurrent = userCurrent.uid;
+    printPhoto.innerHTML = `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
 
-//----------------------Guarda datos------------------------------------//
 
-const saveProfile = document.getElementById('saveProfile');
-saveProfile.addEventListener("click", () => {
+    //----------------------Guarda datos------------------------------------//
 
-  let name = document.getElementById('name').value;
-  //let lastName = document.getElementById('lastName').value;
-  let userName = document.getElementById('userName').value;
-  let interestArea = document.getElementById('interestArea').value;
-  let eMail = document.getElementById('eMail').value;
-  let uid = uidCurrent;
-  if (name === "" || /*lastName === ""||*/ userName === "" || interestArea === "" || eMail === "") {
-      alert('Por favor, completa todos los campos del formulario')
-  } else {
-      db.collection('members').add({
+    const saveProfile = document.getElementById('saveProfile');
+    saveProfile.addEventListener("click", () => {
+
+      let name = document.getElementById('name').value;
+      //let lastName = document.getElementById('lastName').value;
+      let userName = document.getElementById('userName').value;
+      let interestArea = document.getElementById('interestArea').value;
+      let eMail = document.getElementById('eMail').value;
+      let uid = uidCurrent;
+      if (name === "" || /*lastName === ""||*/ userName === "" || interestArea === "" || eMail === "") {
+        alert('Por favor, completa todos los campos del formulario')
+      } else {
+        db.collection('members').add({
           first: name,
-         // last: lastName,
+          // last: lastName,
           user: userName,
           interest: interestArea,
           contactEmail: eMail,
           uid: uidCurrent
-      }).then((docRef) => {
+        }).then((docRef) => {
           console.log('Document written with ID:', docRef.id);
           document.getElementById('name').value = '';
-         // document.getElementById('lastName').value = '';
+          // document.getElementById('lastName').value = '';
           document.getElementById('userName').value = '';
           document.getElementById('interestArea').value = '';
           document.getElementById('eMail').value = '';
-      }).catch((error) => {
+        }).catch((error) => {
           console.log('Error adding document:', error);
-      }).then(() => {
+        }).then(() => {
           let cardName = document.getElementById('cardName');
           let cardUser = document.getElementById('cardUser');
           let cardInterest = document.getElementById('cardInterest');
@@ -198,13 +190,13 @@ saveProfile.addEventListener("click", () => {
           cardUser.innerHTML = `${userName}`;
           cardInterest.innerHTML = `${interestArea}`;
           cardContact.innerHTML = `${eMail}`;
-      })
+        })
+      }
+
+    })
+
+
   }
-
-})
-
-
-   }
 
 
 })

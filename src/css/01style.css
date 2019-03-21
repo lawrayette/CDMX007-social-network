@@ -8,7 +8,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+blockquote {
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 0;
+}
 body {
     background-color: rgb(219, 208, 219);
   }
