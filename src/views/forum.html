@@ -1,28 +1,29 @@
 <div>
   <main class="forum-container">
  
-    <div id="div-area">
-      <!-- <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p> -->
-        <div id="inputs">
-          <!-- cambiosJanet -->
-          <div id="print-photo" >foto aqui</div>
-          <p id="name-input"></p>
-              <!-- termina cambiosJanet -->
+    <div class="container"> 
+        <div class="row"> 
     
-        <!-- <input id = "name-input" type="text" placeholder="Nombre"> -->
-        <select id="area-select">
-            <option value="Science">Ciencia</option>
-            <option value="Technology">Tecnología</option>
-            <option value="Engineering">Ingeniería</option>
-            <option value="Arts">Arte</option>
-            <option value="Math">Matemáticas</option>
-          </select>
-          <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-    
-          <!--<input type="file" id="input-image">
-          <progress value="0" max ="100" id="uploader"></progress>-->
-    
-          <div>
+
+          <div class="col s12 m8 l8 offset -l4 post-wall"> <!-- Note that "m8 l9" was added -->
+                     <div class="card">
+                      <div class=" grey lighten-4">
+                            <div id="print-photo" class="photo-post-style" >foto aqui</div>
+                            <p id="name-input" class="post-text"></p>
+                          <p class="post-text">Crea un post</p>
+                          </div>
+                       <div  id="inputs">
+                           <div class="align-content-post">
+                               <textarea name="textarea" id="input" cols="30" rows="10" class="form-control-textarea" placeholder="¿Qué nos quieres compartir hoy?"></textarea>
+                           </div>
+                           <div class="grey lighten-4">
+                           <p><label><input type="checkbox" /><span>Solo yo</span></label></p>   
+                            
+                           <div class="chip">Ciencia<i class="close material-icons"></i></div>
+                           <div class="chip">Tecnología<i class="close material-icons"></i></div>
+                           <div class="chip">Ingeniería<i class="close material-icons"></i></div>
+                           <div class="chip">Arte<i class="close material-icons"></i></div>
+                           <div class="chip">Matemáticas<i class="close material-icons"></i></div>
     
         <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
     

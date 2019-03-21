@@ -48,7 +48,7 @@ let mainApp = {};
 function send() {
   let textInput = document.getElementById('input').value;
   // let nameInput = document.getElementById('name-input').value;
-  let areaInput = document.getElementById('area-select').value;
+ // let areaInput = document.getElementById('area-select').value;
   let privateMsgChecked = document.getElementById('private').checked
 
   db.collection("state").add({

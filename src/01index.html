@@ -24,21 +24,23 @@
 
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Ciencia</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Tecnología</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Ingeniería</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Arte</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Matemáticas</a></li>
-  </ul>
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">Público</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Privado</a></li>
-  </ul>
+      <li><a id="Science" class="area-name" href="#!">Ciencia</a></li>
+      <li class="divider"></li>
+      <li><a id="Technology" class="area-name" href="#!">Tecnología</a></li>
+      <li class="divider"></li>
+      <li><a id="Engineering" class="area-name" href="#!">Ingeniería</a></li>
+      <li class="divider"></li>
+      <li><a id="Arts" class="area-name" href="#!">Arte</a></li>
+      <li class="divider"></li>
+      <li><a id="Math" class="area-name" href="#!">Matemáticas</a></li>
+    </ul>
+    <ul id="list-privacy" class="dropdown-content">
+      <li><a id="all" class = "privacy-name" href="#!">Todas</a></li>
+      <li class="divider"></li>
+      <li><a id="public" class = "privacy-name" href="#!">Público</a></li>
+      <li class="divider"></li>
+      <li><a id="private" class = "privacy-name" href="#!">Privado</a></li>
+    </ul>
 
   <nav>
     <div class="nav-wrapper">
@@ -47,16 +49,21 @@
             color=#fffff></i></i></a>
       <ul id="menuButtons" class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
-        <li><a id="filterSteamBtn" class="dropdown-trigger hide" href="#/filterSteam" data-target="dropdown1">Filtro por
+        <li><a id="filterSteamBtn" class="dropdown-trigger" href="#/filterSteam" data-target="dropdown1">Filtro por
             tema</a></li>
-        <li><a id="filterByPrivacyBtn" class="dropdown-trigger hide" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
+        <li><a id="filterByPrivacyBtn" class="dropdown-trigger" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
         <li><a href="#/">Inicio</a></li>
         <li><a href="#/forum">Foro</a></li>
-        <li><a href="#/myProfile">Mi perfil</a></li>
+        <li><a href="#/myProfile">
+          <div id="profile-photo" class="nav-bar-avatar">foto aqui</div>
+        </a></li>
+      <li><a href="#/myProfile">
+          <p id="name-input"></p>
+        </a></li>
         <li><a href="#/comunity">Comunidad steam</a></li>
-        <li><a href="#/01noticias">Próximos eventos</a></li>
-        <li><a href="#/01noticias">Cerrar sesión</a></li>
-        <li><a href="#/02login">Login</a></li>
+        <li><a href="#/news">Próximos eventos</a></li>
+        <li><a href="#/news">Cerrar sesión</a></li>
+        <li><a href="#/login">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -72,7 +79,7 @@
 
 
 
-  <div id='vista'>
+  <div id='vista' class="container col s12 m12 l12">
 
   </div>
 
@@ -113,6 +120,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="./firebase.js"></script>
   <script src="./js/libreria.js"></script>
   <script src="./js/controlador.js"></script>
