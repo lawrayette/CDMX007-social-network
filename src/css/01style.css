@@ -148,6 +148,10 @@ nav{
     height: 6rem;
       }
 
+      .tweet{
+          position: relative;
+          top: 15.5px;
+      }
 
   /*----Colores de chips etiquetas filtros----*/
   
@@ -255,4 +259,15 @@ table.highlight tbody tr:hover {
 
 .copyright-size{
     font-size: 12px;
+}
+
+/*--applause--*/
+.clap-button{
+    width: 30px !important;
+    height: 30px !important;
+}
+#applause-container {
+    position: relative;
+    bottom: 75px;
+    right: 7%;
 }

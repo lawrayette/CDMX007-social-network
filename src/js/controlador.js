@@ -29,10 +29,6 @@ libreria.controlador('miControlador', {
 
 
   forumFunctions:()=>{
-<<<<<<< HEAD
-=======
-
->>>>>>> upstream/master
     const generalTable = document.getElementById('state-user');
 
     let db = firebase.firestore();
@@ -49,8 +45,8 @@ libreria.controlador('miControlador', {
             <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
             <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
            <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-           <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
+           <img class="tweet" src="https://simplesharebuttons.com/images/somacro/twitter.png" width="40 height="40" alt="Twitter" /></a>
+           <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
            </p>
           </div>
           <!-- Modal -->
@@ -119,7 +115,8 @@ libreria.controlador('miControlador', {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         table.innerHTML += `
-                <tr>
+              
+        <tr>
                 <td>${doc.data().first}</td>
                 <td>${doc.data().user}</td>
                 <td>${doc.data().interest}</td>
