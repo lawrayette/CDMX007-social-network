@@ -8,7 +8,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+blockquote {
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 0;
+}
 body {
     background-color: rgb(219, 208, 219);
   }
@@ -153,17 +157,23 @@ nav{
           top: 15.5px;
       }
 
+
+
+      .view-height{
+          min-height:1000px;
+      }
+
   /*----Colores de chips etiquetas filtros----*/
   
   .chip{
     background-color: rgba(220, 20, 60, 0.404);
   }
 
-
-
-
-
-
+ 
+.card-on-profile-page{
+    position:relative;
+    top:50px;
+}
 
 
 
@@ -196,7 +206,7 @@ nav{
     border-radius: 50%;
     background: #AD29B6;
     color: white;
-    text-0: center;
+    
 }
 
 /*---comunity table-*/

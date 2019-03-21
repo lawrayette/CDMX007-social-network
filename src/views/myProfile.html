@@ -1,56 +1,71 @@
 <div>
 
-        <div class="container-fluid text-center py-5 cont-purple">
-            <div class="button-right"> <a href="user.html"><i class="far fa-times-circle" style="color:white; font-size: 25px; text-align: right; font-style: bold" ></i></a></div>
-            <div class ="container text-white">
-             <h2 class ="display-4"><b>Mi perfil</b></h2>
-        <p class ="lead">Personaliza tu perfil y permite que la comunidad te conozca</p>
-        <div id="print-photo" >foto aqui</div>
-               </div>
-             </div>
-    
-           <div>
-          <form class=container id="form">
-            <div class="form-row my-4">
-              <div class="col-md-4 mb-3">
-                <label>Nombre</label>
-                <input type="text" id="name" class="form-control" >
-              </div>
-             <!--<div class="col-md-4 mb-3">
-                <label> Apellido</label>
-                <input type="text" id ="lastName" class="form-control" >
-              </div>-->
-              <div class="col-md-4 mb-3">
-                <label> Nombre de usuario</label>
-                <div class="input-group">
-                  <input type="text" id="userName" class="form-control">
-                </div>
-              </div>
-            </div>
-            <div class="form-row my-4">
-              <div class="col-md-6 mb-3">
-                <label>Área(s) de interés STEAM</label>
-                <input type="text" id="interestArea" class="form-control" >
-              </div>
-              <div class="col-md-3 mb-3">
-                <label>Correo electrónico</label>
-                <input type="text" id="eMail" class="form-control">
-              </div>
-            </div>
-          </form>
-         <button id="saveProfile" class="btnProfile" type="submit" >Guardar</button>
-     <button id="vid-members" class="btnMembers">Conoce a otros miembros</button>
-       <div class="card bg-light mb-3 cardProfile" style="max-width: 18rem;">
-          <div class="card-header" id ="cardName"></div>
-          <div class="card-body">
-            <h2 class ="card-title" id="cardUser"></h2>
-            <h5 class="card-title" id="cardInterest"></h5>
-            <p class="card-text" id="cardContact"></p>
-          </div>
-        </div>
-      </div>  
-    
-    
+  
+    <div class="container text-white">
+      <h2 class="display-4 center"><b>Mi perfil</b></h2>
+     <blockquote>
+        <h5 class="lead display-4 center">Personaliza tu perfil y permite que la comunidad te conozca</h5>
+     </blockquote> 
+     
     </div>
-    
-    
+ 
+
+  <div>
+
+    <!--Form-->
+    <div class="container white card-on-profile-page">
+        <form class="row">
+          <div class="col s12">
+            <div class= "col l2 m5 offset-m5 ps4 offset-s3 ">
+          <div id="print-photo"></div>
+        </div>
+            <div class="input-field col l4 s10">
+              <input  id="name" type="text" class="validate">
+              <label for="first_name"></label>
+              <span class="helper-text">Nombre</span>
+            </div>
+            <div class="input-field col l4 s10">
+                <i class="material-icons prefix">account_circle</i>
+              <input  id="userName" type="text" class="validate">
+              <label for="user_name"></label>
+              <span class="helper-text">Nombre de usuario</span>
+            </div>
+          </div>
+            <div class="row">
+              <div class="input-field col l5 offset-l1 s10">
+                <input  id="interestArea" type="text" class="validate">
+                <label for="interest-Area"></label>
+                <span class="helper-text">Área de interés STEAM</span>
+              </div>
+              <div class="input-field col l5 s10">
+                <input id="eMail" type="email" class="validate">
+                <label for="email"></label>
+                <span class="helper-text offset-l2">e-mail</span>
+              </div>
+            </div>
+      
+    <div class="row">
+           <a id="saveProfile" class="waves-effect waves-yellow lighten-4 btn purple accent-3 col l2 offset-l5 s4 offset-s4">Guardar</a>
+      </div>
+   
+      
+        </form>
+      </div>
+     
+   
+    <div class="card bg-light mb-3 cardProfile" style="max-width: 18rem;">
+      <div class="card-header" id="cardName"></div>
+      <div class="card-body">
+        <h2 class="card-title" id="cardUser"></h2>
+        <h5 class="card-title" id="cardInterest"></h5>
+        <p class="card-text" id="cardContact"></p>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+

@@ -24,7 +24,7 @@ let eMail = document.getElementById('eMail').value = userCurrent.email
 let printPhoto = document.getElementById('print-photo')
 let photo = userCurrent.photoURL
 let uidCurrent = userCurrent.uid
-printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
+printPhoto.innerHTML =  `<img  src="${photo}" alt="FotoPerfil" style="width: 500px; border-radius:60%"></img>`
 
 
 //----------------------Guarda datos------------------------------------//
