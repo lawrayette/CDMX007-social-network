@@ -153,17 +153,23 @@ nav{
       }
 
 
+
+
+      .view-height{
+          min-height:1000px;
+      }
+
   /*----Colores de chips etiquetas filtros----*/
   
   .chip{
     background-color: rgba(220, 20, 60, 0.404);
   }
 
-
-
-
-
-
+ 
+.card-on-profile-page{
+    position:relative;
+    top:50px;
+}
 
 
 
