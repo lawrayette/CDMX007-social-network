@@ -1,192 +1,189 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
+
+</html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image" href="./assets/favicon.png">
-    <!-- Compiled and minified CSS materialize-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     <!-- Iconos -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
-     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-     <!-- Fuentes -->
-     <!-- Estilos -->
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/01style.css">
-    <!-- Firebase-->
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
- 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image" href="./assets/favicon.png">
+  <!-- Compiled and minified CSS materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Fuentes -->
+  <!-- Estilos -->
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/01style.css">
+  <!-- Firebase-->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <!--applause button-->
+  <link rel="stylesheet" href="applause_button.css">
+  <script src="applause_button.js"></script>
+
 </head>
+
 <body>
+
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a id="Science" class="area-name" href="#!">Ciencia</a></li>
+    <li class="divider"></li>
+    <li><a id="Technology" class="area-name" href="#!">Tecnología</a></li>
+    <li class="divider"></li>
+    <li><a id="Engineering" class="area-name" href="#!">Ingeniería</a></li>
+    <li class="divider"></li>
+    <li><a id="Arts" class="area-name" href="#!">Arte</a></li>
+    <li class="divider"></li>
+    <li><a id="Math" class="area-name" href="#!">Matemáticas</a></li>
+  </ul>
+  <ul id="list-privacy" class="dropdown-content">
+    <li><a id="all" class = "privacy-name" href="#!">Todas</a></li>
+    <li class="divider"></li>
+    <li><a id="public" class = "privacy-name" href="#!">Público</a></li>
+    <li class="divider"></li>
+    <li><a id="private" class = "privacy-name" href="#!">Privado</a></li>
+  </ul>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm" class="logo-login"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars"
+            color=#fffff></i></i></a>
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a id="filterSteamBtn" class="dropdown-trigger" href="#/filterSteam" data-target="dropdown1">Filtro por
+            tema</a></li>
+        <li><a id="filter-by-privacy-btn" class="dropdown-trigger" href="#/filterByPrivacy"
+            data-target="list-privacy">Visualización</i></a></li>
+        <li><a href="#/">Inicio</a></li>
+        <li><a href="#/forum">Foro</a></li>
+        <li><a href="#/myProfile">Mi perfil</a></li>
+            <div id="print-photo" class="nav-bar-avatar">foto aqui</div> 
+          
+        <li><a href="#/myProfile">
+            <p id="name-input"></p>
+          </a></li> 
+        <li><a href="#/comunity">Comunidad steam</a></li>
+        <li><a href="#/01noticias">Próximos eventos</a></li>
+        <li><a href="#/01noticias">Cerrar sesión</a></li>
+    </div>
+    <li><a id="hideLogin" href="#/02login">Login</a></li>
+    </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#/"><i class="fas fa-home"></i></a></li>
+    <li><a href="#/forum"><i class="fas fa-user-friends"></i></a></li>
+    <li><a href="#/myProfile"><i class="fas fa-user-astronaut"></i></a></li>
+    <li><a href="#/comunity"><i class="fas fa-user-friends"></i></a></li>
+    <li><a href="#/01noticias"><i class="fas fa-calendar-alt"></i></a></li>
+    <li><a href="#/02login">Cerrar Sesión</a></li>
+  </ul>
+  <!-- Termina navbar -->
+
+
+  <!-- Crear post -->
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 l8 post-wall">
+        <div class="card">
+          <div class=" grey lighten-4">
+            <div id="print-photo-post" class="nav-bar-avatar">foto aqui</div></a></li>
+            <p id="name-input-post" class="post-text"></p>
+            <p class="post-text">Crea un post</p>
+          </div>
+          <div id="inputs">
+            <div class="align-content-post">
+              <textarea name="textarea" id="input" cols="30" rows="10" class="form-control-textarea"
+                placeholder="¿Qué nos quieres compartir hoy?"></textarea>
+            </div>
+            <div class="grey lighten-4">
+              <p><label><input id="private" type="checkbox" name="private" /><span>Solo yo</span></label></p>
     
-        <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Ciencia</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Tecnología</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Ingeniería</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Arte</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Matemáticas</a></li>
-              </ul>
-              <ul id="dropdown2" class="dropdown-content">
-                  <li><a href="#!">Público</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#!">Privado</a></li>
-                </ul>
-            
-              <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login"></a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars" color=#fffff></i></i></a>
-                    <ul class="right hide-on-med-and-down">
-                      <!-- Dropdown Trigger -->
-                      <li><a id="filterSteamBtn"class="dropdown-trigger hide " href="#/filterSteam" data-target="dropdown1">Filtro por tema</a></li>
-                      <li><a id="filterByPrivacyBtn" class="dropdown-trigger hide" href="#/filterByPrivacy" data-target="dropdown2">Visualización</i></a></li>
-                      <li><a href ="#/">Inicio</a></li>
-                      <li><a href="#/forum">Foro</a></li>
-                      <li><a href ="#/myProfile">
-                        <div id="print-photo nav-bar-avatar" >foto aqui</div>
-                        <!-- <p id="name-input"></p> -->
-                            </a></li>
-                        
-
-                      <li><a href="#/comunity">Comunidad steam</a></li>
-                      <li><a href="#/01noticias">Próximos eventos</a></li>
-                      <li><a href="#/01noticias">Cerrar sesión</a></li></div>
-                     <li><a id ="hideLogin" href="#/02login">Login</a></li>
-                  </ul>
-                </div>
-              </nav>
-              <ul class="sidenav" id="mobile-demo">
-                  <li><a href ="#/"><i class="fas fa-home"></i></a></li>
-                  <li><a href="#/forum"><i class="fas fa-user-friends"></i></a></li>
-                  <li><a href ="#/myProfile"><i class="fas fa-user-astronaut"></i></a></li>
-                  <li><a href="#/comunity"><i class="fas fa-user-friends"></i></a></li>
-                  <li><a href="#/01noticias"><i class="fas fa-calendar-alt"></i></a></li>
-                  <li><a href="#/02login">Cerrar Sesión</a></li>
-                </ul>
-                    <!-- Termina navbar -->
-
-
-<!-- Crear post -->
-
-<div class="container"> 
-        <div class="row"> 
-    
-
-          <div class="col s12 m8 l8 offset -l4 post-wall"> <!-- Note that "m8 l9" was added -->
-                     <div class="card">
-                      <div class=" grey lighten-4">
-                            <div id="print-photo" class="photo-post-style" >foto aqui</div>
-                            <p id="name-input" class="post-text"></p>
-                          <p class="post-text">Crea un post</p>
-                          </div>
-                       <div  id="inputs">
-                           <div class="align-content-post">
-                               <textarea name="textarea" id="input" cols="30" rows="10" class="form-control-textarea" placeholder="¿Qué nos quieres compartir hoy?"></textarea>
-                           </div>
-                           <div class="grey lighten-4">
-                           <p><label><input type="checkbox" /><span>Solo yo</span></label></p>   
-                            
-                           <div class="chip">Ciencia<i class="close material-icons"></i></div>
-                           <div class="chip">Tecnología<i class="close material-icons"></i></div>
-                           <div class="chip">Ingeniería<i class="close material-icons"></i></div>
-                           <div class="chip">Arte<i class="close material-icons"></i></div>
-                           <div class="chip">Matemáticas<i class="close material-icons"></i></div>
-                                                  <!-- Dropdown Trigger -->
-   <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Tema</a>
-  <!-- Dropdown Structure -->
-  <ul  id='dropdown3' class='dropdown-content'>
-        <option value="Science">Ciencia</option>
+              
+              <select id="dropdown3" class="browser-default">
+                <option value="Choose your option">Choose your option</option>
+                <option value="Science">Ciencia</option>
         <option value="Technology">Tecnología</option>
         <option value="Engineering">Ingeniería</option>
         <option value="Arts">Arte</option>
         <option value="Math">Matemáticas</option>
-    </ul>
-                            
-
-      <!-- <ul id='dropdown3' class='dropdown-content'>
-            <li><a href="#!">Ciencia</a></li>
-           <li><a href="#!">Tecnología</a></li>
-             <li><a href="#!">Ingeniería</a></li>
-             <li><a href="#!">Arte</a></li>
-             <li><a href="#!">Matemáticas</a></li>
-    </ul> -->
+              </select>
 
 
+              <button id="sendButton" class="btn waves-effect waves-light" onclick="send()" type="button"
+                name="action">Compartir
+              </button> 
 
 
-
-
-
-
-
-                        </div>
-                  </div>
-                   </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-   <!-- Post  -->
-   <div id= "state-user">
+
+    <!-- Post  -->
+    <div id="state-user">
     </div>
-  
-    <div id= "state-user-filter">
+
+    <div id="state-user-filter">
     </div>
-  
-    </main>
+  </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <img src="./assets/logo3cm.png" alt="logo3cm" class="logo-login-footer">
+          <p class="grey-text text-lighten-4 footer-text">Es un proyecto que busca entrelazar personas que comparten el
+            amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.</p>
+          <br>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <p class="white-text footer-text">Tonalá 10, Roma Sur, 06700, CDMX.</p>
+          <p class="white-text footer-text">01 800 314 159 265</p>
+          <p class="white-text footer-text">info@point-steam.com</p>
+          <br>
+          <ul>
+            <li><a class="fab fa-twitter" href="#!">Twitter</a></li>
+            <li><a class="fab fa-instagram" href="#!">Instagram</a></li>
+            <li><a class="fab fa-github" href="https://github.com/jaurinu/CDMX007-social-network">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2019 .STEAM, 2019.
+      </div>
+    </div>
+  </footer>
 
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
 
 
-
-
-                          <!-- Footer -->
-              <footer class="page-footer">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col l6 s12">
-                          <img src="./assets/logo3cm.png" alt="logo3cm"  class="logo-login-footer">
-                           <p class="grey-text text-lighten-4 footer-text">Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.</p>
-                        <br>
-                          </div>
-                        <div class="col l4 offset-l2 s12">
-                          <p class="white-text footer-text">Tonalá 10, Roma Sur, 06700, CDMX.</p>
-                          <p class="white-text footer-text">01 800 314 159 265</p>
-                          <p class="white-text footer-text">info@point-steam.com</p>
-                          <br>
-                          <ul>
-                            <li><a class="fab fa-twitter" href="#!">Twitter</a></li>
-                            <li><a class="fab fa-instagram" href="#!">Instagram</a></li>
-                            <li><a class="fab fa-github" href="https://github.com/jaurinu/CDMX007-social-network">Github</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="footer-copyright">
-                      <div class="container">
-                      © 2019 .STEAM, 2019.
-                      </div>
-                    </div>
-                  </footer>
-  
-
-
-                  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                  <script src="fireBase.js"></script>
-                  <script src="./forum1.js"></script>
-    <script src="./main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="fireBase.js"></script>
+  <script src="./forum1.js"></script>
+  <script src="./mainforum.js"></script>
 </body>
+
 </html>

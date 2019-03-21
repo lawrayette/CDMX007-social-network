@@ -19,6 +19,7 @@ firebase.initializeApp({
 const userCurrent = JSON.parse(localStorage.getItem('user'));
 console.log(userCurrent)
 let name = document.getElementById('name').value = userCurrent.displayName
+console.log (name)
 let eMail = document.getElementById('eMail').value = userCurrent.email
 let printPhoto = document.getElementById('print-photo')
 let photo = userCurrent.photoURL
