@@ -2,47 +2,17 @@ const generalTable = document.getElementById('state-user');
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 // const image = document.getElementById('input.image');//borrar//
-let mainApp = {};
 
 
-//let nameInput = document.getElementById('name-input')
-(function () {
-  let firebase = app_fireBase;
-  //let uid = null;
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      localStorage.setItem('user', JSON.stringify(user))
-      name = user.displayName;
-      eMail = user.email;
-      photoURL = user.photoURL;
-      uid = user.uid;
 
-      let printPhoto = document.getElementById('print-photo')
-      let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
-     
-      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
-     
-      console.log(nameCurrent)
-      console.log(uid)
-      
-    } else {
-      //redirect to login page
-      uid = null;
-      window.location.replace("index.html");
-    }
-  });
-  
-  console.log(name)
-  //console.log(uid)
+//funcion para desloguear
 
-
+  let mainApp = {};
   function logOut() {
     firebase.auth().signOut();
   }
   mainApp.logOut = logOut;
-})()
+
 
 // Crea los datos y los manda a Firestore
 function send() {
