@@ -59,8 +59,8 @@ libreria.controlador('miControlador', {
             <p>${doc.data().first}</p>
             <li class="area" value="${doc.data().area}">${doc.data().area}</li>
             <p>
-            <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-            <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+            <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+            <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
            <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
            <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
@@ -98,7 +98,7 @@ libreria.controlador('miControlador', {
 
       let printPhoto = document.getElementById('print-photo')
       let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
+      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
      
       let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
      

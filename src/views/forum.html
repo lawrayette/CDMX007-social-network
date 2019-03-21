@@ -1,132 +1,52 @@
-<div>
-  <main class="forum-container">
- 
-    <div id="div-area">
-      <!-- <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p> -->
-        <div class="row">
-         <div  class="container col s12 m6 l6 offset-m3 offset-l3">
-      <div id="inputs">
-        <div id="print-photo" >foto aqui</div>
-        
-        <div >
-          <select id="dropdown3" class="browser-default">
-            <option value="Choose your option">Choose your option</option>
-            <option value="Science">Ciencia</option>
-            <option value="Technology">Tecnología</option>
-            <option value="Engineering">Ingeniería</option>
-            <option value="Arts">Arte</option>
-            <option value="Math">Matemáticas</option>
-          </select>
-        </div>
-          <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div>
-        <div><button id="sendButton" class="button-send-input " onclick ="send()"> Enviar </button></div>
-      </div>
-    <div>
-      <label for="private">Solo yo</label>
-        <input id="private" type="checkbox" name="private">
-      </div>
-        
-    </div>
-  </div>
-</div>
-    <div class="container col s12 m6 l6 offset-m3 offset-l3" id= "state-user">
-    </div>
+<div class="row  ">
+
+  <div class="col s5 m3 l3">
+      <blockquote class="z-depth-5">
+    <div id="print-photo" class="section">foto aqui</div>
     
-    <div id= "state-user-filter">
-    </div> 
-</div>
-    
+        <p class="flow-text section" id="name-input"></p>
+    </blockquote>
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div> -->
-
-      <!-- Modal Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
-
-  <!-- Modal Structure -->
-  <!-- <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
+    <!-- Grey navigation panel -->
   </div>
-  </div> -->
 
-  <script src="forum.js"></script>
-  </body>
-  </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <main class="forum-container">
- 
-<div id="div-area"> -->
-  <!-- <p>Bienvenida/o a punto STEAM. Puedes publicar de forma anónima o decirnos quién eres :)</p> -->
-    <!-- <div id="inputs"> -->
-      <!-- cambiosJanet -->
-      <div id="print-photo" >foto aqui</div>
-      <p id="name-input"></p> 
-          <!-- termina cambiosJanet -->
-
-    <!-- <input id = "name-input" type="text" placeholder="Nombre"> -->
-    <!-- <select id="area-select">
-        <option value="Science">Ciencia</option>
-        <option value="Technology">Tecnología</option>
-        <option value="Engineering">Ingeniería</option>
-        <option value="Arts">Arte</option>
-        <option value="Math">Matemáticas</option>
-      </select>
-      <textarea name="textarea" class="form-control-textarea" id="input" cols="35" rows="1" placeholder="¿Qué nos quieres compartir hoy?"></textarea></div> -->
-
-      <!--<input type="file" id="input-image">
-      <progress value="0" max ="100" id="uploader"></progress>-->
-
-      <!-- <div>
-
-    <button id="sendButton" class="button-send-input" onclick ="send()"> Enviar </button></div>
-
-<div>
-  <label for="private">Solo yo</label>
-    <input id="private" type="checkbox" name="private">
+  <div class="container  col s4 m6 l6">
+    <!-- Teal page content  -->
+    <div class="section">
+      <div class="col s4 m4 l4">
+        <select id="dropdown3" class="browser-default">
+          <option value="Choose your option">Choose your option</option>
+          <option value="Science">Ciencia</option>
+          <option value="Technology">Tecnología</option>
+          <option value="Engineering">Ingeniería</option>
+          <option value="Arts">Arte</option>
+          <option value="Math">Matemáticas</option>
+        </select>
+      </div>
+      <div>
+        <p>
+          <label>
+            <input id="private" type="checkbox" />
+            <span>Solo Yo</span>
+          </label>
+        </p>
+      </div>
+      <div class="row">
+          <div class="input-field col s12">
+              <input placeholder="Placeholder" id="input" type="text" class="validate">
+              <label for="first_name">¿Qué nos quieres compartir hoy?</label>
+          </div>
+       </div>
+       <button id= "sendButton" onclick = "send()" class="btn btn-sm waves-effect waves-light purple accent-4" type="submit" name="action">Publicar
+          <i class="material-icons right">near_me</i>
+        </button>
     </div>
-</div>
-<div id= "state-user">
+    <div id= "state-user"></div>
+    <div id= "state-user-filter"></div>
+
+
+  </div>
+
 </div>
 
-<div id= "state-user-filter">
-</div> -->
+
