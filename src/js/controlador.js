@@ -1,6 +1,5 @@
 libreria.controlador('miControlador', {
 
-
   login: () => {
     (function () {
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -116,7 +115,7 @@ libreria.controlador('miControlador', {
         console.log(`${doc.id} => ${doc.data()}`);
         table.innerHTML += `
               
-        <tr>
+        <tr class="text-on-table">
                 <td>${doc.data().first}</td>
                 <td>${doc.data().user}</td>
                 <td>${doc.data().interest}</td>

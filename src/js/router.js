@@ -6,7 +6,7 @@ window.libreria.getId('vista').enrutar()
 .ruta('/forum', './views/forum.html', 'miControlador', function(){
         libreria.getCtrl().forumFunctions()
      })
-.ruta('/01noticias', './views/01noticias.html', null, null)
+.ruta('/news', './views/news.html', null, null)
 .ruta('/comunity', './views/comunity.html', 'miControlador', function (){
         libreria.getCtrl().printComunity()
 })

@@ -196,15 +196,24 @@ nav{
     border-radius: 50%;
     background: #AD29B6;
     color: white;
-    text-align: center;
+    text-0: center;
 }
 
 /*---comunity table-*/
+
+.font-size-on-subtitle-members{
+    font-size:16px;
+}
 table.highlight tbody tr:hover {
     background-color: black !important;
     color: whitesmoke !important;
 }
-
+.text-on-table{
+    font-size: 9px;
+}
+.propierty-on-columns{
+    font-size: 11px;
+}
 .nav-bar-avatar {
     margin-top: 14px;
   }
@@ -271,3 +280,26 @@ table.highlight tbody tr:hover {
     bottom: 75px;
     right: 7%;
 }
+
+
+@media (min-width: 767px) {
+
+
+    .font-size-on-subtitle-members{
+        font-size:20px;
+    }
+    .text-on-table{
+        font-size: 16px;
+    }
+
+   .propierty-on-columns{
+       font-size: 18px;
+   }
+
+
+
+}
+
+
+
+
