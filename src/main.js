@@ -2,100 +2,48 @@ const generalTable = document.getElementById('state-user');
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
 // const image = document.getElementById('input.image');//borrar//
+let mainApp = {};
 
 
+//let nameInput = document.getElementById('name-input')
+(function () {
+  let firebase = app_fireBase;
+  //let uid = null;
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      localStorage.setItem('user', JSON.stringify(user))
+      name = user.displayName;
+      eMail = user.email;
+      photoURL = user.photoURL;
+      uid = user.uid;
 
-//funcion para desloguear
-
-  let mainApp = {};
+      let printPhoto = document.getElementById('print-photo')
+      let photo = user.photoURL
+      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
+     
+      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+     
+      console.log(nameCurrent)
+      console.log(uid)
+      
+    } else {
+      //redirect to login page
+      uid = null;
+      window.location.replace("index.html");
+    }
+  });
+  
+  console.log(name)
+  //console.log(uid)
   function logOut() {
     firebase.auth().signOut();
   }
   mainApp.logOut = logOut;
-
-
-// Crea los datos y los manda a Firestore
-function send() {
-  let textInput = document.getElementById('input').value;
-  // let nameInput = document.getElementById('name-input').value;
-  let areaInput = document.getElementById('area-select').value;
-  let privateMsgChecked = document.getElementById('private').checked
-
-  db.collection("state").add({
-      area: areaInput,
-      name: name,
-      first: textInput,
-      uid:uid,
-     private: privateMsgChecked,
-      
-
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      let textInput = document.getElementById('input').value = '';
-      let nametInput = document.getElementById('name-input').value = '';
-     
-
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-
-}
-
-//filtra por tipo de contenido al dar click en el li del área impresa
-let searchGlass = document.getElementById("dropdownMenuButton");
-let areaSelection= document.getElementsByClassName('area-name');
-let listContainer= document.getElementById("area-search");
-//eventos del dom para mostrar y ocultar post
-let principalPrint = document.getElementById('principalPrint');
-let printDataFunction = document.getElementById('printDataFunction');
-
-
-//logo de steam con función de "home"
-// let logoSteamHome = document.getElementById("logo-nav");
-// logoSteamHome.addEventListener('click', ()=>{
-//   console.log ('funciona');
-//   filteredTable.style.display = "none";
-//   generalTable.style.display= "block";
-// })
-
-//---------------mensajes privados y publicos-------------------//
-let selectPrivacy = document.getElementById('select-Privacy')
-selectPrivacy.addEventListener('change', () => {
-  console.log(selectPrivacy.value)
-if (selectPrivacy.value == 'private') {
- db.collection("state").where("uid", "==", uid).where("private", "==", true)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }else{
-    console.log('son publicos')
-    db.collection("state").where("uid", "==", uid).where("private", "==", false)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }
-});
-//--------------- termina mensajes privados y publicos-------------------//
-
-//da eventos de click a lista de 'areas'
-searchGlass.addEventListener('click', ()=>{
-  listContainer.style.display="block";
-  for (let i = 0; i < areaSelection.length; i++) {
-    areaSelection[i].addEventListener('click', () => {
-    let areaClicked = areaSelection[i].id;
-    console.log(areaClicked);
-    listContainer.style.display="none";
-
-    db.collection("state").where("area", "==", areaClicked).get().then(printData);
-    })}})
+})()
 
 // imprime los datos en el muro
+const printPost = ()=>{
 db.collection("state").onSnapshot((querySnapshot) => {
   generalTable.innerHTML = '';
   querySnapshot.forEach((doc) => {
@@ -130,42 +78,8 @@ db.collection("state").onSnapshot((querySnapshot) => {
   });
 });
 
-
- //aparecen botones editar y eliminar
- 
-//  const ButtonUnhide = () => {
-   
-//   if (`${doc.id}.uid == uid`) {
-//     console.log(doc.data().uid)
-//     document.getElementById('delete-btn').classList.remove('hide');
-//     document.getElementById('edit-btn').classList.remove('hide');
-//   }
-// }
-// ButtonUnhide();
-
-// let selectPrivacy = document.getElementById('select-Privacy')
-// selectPrivacy.addEventListener('change', () => {
-//   console.log(selectPrivacy.value)
-// if (selectPrivacy.value == 'private') {
-//  db.collection("state").where("uid", "==", uid).where("private", "==", true)
-//     .get()
-//     .then(printData)
-//     .catch(function(error) {
-//         console.log("Error getting documents: ", error);
-//     });
-//   }else{
-//     console.log('son publicos')
-//     db.collection("state").where("uid", "==", uid).where("private", "==", false)
-//     .get()
-//     .then(printData)
-//     .catch(function(error) {
-//         console.log("Error getting documents: ", error);
-//     });
-//   }
-// });
-
-
- 
+}
+printPost();
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -192,6 +106,105 @@ const printData = (querySnapshot) => {
   generalTable.style.display = "none";
 };						
 
+// Crea los datos y los manda a Firestore
+function send() {
+  let textInput = document.getElementById('input').value;
+  // let nameInput = document.getElementById('name-input').value;
+  let areaInput = document.getElementById('area-select').value;
+  let privateMsgChecked = document.getElementById('private').checked
+
+  if (privateMsgChecked == true){
+  
+  db.collection("private").add({
+    area: areaInput,
+    name: name,
+    first: textInput,
+    uid: uid,
+   private: privateMsgChecked,  
+  })
+  .then(function (docRef) {
+    console.log("Document written with ID: ", docRef.id);
+    let textInput = document.getElementById('input').value = '';
+    let nametInput = document.getElementById('name-input').value = '';
+   })
+   .catch(function (error) {
+    console.error("Error adding document: ", error);
+  });
+}else{ 
+  db.collection("state").add({
+    area: areaInput,
+    name: name,
+    first: textInput,
+    uid:uid,
+   private: privateMsgChecked,  
+  })
+  .then(function (docRef) {
+    console.log("Document written with ID: ", docRef.id);
+    let textInput = document.getElementById('input').value = '';
+    let nametInput = document.getElementById('name-input').value = '';
+   })
+
+  .catch(function (error) {
+    console.error("Error adding document: ", error);
+  });
+  
+}
+}
+
+//filtra por tipo de contenido al dar click en el li del área impresa
+let searchGlass = document.getElementById("dropdownMenuButton");
+let areaSelection= document.getElementsByClassName('area-name');
+let listContainer= document.getElementById("area-search");
+//eventos del dom para mostrar y ocultar post
+let principalPrint = document.getElementById('principalPrint');
+let printDataFunction = document.getElementById('printDataFunction');
+
+
+//logo de steam con función de "home"
+let logoSteamHome = document.getElementById("logo-nav");
+logoSteamHome.addEventListener('click', ()=>{
+  console.log ('funciona');
+  filteredTable.style.display = "none";
+  generalTable.style.display= "block";
+})
+
+
+
+//da eventos de click a lista de 'areas'
+searchGlass.addEventListener('click', ()=>{
+  listContainer.style.display="block";
+  for (let i = 0; i < areaSelection.length; i++) {
+    areaSelection[i].addEventListener('click', () => {
+    let areaClicked = areaSelection[i].id;
+    console.log(areaClicked);
+    listContainer.style.display="none";
+
+    db.collection("state").where("area", "==", areaClicked).get().then(printData);
+    })}})
+
+
+//---------------mensajes privados y publicos-------------------//
+let selectPrivacy = document.getElementById('select-Privacy')
+selectPrivacy.addEventListener('change', () => {
+  console.log(selectPrivacy.value)
+if (selectPrivacy.value == 'private') {
+ db.collection("private").where("uid", "==", uid).where("private", "==", true)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }else{
+    console.log('son publicos')
+    db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+});
+//--------------- termina mensajes privados y publicos-------------------//
 
 //le funcion de filtrado y el 'back' al hacer el click en el logo steam funciona mostrando y ocultando
 //los divs que contiene los datos
@@ -244,4 +257,3 @@ userProfile.addEventListener("click", () => {
 
 // 
 // Get a reference to the storage service, which is used to create references in your storage bucket
-
