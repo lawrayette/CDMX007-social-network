@@ -1,6 +1,13 @@
 libreria.controlador('miControlador', {
+firstViewFunction:()=>{
+ const loginButton = document.getElementById('loginButton');
+ 
+ const showLoginButton = ()=>{
+   loginButton.classList.remove('hide')
+ }
+showLoginButton();
 
-
+},
   login: () => {
     (function () {
       // Initialize the FirebaseUI Widget using Firebase.
@@ -21,7 +28,7 @@ libreria.controlador('miControlador', {
         },
         // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
-        signInSuccessUrl: '01index.html#/forum',
+        signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -33,34 +40,55 @@ libreria.controlador('miControlador', {
         ],
 
         // Terms of service url.
-        tosUrl: '01index.html#/forum',
+        tosUrl: 'index.html#/forum',
         // Privacy policy url.
         //privacyPolicyUrl: '<your-privacy-policy-url>'
       };
       // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
+
+
+    let loginButton = document.getElementById('loginButton');
+ 
+    const hideLoginButton = ()=>{
+      loginButton.classList.add('hide')
+    }
+   hideLoginButton();
+
+
+
   },
 
 
 
   forumFunctions: () => {
 
-
+    const removeHideMenu = document.getElementsByClassName('menuButtons');
     
-    //Función para filtrar por tema
-    let areaSelection=document.getElementsByClassName('area-name');
-          
-  
-    for (let i = 0; i < areaSelection.length; i++) {
-     areaSelection[i].addEventListener('click', () => {
-       let  areaClicked= areaSelection[i].id;
-      console.log(areaClicked);
-       db.collection("state").where("area", "==", areaClicked).get().then(printData);
-    })
+ const navButtonsforUser =()=>{
+   for (let i= 0; i< removeHideMenu.length; i++){
+     removeHideMenu[i].classList.remove('hide');
    }
-  
+   loginButton.classList.add('hide');
+
+ }
+ navButtonsforUser()
    
+
+    //Función para filtrar por tema
+    let areaSelection = document.getElementsByClassName('area-name');
+
+
+    for (let i = 0; i < areaSelection.length; i++) {
+      areaSelection[i].addEventListener('click', () => {
+        let areaClicked = areaSelection[i].id;
+        console.log(areaClicked);
+        db.collection("state").where("area", "==", areaClicked).get().then(printData);
+      })
+    }
+
+
 
     const generalTable = document.getElementById('state-user');
 
@@ -91,12 +119,12 @@ libreria.controlador('miControlador', {
     });
 
     //imprime los datos del filtro
-const printData = (querySnapshot) => {
-  let filteredTable = document.getElementById('state-user-filter');
-  filteredTable.style.display= "block";
-  filteredTable.innerHTML = "";
-  querySnapshot.forEach((doc) => {
-    filteredTable.innerHTML += `
+    const printData = (querySnapshot) => {
+      let filteredTable = document.getElementById('state-user-filter');
+      filteredTable.style.display = "block";
+      filteredTable.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        filteredTable.innerHTML += `
     <div class="row white">
     <blockquote >
     <div class="section">
@@ -114,9 +142,9 @@ const printData = (querySnapshot) => {
     </blockquote>
     </div>
     `
-  });
-  generalTable.style.display = "none";
-};				
+      });
+      generalTable.style.display = "none";
+    };
 
 
 
@@ -146,27 +174,27 @@ const printData = (querySnapshot) => {
     })()
 
     //---------------mensajes privados y publicos-------------------//
-let selectPrivacy = document.getElementById('select-Privacy')
-selectPrivacy.addEventListener('change', () => {
-  console.log(selectPrivacy.value)
-if (selectPrivacy.value == 'private') {
- db.collection("state").where("uid", "==", uid).where("private", "==", true)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
+    let selectPrivacy = document.getElementById('select-Privacy')
+    selectPrivacy.addEventListener('change', () => {
+      console.log(selectPrivacy.value)
+      if (selectPrivacy.value == 'private') {
+        db.collection("state").where("uid", "==", uid).where("private", "==", true)
+          .get()
+          .then(printData)
+          .catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+      } else {
+        console.log('son publicos')
+        db.collection("state").where("uid", "==", uid).where("private", "==", false)
+          .get()
+          .then(printData)
+          .catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+      }
     });
-  }else{
-    console.log('son publicos')
-    db.collection("state").where("uid", "==", uid).where("private", "==", false)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }
-});
-//--------------- termina mensajes privados y publicos-------------------//
+    //--------------- termina mensajes privados y publicos-------------------//
 
   },
 
@@ -253,8 +281,9 @@ if (selectPrivacy.value == 'private') {
     })
 
 
+  },
+  functionOnNews:() =>{
+    navButtonsforUser()
   }
 
-
 })
-

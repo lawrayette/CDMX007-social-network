@@ -5,6 +5,7 @@
 let mainApp = {};
 function logOut() {
   firebase.auth().signOut();
+  window.location='index.html';
 }
 mainApp.logOut = logOut;
 
