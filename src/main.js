@@ -1,85 +1,7 @@
-const generalTable = document.getElementById('state-user');
+
 const filteredTable = document.getElementById('state-user-filter');
-let db = firebase.firestore();
-// const image = document.getElementById('input.image');//borrar//
-let mainApp = {};
 
 
-//let nameInput = document.getElementById('name-input')
-(function () {
-  let firebase = app_fireBase;
-  //let uid = null;
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      localStorage.setItem('user', JSON.stringify(user))
-      name = user.displayName;
-      eMail = user.email;
-      photoURL = user.photoURL;
-      uid = user.uid;
-
-      let printPhoto = document.getElementById('print-photo')
-      let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 40px; border-radius:50%"></img>`
-     
-      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
-     
-      console.log(nameCurrent)
-      console.log(uid)
-      
-    } else {
-      //redirect to login page
-      uid = null;
-      window.location.replace("index.html");
-    }
-  });
-  
-  console.log(name)
-  //console.log(uid)
-  function logOut() {
-    firebase.auth().signOut();
-  }
-  mainApp.logOut = logOut;
-})()
-
-// imprime los datos en el muro
-const printPost = ()=>{
-db.collection("state").onSnapshot((querySnapshot) => {
-  generalTable.innerHTML = '';
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().first}`);
-    generalTable.innerHTML += `
-    <div class="card  text-center alert alert-info">
-       <p>${doc.data().name}</p>
-      <p>${doc.data().first}</p>
-      <li class="area" value="${doc.data().area}">${doc.data().area}</li>
-      <p>
-      <button class = "btn btn-danger btn-sm" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-      <button id = "edit-button" class = "btn btn-warning btn-sm"data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-     <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-     <button id="applause-container"><applause-button id="applause-${doc.id}" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Black"/></button>
-     </p>
-    </div>
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-     <div class="modal-body">
-     <textarea id="input-edit" class="form-control" rows="3" cols="50" aria-label="With textarea" autofocus></textarea>
-         </div>
-      <div class="modal-footer">
-        <button id = "save-data" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fas fa-save"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-    `
-  });
-});
-
-}
-printPost();
 
 //imprime los datos del filtro
 const printData = (querySnapshot) => {
@@ -160,16 +82,6 @@ let principalPrint = document.getElementById('principalPrint');
 let printDataFunction = document.getElementById('printDataFunction');
 
 
-//logo de steam con función de "home"
-let logoSteamHome = document.getElementById("logo-nav");
-logoSteamHome.addEventListener('click', ()=>{
-  console.log ('funciona');
-  filteredTable.style.display = "none";
-  generalTable.style.display= "block";
-})
-
-
-
 //da eventos de click a lista de 'areas'
 searchGlass.addEventListener('click', ()=>{
   listContainer.style.display="block";
@@ -206,54 +118,6 @@ if (selectPrivacy.value == 'private') {
 });
 //--------------- termina mensajes privados y publicos-------------------//
 
-//le funcion de filtrado y el 'back' al hacer el click en el logo steam funciona mostrando y ocultando
-//los divs que contiene los datos
-//nota para pasar a SPA
-
-// elimina los datos del muro
-function deleteData(id) {
-  if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
-    db.collection("state").doc(id).delete().then(function () {
-      console.log("Document successfully deleted!");
-    }).catch(function (error) {
-      console.error("Error removing document: ", error);
-    });
-  } else {
-    return false;
-  }
-}
-
-//Edita los datos
-function editState(id, state) {
-  let editButton = document.getElementById('save-data');
-      document.getElementById('input-edit').value = state;
-      
-   editButton.onclick = function () {
-     var washingtonRef = db.collection("state").doc(id);
- 
-     let newInput = document.getElementById('input-edit').value;
-        return washingtonRef.update({
-         first: newInput,
-        })
-       .then(function () {
-         console.log("Document successfully updated!");
-        
-             })
-       .catch(function (error) {
-         // The document probably doesn't exist.
-         console.error("Error updating document: ", error);
-       });
-   }
- }
- 
 
 
-//See User
-const userProfile = document.getElementById('button-user')
-userProfile.addEventListener("click", () => {
-  window.location = 'profile.html';
-})
 
-
-// 
-// Get a reference to the storage service, which is used to create references in your storage bucket

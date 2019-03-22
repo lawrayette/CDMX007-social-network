@@ -24,6 +24,9 @@ nav{
     background-color: #212529;
 }
 
+.font-style-area{
+    font-size: 20px;
+}
 .logo-login{
     width: 150px;
     margin-top: 12px;
