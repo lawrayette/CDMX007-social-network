@@ -46,6 +46,7 @@ libreria.controlador('miControlador', {
 
   forumFunctions: () => {
 
+
     
     //Función para filtrar por tema
     let areaSelection=document.getElementsByClassName('area-name');
@@ -143,6 +144,29 @@ const printData = (querySnapshot) => {
         }
       });
     })()
+
+    //---------------mensajes privados y publicos-------------------//
+let selectPrivacy = document.getElementById('select-Privacy')
+selectPrivacy.addEventListener('change', () => {
+  console.log(selectPrivacy.value)
+if (selectPrivacy.value == 'private') {
+ db.collection("state").where("uid", "==", uid).where("private", "==", true)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }else{
+    console.log('son publicos')
+    db.collection("state").where("uid", "==", uid).where("private", "==", false)
+    .get()
+    .then(printData)
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+});
+//--------------- termina mensajes privados y publicos-------------------//
 
   },
 
