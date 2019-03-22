@@ -8,9 +8,7 @@ libreria.controlador('miControlador', {
       var uiConfig = {
         callbacks: {
           signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
+
             return true;
           },
           uiShown: function () {
@@ -98,20 +96,7 @@ libreria.controlador('miControlador', {
         }
       });
     })()
-
-
-
-
-
-
-
-
-
-
-
-  },
-
-
+ },
 
   printComunity: () => {
     db = firebase.firestore();

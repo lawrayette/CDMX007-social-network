@@ -211,28 +211,29 @@ function deleteData(id) {
 }
 
 //Edita los datos
-function editState(id, state) {
-  let editButton = document.getElementById('save-data');
-      document.getElementById('input-edit').value = state;
-      
-   editButton.onclick = function () {
-     var washingtonRef = db.collection("state").doc(id);
- 
-     let newInput = document.getElementById('input-edit').value;
-        return washingtonRef.update({
-         first: newInput,
-        })
-       .then(function () {
-         console.log("Document successfully updated!");
-        
-             })
-       .catch(function (error) {
-         // The document probably doesn't exist.
-         console.error("Error updating document: ", error);
-       });
-   }
- }
- 
+function editState(id,state) {
+  document.getElementById('input').value = state;
+  let editButton = document.getElementById('sendButton');
+  editButton.innerHTML = "Editar";
+
+  editButton.onclick = function () {
+    var washingtonRef = db.collection("state").doc(id);
+
+    let textInput = document.getElementById('input').value;
+      return washingtonRef.update({
+      first: textInput,
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+        let textInput = document.getElementById('input').value = '';
+        editButton.innerHTML = "Enviar";
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+    }
+  }
 
 
 //See User
