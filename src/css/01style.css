@@ -24,6 +24,10 @@ nav{
     background-color: #212529;
 }
 
+.view-height{
+    min-height: 1000px;
+}
+
 .font-style-area{
     font-size: 20px;
 }
