@@ -8,20 +8,29 @@
   padding: 0;
   box-sizing: border-box;
 }
-blockquote {
-    margin: 20px 0;
-    padding-left: 1.5rem;
-    border-left: 0;
-}
+
 body {
     background-color: rgb(219, 208, 219);
   }
+  
+  blockquote {
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid rgba(0,0,0,.87);
+}
 
 /*----Materialize Navbar----*/
 nav{
     background-color: #212529;
 }
 
+.view-height{
+    min-height: 1000px;
+}
+
+.font-style-area{
+    font-size: 20px;
+}
 .logo-login{
     width: 150px;
     margin-top: 12px;
@@ -38,6 +47,7 @@ nav{
     margin: .5rem 0 .5rem 0;
     text-align: center;
 }
+
 
 /*----Cards----*/
 
@@ -152,11 +162,9 @@ nav{
     height: 6rem;
       }
 
-
-
-
-      .view-height{
-          min-height:1000px;
+      .tweet{
+          position: relative;
+          top: 15.5px;
       }
 
   /*----Colores de chips etiquetas filtros----*/
@@ -165,11 +173,11 @@ nav{
     background-color: rgba(220, 20, 60, 0.404);
   }
 
- 
-.card-on-profile-page{
-    position:relative;
-    top:50px;
-}
+
+
+
+
+
 
 
 
@@ -202,9 +210,58 @@ nav{
     border-radius: 50%;
     background: #AD29B6;
     color: white;
-    text-align: center;
 }
 
+/*---comunity table-*/
+
+.font-size-on-subtitle-members{
+    font-size:16px;
+}
+table.highlight tbody tr:hover {
+    background-color: black !important;
+    color: whitesmoke !important;
+}
+.text-on-table{
+    font-size: 9px;
+}
+.propierty-on-columns{
+    font-size: 11px;
+}
+.nav-bar-avatar {
+    margin-top: 14px;
+  }
+ 
+  .aside-style{
+    background-color: rgba(97, 71, 170, 0.411);
+  }
+ 
+ .post-wall{
+    background-color: antiquewhite;
+ }
+ 
+ .post-text{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+    padding: 0;
+    }
+ 
+    .photo-post-style{
+        margin: 10px;
+        padding: 15px;
+    }
+ 
+    .align-content-post{
+        display: inline-block;
+    }
+ 
+      .form-control-textarea {
+          border:none;
+        width: 200%;
+    padding: 5%;
+    height: 6rem;
+      }
 .footer-copyright{
     position: relative;
     text-align: center;
@@ -225,3 +282,34 @@ nav{
 .copyright-size{
     font-size: 12px;
 }
+
+/*--applause--*/
+.clap-button{
+    width: 30px !important;
+    height: 30px !important;
+}
+#applause-container {
+    position: relative;
+    bottom: 75px;
+    right: 7%;
+}
+
+
+@media (min-width: 767px) {
+
+
+    .font-size-on-subtitle-members{
+        font-size:20px;
+    }
+    .text-on-table{
+        font-size: 16px;
+    }
+
+   .propierty-on-columns{
+       font-size: 18px;
+   }
+
+
+
+}
+
