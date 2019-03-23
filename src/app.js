@@ -1,5 +1,5 @@
 
-
+db = firebase.firestore();
 //funcion para desloguear
 
 let mainApp = {};
@@ -8,7 +8,7 @@ function logOut() {
 }
 mainApp.logOut = logOut;
 
-db = firebase.firestore();
+
 
 //Crea los datos y los manda a Firestore
 function send() {
