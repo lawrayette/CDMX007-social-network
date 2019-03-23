@@ -288,10 +288,11 @@ table.highlight tbody tr:hover {
     width: 30px !important;
     height: 30px !important;
 }
-#applause-container {
+#applause-container{
     position: relative;
-    bottom: 75px;
-    right: 7%;
+    bottom: 40px;
+    right: -90%;
+    width: 30px;    
 }
 
 
