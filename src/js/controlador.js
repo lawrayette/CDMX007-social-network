@@ -40,7 +40,7 @@ showLoginButton();
         ],
 
         // Terms of service url.
-       // tosUrl: 'index.html#/forum',
+       tosUrl: 'index.html#/forum',
         // Privacy policy url.
         //privacyPolicyUrl: '<your-privacy-policy-url>'
       };
