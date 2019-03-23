@@ -1,12 +1,14 @@
 
-db = firebase.firestore();
 //funcion para desloguear
 
 let mainApp = {};
 function logOut() {
   firebase.auth().signOut();
+  window.location= 'index.html'
 }
 mainApp.logOut = logOut;
+
+db = firebase.firestore()
 
 
 
@@ -15,7 +17,6 @@ function send() {
   let userPost = JSON.parse(localStorage.getItem("user"));
   let textInput = document.getElementById('input').value;
   let areaSelected = document.getElementById('dropdown3').value;
-  // console.log (areaSelected);
   let privateMsgChecked = document.getElementById('private').checked;
   db.collection("state").add({
     name: userPost.displayName,
