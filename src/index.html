@@ -1,110 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <link rel="icon" type="image" href="./assets/favicon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <title>Point STEAM </title>
-
-    <div class ="container-nav-index">
-        <nav class="navbar navbar-light" style="background-color: #181717">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/logo.png" alt="" id="logo">
-        </a>
-          <button class="btn btn-info my-2 my-sm-0" style="background-color: #AD29B6" id="start" type="submit">Login</button>
-      </nav>
-</div>
-
-    <section class="news-steam">
-        <h1 class="display-4">Próximos Eventos</h1>
-
-    <article id="steam">
-        <h2>Fiesta STEAM</h2>
-        <div class="steam-party">
-            <img src="./assets/fiestaSteam.png" alt="" class="image-event" width="100%">
-        </div>
-        <p>Ahora es más fácil inscribirse a la #FiestaSTEAM. Solo llenas el formulario y ¡listo!, a esperar la confirmación. 
-           <br> <a href="http://189.240.62.236:4080/474-2/?fbclid=IwAR3VviVm38wuaCKVKxiirkqGnc86IX99bhXhGZoft4Rb2y6t1ig9xE5y490">Registro</a>
-           </p>
-        <p>
-            <strong>INVITAN</strong> <br>
-            El Laboratorio de Tecnologías El Rule// El Rule Comunidad de Saberes// Centro Cultural de España en México// Ateneo Español de México A.C.
-            </p>
-    </article>
-    <article id="arduino">
-        <h2>ARDUINO DAY 2019</h2>
-        <img src="./assets/arduinoDay.png" alt="" class="image-event" width="98%">
-        <p> Te esperamos el próximo sábado 16 de marzo para celebrar la edición 2019 de Arduino Day, la cita es en el atractivo Museo Franz Mayer a las 10 de la mañana.
-            <br> <br>
-            Acceso general: $60 <br>
-            Estudiantes, profesores y adultos mayores con credencial: $25 <br>
-            Niños menores de 12 años: Entrada gratuita <br>
-            Consulta más información en: <br> <a href="http://arduino.mx/">ARDUINO DAY</a> 
-            </p>
-
-    </article>
-    <article id="lunar">
-        <h2>Hacia una base Lunar</h2>
-        <img src="./assets/baseLunar.png" alt="" class="image-event" width="98%" >
-        <p>
-            Consulta las bases en <a href="http://haciaunabaselunar.org.mx/">Base Lunar</a> <br>
-
-            ¡Tienes hasta <strong>15 de marzo </strong>para registrarte!
-        </p>
-    </article>
-    <article id="arsgames">
-        <h2>El aprendizaje en juego: Tecnoludismo para el pensamiento crítico</h2>
-        <img src="./assets/arsgames.png" alt="" class="image-event" width="98%">
-        <p>Presentación de Libro <br>
-            Marabunta
-            Miguel Ángel de Quevedo 485c, 04310 Ciudad de México</p>
-    </article>
-
-    </section>
-    <footer>
-        <div class="footer-container">
-          <div class="footer-main">
-            <div class="footer-column">
-             <div id="logo-footer-two"></div>
-              <span class="footer-about">  Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.  </span>
-            </div>
-            <div class="footer-column">
-              <h3></h3>
-              <span ><i class="fas fa-map-marker-alt"></i>
-                Tonalá 10, Roma Sur, 06700, CDMX.
-              </span> <br>
-              <span><i class="fas fa-phone"></i>
-                01 800 314 159 265
-              </span> <br>
-              <span><i class="far fa-envelope"></i> info@point-steam.com</span>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copy-redes container-fluid">
-          <div class="main-copy-redes">
-            <div class="footer-copy lead">
-              &copy; .STEAM, 2019. <br> Todos los derechos reservados</div>
-            <div class="footer-redes">
-              <a href="#" class="fab fa-twitter"></a>
-              <a href="#" class="fab fa-instagram"></a>
-              <a href="https://github.com/jaurinu/CDMX007-social-network" class="fab fa-github"></a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    <script src="./app2.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Point STEAM</title>
+  <link rel="icon" type="image" href="./assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Compiled and minified CSS materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Fuentes -->
+  <!-- Estilos -->
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/01style.css">
+  <!-- Firebase-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 <body>
+  <!--Navbar-->
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm" class="logo-login"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars"
+            color=#fffff></i></i></a>
+      <ul id="menuButtons" class="right hide-on-med-and-down">
+        <li><a href="#/">Inicio</a></li>
+        <li><a href="#/forum">Foro</a></li>
+      <li><a href="#/myProfile"> Mi perfil  </a></li>
+        <li><a href="#/comunity">Comunidad steam</a></li>
+        <li><a href="#/news.html">Próximos eventos</a></li>
+        <li><a href="#/news.html">Cerrar sesión</a></li>
+        <li><a href="#/02login">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav sidenav-color" id="mobile-demo">
+    <li><a class="sidenav-close" href="#/"><i class="fas fa-home"></i>Inicio</a></li>
+    <li><a class="sidenav-close" href="#/forum"><i class="fas fa-user-friends"></i>Foro</a></li>
+    <li><a class="sidenav-close" href="#/myProfile"><i class="fas fa-user-astronaut"></i>Mi perfil</a></li>
+    <li><a class="sidenav-close" href="#/comunity"><i class="fas fa-user-friends"></i>Comunidad Steam</a></li>
+    <li><a class="sidenav-close" href="#/01noticias"><i class="fas fa-calendar-alt"></i>Próximos Eventos</a></li>
+    <li><a class="sidenav-close" href="#/02login">Login</a></li>
+    <li><a class="sidenav-close" href="#/02login">Cerrar Sesión</a></li>
+  </ul>
+  <!-- Termina navbar -->
+
+
+
+  <div id='vista' class="view-height">
+
+  </div>
+
+
+  
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 l6">
+
+              <div>
+                <img src="./assets/logo.png" class="responsive-img" alt="">
+              </div>
+             <p><br>
+
+                    Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas.</p>
+
+
+            </div>
+            <div class="col  s12 m6 l6">
+              <br>
+              <p><i class="fas fa-map-marker-alt"></i> Tonalá 10, Roma Sur, 06700, CDMX</p>
+              <p><i class="fas fa-phone"></i> 01 800 314 159 265</p>
+              <p><i class="fas fa-envelope"></i> info@point-steam.com</p>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="col offset-s4 offset-l4 offset-m4 copyright-size">
+                <p>© .STEAM | 2019
+                    <br>
+                    Todos los derechos reservados.
+                  </p>
+
+                  <a class="btn-floating btn-sm waves-effect waves-light github-button" href="https://github.com/jaurinu/CDMX007-social-network" target= ”_blank” title="Github Point STEAM" ><i
+                    class="fab fa-github"></i></a>
+            <a href="" title="Instagram Point Steam" class="btn-floating btn-sm waves-effect waves-light instagram-button"><i class="fab fa-instagram"></i>
+</a>
+            <a href="" title="Twiter Point Steam " class="btn-floating btn-sm waves-effect waves-light twitter-button"><i
+                    class="fab fa-twitter"></i></a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <script src="./firebase.js"></script>
+  <script src="./app.js"></script>
+  <script src="./js/libreria.js"></script>
+  <script src="./js/controlador.js"></script>
+  <!--<script src="./myProfile.js"></script>-->
+  <script src="./js/router.js"></script>
 
 </body>
+
 
 </html>

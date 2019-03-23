@@ -14,27 +14,3 @@ window.libreria.getId('vista').enrutar()
 .ruta('/myProfile', './views/myProfile.html', 'miControlador', function (){
         libreria.getCtrl().profileFunctions()
 })     
-// .ruta('/forum', './views/forum.html', null, null)
-
-
-// .ruta('/', './views/01index.html', 'miControlador', function(){
-//     libreria.getCtrl().conBoton()
-// })
-
-
-// .ruta('/01noticias', './views/01noticias.html', 'miControlador', function(){
-//     libreria.getCtrl().segundaprueba()
-// })
-// .ruta('/tercera', './views/tercera.html', 'miControlador', function(){
-//     libreria.getCtrl().prueba()
-// })
-/*
-(function (window, document) {
-        library.getID('view').enroute()
-            .route('/', 'views/init.html', null, null)
-            .route('/forum', 'views/change/forum.html', 'forum', null)
-            //hideLoadingshowMenu()//)//En lugar de null podrías implementar una función para que se ejecute inmediatamente al cargar la página)
-            .route('/profile', 'views/change/profile.html', 'contacto', null)
-            .route('/members', 'views/change/members.html', 'contacto', null)
-            .route('/events', 'views/change/events.html', 'contacto', null)
-    })(window, document);*/

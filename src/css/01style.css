@@ -8,20 +8,29 @@
   padding: 0;
   box-sizing: border-box;
 }
-blockquote {
-    margin: 20px 0;
-    padding-left: 1.5rem;
-    border-left: 0;
-}
+
 body {
     background-color: rgb(219, 208, 219);
   }
+  
+  blockquote {
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid rgba(0,0,0,.87);
+}
 
 /*----Materialize Navbar----*/
 nav{
     background-color: #212529;
 }
 
+.view-height{
+    min-height: 1000px;
+}
+
+.font-style-area{
+    font-size: 20px;
+}
 .logo-login{
     width: 150px;
     margin-top: 12px;
@@ -38,6 +47,7 @@ nav{
     margin: .5rem 0 .5rem 0;
     text-align: center;
 }
+
 
 /*----Cards----*/
 
@@ -157,23 +167,17 @@ nav{
           top: 15.5px;
       }
 
-
-
-      .view-height{
-          min-height:1000px;
-      }
-
   /*----Colores de chips etiquetas filtros----*/
   
   .chip{
     background-color: rgba(220, 20, 60, 0.404);
   }
 
- 
-.card-on-profile-page{
-    position:relative;
-    top:50px;
-}
+
+
+
+
+
 
 
 
@@ -206,10 +210,23 @@ nav{
     border-radius: 50%;
     background: #AD29B6;
     color: white;
-    
 }
 
-/ 
+/*---comunity table-*/
+
+.font-size-on-subtitle-members{
+    font-size:16px;
+}
+table.highlight tbody tr:hover {
+    background-color: black !important;
+    color: whitesmoke !important;
+}
+.text-on-table{
+    font-size: 9px;
+}
+.propierty-on-columns{
+    font-size: 11px;
+}
 .nav-bar-avatar {
     margin-top: 14px;
   }
@@ -271,10 +288,11 @@ nav{
     width: 30px !important;
     height: 30px !important;
 }
-#applause-container {
+#applause-container{
     position: relative;
-    bottom: 75px;
-    right: 7%;
+    bottom: 40px;
+    right: -90%;
+    width: 30px;    
 }
 
 
@@ -295,7 +313,4 @@ nav{
 
 
 }
-
-
-
 
