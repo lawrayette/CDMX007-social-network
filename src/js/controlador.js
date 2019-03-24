@@ -1,4 +1,16 @@
 libreria.controlador('miControlador', {
+  firstViewFunction: () => {
+    const loginButton = document.getElementById('loginButton');
+    const loginButtonsideNav = document.getElementById('loginButtonsideNav')
+    const showLoginButton = () => {
+      loginButton.classList.remove('hide')
+      loginButtonsideNav.classList.remove('hide')
+
+
+    }
+    showLoginButton();
+
+  },
 
   login: () => {
     (function () {
@@ -21,32 +33,60 @@ libreria.controlador('miControlador', {
         ],
 
 
+        // Terms of service url.
         tosUrl: 'index.html#/forum',
+        // Privacy policy url.
+        //privacyPolicyUrl: '<your-privacy-policy-url>'
 
       };
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
+
+
+
+
+    // let loginButton = document.getElementById('loginButton');
+
+    const hideLoginButton = () => {
+      loginButton.classList.add('hide');
+      loginButtonsideNav.classList.add('hide');
+    }
+    hideLoginButton();
+
+
+
+
+
+
   },
-
-
-
   forumFunctions: () => {
 
+    const removeHideMenu = document.getElementsByClassName('menuButtons');
 
-    
+
+    const navButtonsforUser = () => {
+      for (let i = 0; i < removeHideMenu.length; i++) {
+        removeHideMenu[i].classList.remove('hide');
+      }
+      loginButton.classList.add('hide');
+      loginButtonsideNav.classList.add('hide');
+    }
+    navButtonsforUser()
+
+
     //Función para filtrar por tema
-    let areaSelection=document.getElementsByClassName('area-name');
-          
-  
+    let areaSelection = document.getElementsByClassName('area-name');
+
+
     for (let i = 0; i < areaSelection.length; i++) {
-     areaSelection[i].addEventListener('click', () => {
-       let  areaClicked= areaSelection[i].id;
-      console.log(areaClicked);
-       db.collection("state").where("area", "==", areaClicked).get().then(printData);
-    })
-   }
-  
-   
+      areaSelection[i].addEventListener('click', () => {
+        let areaClicked = areaSelection[i].id;
+        console.log(areaClicked);
+        db.collection("state").where("area", "==", areaClicked).get().then(printData);
+      })
+    }
+
+
 
     const generalTable = document.getElementById('state-user');
 
@@ -56,53 +96,54 @@ libreria.controlador('miControlador', {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
         generalTable.innerHTML += `
-        <div class="row white">
-          <blockquote >
-          <div class="section">
-          <p class="flow-text">${doc.data().first}</p>
-          <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
-          </div>
+          <div class="row white">
+            <blockquote >
             <div class="section">
-              <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-              <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-              <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25" height="25" alt="Twitter" /></a>
-                <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
-                <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
-                </div>
-          </blockquote>
-          </div>
-          `
+
+            <p class="flow-text">${doc.data().first}</p>
+            <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
+            </div>
+              <div class="section">
+                <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+                <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+                <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+                  <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+                  <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+                  <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+                  </div>
+            </blockquote>
+            </div>
+            `
       });
     });
-
     //imprime los datos del filtro
-const printData = (querySnapshot) => {
-  let filteredTable = document.getElementById('state-user-filter');
-  filteredTable.style.display= "block";
-  filteredTable.innerHTML = "";
-  querySnapshot.forEach((doc) => {
-    filteredTable.innerHTML += `
-    <div class="row white">
-    <blockquote >
-    <div class="section">
-    <p class="flow-text">${doc.data().first}</p>
-    <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
-    </div>
+    const printData = (querySnapshot) => {
+      let filteredTable = document.getElementById('state-user-filter');
+      filteredTable.style.display = "block";
+      filteredTable.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        filteredTable.innerHTML += `
+      <div class="row white">
+      <blockquote >
       <div class="section">
-        <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-        <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-        <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-          <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
-          <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
-          </div>
-    </blockquote>
-    </div>
-    `
-  });
-  generalTable.style.display = "none";
-};				
+
+      <p class="flow-text">${doc.data().first}</p>
+      <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
+      </div>
+        <div class="section">
+          <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+          <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+          <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+            <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+            <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+            </div>
+      </blockquote>
+      </div>
+      `
+      });
+      generalTable.style.display = "none";
+    };
 
 
 
@@ -132,27 +173,27 @@ const printData = (querySnapshot) => {
     })()
 
     //---------------mensajes privados y publicos-------------------//
-let selectPrivacy = document.getElementById('select-Privacy')
-selectPrivacy.addEventListener('change', () => {
-  console.log(selectPrivacy.value)
-if (selectPrivacy.value == 'private') {
- db.collection("state").where("uid", "==", uid).where("private", "==", true)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
+    let selectPrivacy = document.getElementById('select-Privacy')
+    selectPrivacy.addEventListener('change', () => {
+      console.log(selectPrivacy.value)
+      if (selectPrivacy.value == 'private') {
+        db.collection("state").where("uid", "==", uid).where("private", "==", true)
+          .get()
+          .then(printData)
+          .catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+      } else {
+        console.log('son publicos')
+        db.collection("state").where("uid", "==", uid).where("private", "==", false)
+          .get()
+          .then(printData)
+          .catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+      }
     });
-  }else{
-    console.log('son publicos')
-    db.collection("state").where("uid", "==", uid).where("private", "==", false)
-    .get()
-    .then(printData)
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-  }
-});
-//--------------- termina mensajes privados y publicos-------------------//
+    //--------------- termina mensajes privados y publicos-------------------//
 
   },
 
@@ -166,12 +207,14 @@ if (selectPrivacy.value == 'private') {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         table.innerHTML += `
-              <tr class="text-on-table">
-                <td>${doc.data().first}</td>
-                <td>${doc.data().user}</td>
-                <td>${doc.data().interest}</td>
-                <td class="email">${doc.data().contactEmail}</td>
-              </tr>`
+
+                <tr class="text-on-table">
+                  <td>${doc.data().first}</td>
+                  <td>${doc.data().user}</td>
+                  <td>${doc.data().interest}</td>
+                  <td>${doc.data().contactEmail}</td>
+                </tr>`
+
       });
     });
   },
@@ -239,8 +282,12 @@ if (selectPrivacy.value == 'private') {
     })
 
 
-  }
+  },
+
+  // functionOnNews:() =>{
+  //  navButtonsforUser()
+  // },
+
 
 
 })
-

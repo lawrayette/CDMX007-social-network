@@ -81,7 +81,10 @@ nav{
 }
 
 /*----LoginPage----*/
-
+.login-position{
+    position: relative;
+    top: 240px;
+}
 .firebaseui-card-content {
     padding: 80px 24px;
 }
@@ -150,8 +153,7 @@ nav{
 
     .responsive-img{
         width: 35%;
-        position: relative;
-        left:10%;
+    
     }
 
     .align-content-post{
