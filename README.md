@@ -1,4 +1,4 @@
-# Point Steam
+# Punto Steam
 
 - [Introducción](#introducción)
 - [Descripción](#descripción)
@@ -6,29 +6,30 @@
 - [Consideraciones técnicas](#consideraciones-técnicas)
 - [Hecho con](#hecho-con)
 
+
 # Introducción
 
 Para finales del 2017, el número de internautas en el país era de 79.1 millones de usuarios; según datos 
 de la AMIPCI ( Asociación de Internet México). En México, los dispositivos más usados son: 
 
-1.- Smartphone 89%
-2.- Laptop 49%
-3.- PC 34%
-4.- Tablet 23%...
+1. Smartphone 89%
+2. Laptop 49%
+3. PC 34%
+4. Tablet 23%.
 
 Dentro de las actividades más realizadas por parte de los usuarios, se encuentran: 
 
-Uso de Redes Sociales 89%
-Uso de correo electrónico 84%
-Mensajería instantánea 83%
-Búsqueda de información 82%
+- Uso de Redes Sociales 89%
+- Uso de correo electrónico 84%
+- Mensajería instantánea 83%
+- Búsqueda de información 82%
 
 Por otro lado, las redes sociales más usadas son: 
-Facebook 98%
-WhatsApp 91%
-Youtube 82%
-Instagram 57%
-Twitter 49%
+- Facebook 98%
+- WhatsApp 91%
+- Youtube 82%
+- Instagram 57%
+- Twitter 49%
 
 Un usuario usa en promedio 5 redes sociales, mientras que el 1% de la población 
 con acceso a internet no usa red social alguna.
@@ -40,6 +41,12 @@ la forma en la cual llevar las llamadas ciencias duras a las aulas, de una forma
 Al paso de los años, se le commienza a agregar la A al STEM, pasando a ser STEAM, esto
 para agregar las artes como una forma para hacer más disruptiva la educción.
 
+El término STEAM es un acrónimo que corresponde a las iniciales de las palabras en inglés Science, 
+Technology, Engineering Arts and Maths, que fue acuñado por la Escuela de Diseño de Rhode Island. 
+Es básicamente un enfoque educacional de aprendizaje que recurre al diálogo entre dichas disciplinas
+(Ciencia, la Tecnología, la Ingeniería, las Artes y las Matemáticas) para despertar en las personas 
+la curiosidad, el pensamiento crítico, la creatividad, la imaginación y el aprendizaje continuo. 
+Lo que el movimiento STEAM busca, en pocas palabras, es estimular el amor al conocimiento. <3
 
 # Creando una Red Social
 
@@ -67,6 +74,27 @@ Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, in
 ## Diagrama de flujo alta fidelidad
 
 ![Diagrama de flujo](imagenesReadMe/flowmap.png)
+### Flujo First Mobile
+
+[First Mobile](https://drive.google.com/file/d/18_0CjVZouC145qPe8dNSnwCH5xvnleSq/view?usp=sharing)
+
+
+## Pruebas de usabilidad (resumen)
+
+Los usuarios clave expresaron comentarios favorables por la creación de una red social del movimiento STEAM.
+Comentaron la pertinencia de tenerla y la posibilidad de comenzar a crear nuevas redes no sólo de formadores;
+sino también de ONG's, escuelas, y personas que gusten de la temática.
+
+En cuanto a las pruebas finales con la versión final en mobile, los usuarios comentaron lo siguiente:
+
+- Es una interface bonita sin necesidad de estar llena de colores o elementos.
+- El navbar es muy útil e intuitivo.
+- Falta que edite en el mismo sitio donde se realizan las publicaciones. 
+- Nada pierde su ubicación en mobile y en desktop.
+- Faltan muchas cosas que puedan publicarse; como imágenes, links. 
+- Falta que no permite editar y borrar comentarios de otros.
+- Poder comentar las publicaciones de otros. 
+
 
 ## Autores
 
@@ -83,6 +111,7 @@ Nuestra filosofía es compartir los puntos clave del movimiento STEAM: Crear, in
 - CSS3
 - Boostrap
 - Marvel
+- Materialize
 
 ## Agradecimientos
 

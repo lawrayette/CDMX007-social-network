@@ -1,48 +1,18 @@
 const generalTable = document.getElementById('state-user');
 const filteredTable = document.getElementById('state-user-filter');
 let db = firebase.firestore();
-const image = document.getElementById('input.image');
-let mainApp = {};
+// const image = document.getElementById('input.image');//borrar//
 
 
-//let nameInput = document.getElementById('name-input')
-(function () {
-  let firebase = app_fireBase;
-  //let uid = null;
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      localStorage.setItem('user', JSON.stringify(user))
-      name = user.displayName;
-      eMail = user.email;
-      photoURL = user.photoURL;
-      uid = user.uid;
 
-      let printPhoto = document.getElementById('print-photo')
-      let photo = user.photoURL
-      printPhoto.innerHTML =  `<img src="${photo}" alt="FotoPerfil" style="width: 20px; border-radius:50%"></img>`
-     
-      let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
-     
-      console.log(nameCurrent)
-      console.log(uid)
-      
-    } else {
-      //redirect to login page
-      uid = null;
-      window.location.replace("index.html");
-    }
-  });
-  
-  console.log(name)
-  //console.log(uid)
+//funcion para desloguear
 
-
+  let mainApp = {};
   function logOut() {
     firebase.auth().signOut();
   }
   mainApp.logOut = logOut;
-})()
+
 
 // Crea los datos y los manda a Firestore
 function send() {
@@ -83,12 +53,12 @@ let printDataFunction = document.getElementById('printDataFunction');
 
 
 //logo de steam con función de "home"
-let logoSteamHome = document.getElementById("logo-nav");
-logoSteamHome.addEventListener('click', ()=>{
-  console.log ('funciona');
-  filteredTable.style.display = "none";
-  generalTable.style.display= "block";
-})
+// let logoSteamHome = document.getElementById("logo-nav");
+// logoSteamHome.addEventListener('click', ()=>{
+//   console.log ('funciona');
+//   filteredTable.style.display = "none";
+//   generalTable.style.display= "block";
+// })
 
 //---------------mensajes privados y publicos-------------------//
 let selectPrivacy = document.getElementById('select-Privacy')
@@ -241,28 +211,29 @@ function deleteData(id) {
 }
 
 //Edita los datos
-function editState(id, state) {
-  let editButton = document.getElementById('save-data');
-      document.getElementById('input-edit').value = state;
-      
-   editButton.onclick = function () {
-     var washingtonRef = db.collection("state").doc(id);
- 
-     let newInput = document.getElementById('input-edit').value;
-        return washingtonRef.update({
-         first: newInput,
-        })
-       .then(function () {
-         console.log("Document successfully updated!");
-        
-             })
-       .catch(function (error) {
-         // The document probably doesn't exist.
-         console.error("Error updating document: ", error);
-       });
-   }
- }
- 
+function editState(id,state) {
+  document.getElementById('input').value = state;
+  let editButton = document.getElementById('sendButton');
+  editButton.innerHTML = "Editar";
+
+  editButton.onclick = function () {
+    var washingtonRef = db.collection("state").doc(id);
+
+    let textInput = document.getElementById('input').value;
+      return washingtonRef.update({
+      first: textInput,
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+        let textInput = document.getElementById('input').value = '';
+        editButton.innerHTML = "Enviar";
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+    }
+  }
 
 
 //See User
