@@ -1,4 +1,4 @@
-libreria.controlador('miControlador', {
+library.controller('miControlador', {
 
 
   firstViewFunction: () => {

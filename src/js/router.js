@@ -1,20 +1,20 @@
-window.libreria.getId('view').enrutar()
-        .ruta('/', './views/news.html', 'miControlador', function () {
-                libreria.getCtrl().firstViewFunction()
+window.library.getId('view').routing()
+        .route('/', './views/news.html', 'miControlador', function () {
+                library.getCtrl().firstViewFunction()
         })
-        .ruta('/login', './views/login.html', 'miControlador', function () {
-                libreria.getCtrl().login()
+        .route('/login', './views/login.html', 'miControlador', function () {
+                library.getCtrl().login()
         })
-        .ruta('/forum', './views/forum.html', 'miControlador', function () {
-                libreria.getCtrl().forumFunctions()
+        .route('/forum', './views/forum.html', 'miControlador', function () {
+                library.getCtrl().forumFunctions()
         })
-        .ruta('/news', './views/news.html', 'miControlador', null, null)
+        .route('/news', './views/news.html', 'miControlador', null, null)
    
-        .ruta('/comunity', './views/comunity.html', 'miControlador', function () {
-                libreria.getCtrl().printComunity()
+        .route('/comunity', './views/comunity.html', 'miControlador', function () {
+                library.getCtrl().printComunity()
         })
 
-        .ruta('/myProfile', './views/myProfile.html', 'miControlador', function () {
-                libreria.getCtrl().profileFunctions()
+        .route('/myProfile', './views/myProfile.html', 'miControlador', function () {
+                library.getCtrl().profileFunctions()
         })
 
