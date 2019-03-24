@@ -200,7 +200,10 @@ nav{
     font-family: 'Merriweather Sans', sans-serif;
     font-size: .8rem;
 }
-
+.contact-information{
+    position:relative;
+    top:18px;
+}
 
 
 .fab .fa{
@@ -310,7 +313,10 @@ table.highlight tbody tr:hover {
    .propierty-on-columns{
        font-size: 18px;
    }
-
+.contact-information{
+    position:relative;
+    top:40px;
+}
 
 
 }

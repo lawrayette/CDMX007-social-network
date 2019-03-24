@@ -1,5 +1,7 @@
 libreria.controlador('miControlador', {
   firstViewFunction: () => {
+
+    
     const loginButton = document.getElementById('loginButton');
     const loginButtonsideNav = document.getElementById('loginButtonsideNav')
     const showLoginButton = () => {
@@ -51,9 +53,6 @@ libreria.controlador('miControlador', {
     })()
 
 
-
-
-    // let loginButton = document.getElementById('loginButton');
 
     const hideLoginButton = () => {
       loginButton.classList.add('hide');
@@ -288,9 +287,7 @@ libreria.controlador('miControlador', {
 
   },
 
-  // functionOnNews:() =>{
-  //  navButtonsforUser()
-  // },
+
 
 
 

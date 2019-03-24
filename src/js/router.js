@@ -1,8 +1,8 @@
-window.libreria.getId('vista').enrutar()
+window.libreria.getId('view').enrutar()
         .ruta('/', './views/news.html', 'miControlador', function () {
                 libreria.getCtrl().firstViewFunction()
         })
-        .ruta('/02login', './views/02login.html', 'miControlador', function () {
+        .ruta('/login', './views/login.html', 'miControlador', function () {
                 libreria.getCtrl().login()
         })
         .ruta('/forum', './views/forum.html', 'miControlador', function () {
