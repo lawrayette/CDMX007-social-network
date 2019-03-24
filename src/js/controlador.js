@@ -6,6 +6,7 @@ libreria.controlador('miControlador', {
       var uiConfig = {
         callbacks: {
           signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+
             return true;
           },
           uiShown: function () {
@@ -19,7 +20,9 @@ libreria.controlador('miControlador', {
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
         ],
 
+
         tosUrl: 'index.html#/forum',
+
       };
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
