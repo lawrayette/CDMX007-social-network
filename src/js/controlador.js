@@ -6,47 +6,39 @@ libreria.controlador('miControlador', {
       loginButton.classList.remove('hide')
       loginButtonsideNav.classList.remove('hide')
 
+
     }
     showLoginButton();
 
   },
+
   login: () => {
     (function () {
-      // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       var uiConfig = {
         callbacks: {
           signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
+
             return true;
           },
           uiShown: function () {
-            // The widget is rendered.
-            // Hide the loader.
             document.getElementById('loader').style.display = 'none';
           }
         },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
+
 
         // Terms of service url.
         tosUrl: 'index.html#/forum',
         // Privacy policy url.
         //privacyPolicyUrl: '<your-privacy-policy-url>'
+
       };
-      // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
 
@@ -107,6 +99,7 @@ libreria.controlador('miControlador', {
           <div class="row white">
             <blockquote >
             <div class="section">
+
             <p class="flow-text">${doc.data().first}</p>
             <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
             </div>
@@ -133,6 +126,7 @@ libreria.controlador('miControlador', {
       <div class="row white">
       <blockquote >
       <div class="section">
+
       <p class="flow-text">${doc.data().first}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
       </div>
@@ -213,12 +207,14 @@ libreria.controlador('miControlador', {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         table.innerHTML += `
+
                 <tr class="text-on-table">
                   <td>${doc.data().first}</td>
                   <td>${doc.data().user}</td>
                   <td>${doc.data().interest}</td>
                   <td>${doc.data().contactEmail}</td>
                 </tr>`
+
       });
     });
   },

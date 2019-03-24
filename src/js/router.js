@@ -17,3 +17,4 @@ window.libreria.getId('vista').enrutar()
         .ruta('/myProfile', './views/myProfile.html', 'miControlador', function () {
                 libreria.getCtrl().profileFunctions()
         })
+
