@@ -13,13 +13,13 @@ libreria.controlador('miControlador', {
           }
         },
         signInFlow: 'popup',
-        signInSuccessUrl: '01index.html#/forum',
+        signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
         ],
 
-        tosUrl: '01index.html#/forum',
+        tosUrl: 'index.html#/forum',
       };
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
