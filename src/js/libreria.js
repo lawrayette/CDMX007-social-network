@@ -38,7 +38,7 @@ var inicio = function (){
             xhr = new XMLHttpRequest()
             if(destino && destino.plantilla){
                 if(destino.controlador){
-                    ctrlActual = controladores[destino.controlador].controlador
+                    ctrlActual = controladores[destino.controlador].controlador;
                 }
                 xhr.addEventListener('load', function(){
                     marco.innerHTML = this.responseText
