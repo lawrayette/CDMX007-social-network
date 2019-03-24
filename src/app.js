@@ -11,7 +11,6 @@ mainApp.logOut = logOut;
 db = firebase.firestore()
 
 
-
 //Crea los datos y los manda a Firestore
 function send() {
   let userPost = JSON.parse(localStorage.getItem("user"));
