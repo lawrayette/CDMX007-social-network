@@ -109,7 +109,7 @@ libreria.controlador('miControlador', {
                 <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
                   <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
                   <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
-                  <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+                  <p class="col offset-s7 offset-m9 offset-l9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
                   </div>
             </blockquote>
             </div>

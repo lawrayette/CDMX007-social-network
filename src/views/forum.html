@@ -3,9 +3,6 @@
   <div class="container col s12 m4 l3 xl3">
     <blockquote class="z-depth-1">
       <div id="print-photo" class="section container col offset-l3 offset-m1 offset-s3 offset-xl3">foto aqui</div>
-      <div class="col offset-l3 offset-m1 offset-s3 offset-xl3">
-        <p class="flow-text section" id="name-input"></p>
-      </div>
     </blockquote>
 
     <div class=" col s12">
@@ -38,8 +35,13 @@
   <div class="container  col s12 m8 l9 xl9">  
     <!-- Teal page content  -->
    <div class="section container">
-        <h5 class="col s12 m12 l12 xl12 offset-s1 offset-l3 offset-xl3 section">¿Qué nos quieres compartir hoy?</h5>
-      <div class="col s8 m6 l4">
+      <span class="flow-text section" id="name-input"></span><span class="flow-text section"> ¿Qué nos quieres compartir hoy?</span>
+      <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="Placeholder" id="input" type="text" class="validate">
+            </div>
+        </div>
+      <div class="col s8 m6 l4 section">
          <select id="dropdown3" class="browser-default">
           <option value="Choose your option">Área de tu aporte</option>
           <option value="Ciencia">Ciencia</option>
@@ -57,17 +59,11 @@
           </label>
         </p>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Placeholder" id="input" type="text" class="validate">
-
-
-        </div>
-      </div>
-      <button id="sendButton" onclick="send()" class="btn btn-sm waves-effect waves-light purple accent-4 col offset-s3 offset-m4 offset-xl5"
-        type="submit" name="action">Publicar
-        <i class="material-icons right">near_me</i>
-      </button>
+   <div class="section"> <button id="sendButton" onclick="send()" class="btn btn-sm waves-effect waves-light purple accent-4 col offset-s3 offset-m4 offset-xl5"
+    type="submit" name="action">Publicar
+    <i class="material-icons right">near_me</i>
+  </button></div>
+      
     </div>
     <div id="state-user" class="section container"></div>
     <div id="state-user-filter" class="section container"></div>
