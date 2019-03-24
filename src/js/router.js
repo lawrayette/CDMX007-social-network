@@ -1,20 +1,18 @@
-window.libreria.getId('vista').enrutar()
-        .ruta('/', './views/news.html', 'miControlador', function () {
-                libreria.getCtrl().firstViewFunction()
+//Asigna la ruta, la plantilla, el controlador y la carga
+window.library.getId('view').routing()
+        .route('/', './views/news.html', 'myController', function () {
+                library.getCtrl().firstViewFunction()
         })
-        .ruta('/02login', './views/02login.html', 'miControlador', function () {
-                libreria.getCtrl().login()
+        .route('/login', './views/login.html', 'myController', function () {
+                library.getCtrl().login()
         })
-        .ruta('/forum', './views/forum.html', 'miControlador', function () {
-                libreria.getCtrl().forumFunctions()
+        .route('/forum', './views/forum.html', 'myController', function () {
+                library.getCtrl().forumFunctions()
         })
-        .ruta('/news', './views/news.html', 'miControlador', null, null)
-   
-        .ruta('/comunity', './views/comunity.html', 'miControlador', function () {
-                libreria.getCtrl().printComunity()
+        .route('/news', './views/news.html', 'myController', null, null)
+        .route('/comunity', './views/comunity.html', 'myController', function () {
+                library.getCtrl().printComunity()
         })
-
-        .ruta('/myProfile', './views/myProfile.html', 'miControlador', function () {
-                libreria.getCtrl().profileFunctions()
+        .route('/myProfile', './views/myProfile.html', 'myController', function () {
+                library.getCtrl().profileFunctions()
         })
-

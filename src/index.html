@@ -5,33 +5,34 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Point STEAM</title>
-  <link rel="icon" type="image" href="./assets/favicon.png">
+  <link rel="icon" href="./assets/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Compiled and minified CSS materialize-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Iconos -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- Fuentes -->
   <!-- Estilos -->
   <link rel="stylesheet" type="text/css" media="screen" href="./css/01style.css">
-  <!--applause button-->
+  <!--Applause button-->
   <link rel="stylesheet" href="./css/applause_button.css">
   <script src="./js/applause_button.js"></script>
-  <!-- Firebase-->
+  <!-- Google Icons-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+  <!-- Firebase-->
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 <body>
-  <!--Navbar-->
 
-  <nav>
+  <!--Navbar-->
+  <nav> 
     <div class="nav-wrapper">
       <div class="container"><a href="#!" class="brand-logo"><img src="./assets/logo3cm.png" alt="logo3cm"
             class="logo-login"></a></div>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars"
-            color=#fffff></i></i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><i class="fas fa-bars"></i></i></a>
 
       <ul class="right hide-on-med-and-down">
         <li class="hide menuButtons"><a href="#/forum"> Foro</a></li>
@@ -39,8 +40,8 @@
         <li class="hide menuButtons"><a href="#/comunity"> Comunidad steam</a></li>
         <li class="hide menuButtons"><a href="#/news"> Próximos eventos</a></li>
         <li class="hide menuButtons"><a href="" onclick="logOut()"> Cerrar sesión</a></li>
-        <li class="hide" id="loginButton"><a class="waves-effect waves-yellow lighten-4 btn purple accent-3"href="#/02login">Login</a></li>
-
+        <li class="hide" id="loginButton"><a class="waves-effect waves-yellow lighten-4 btn purple accent-3"
+            href="#/login">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -49,88 +50,77 @@
     </li>
     <li class="hide menuButtons"><a class="sidenav-close" href="#/myProfile"><i class="fas fa-user-astronaut"></i>Mi
         perfil</a></li>
-    <li class="hide menuButtons"><a class="sidenav-close" href="#/comunity"><i
-          class="fas fa-user-friends"></i>Comunidad Steam</a></li>
+    <li class="hide menuButtons"><a class="sidenav-close" href="#/comunity"><i class="fas fa-user-friends"></i>Comunidad
+        Steam</a></li>
     <li class="hide menuButtons"><a class="sidenav-close" href="#/news"><i class="fas fa-calendar-alt"></i>Próximos
         Eventos</a></li>
-    <li class="hide menuButtons"><a  href="" onclick="logOut()">Cerrar Sesión</a></li>
-    <li class="hide " id="loginButtonsideNav"><a class="waves-effect waves-yellow lighten-4 btn purple accent-3" href="#/02login">Login</a></li>
+    <li class="hide menuButtons"><a href="" onclick="logOut()">Cerrar Sesión</a></li>
+    <li class="hide " id="loginButtonsideNav"><a class="waves-effect waves-yellow lighten-4 btn purple accent-3"
+        href="#/login">Login</a></li>
   </ul>
-  <!-- Termina navbar -->
+  <!-- Finish navbar -->
 
 
-
-  <div id='vista' class="view-height">
+<!-- Views of the templates -->
+  <div id='view' class="view-height">
 
   </div>
 
 
 
-  <!-- Footer -->
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-
-        <div class="col s12 center m6 l6">
-
-
-          <div>
-            <img src="./assets/logo.png" class="responsive-img" alt="">
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 center m6 l6">
+              <div>
+                <img src="./assets/logo.png" class="responsive-img" alt="">
+              </div>
+              <p><br>
+                Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la
+                Ingeniería, las Artes y las Matemáticas.</p>
+            </div>
+            <div class="col s12 center m6 l6">
+              <br>
+              <p><i class="fas fa-map-marker-alt"></i> Tonalá 10, Roma Sur, 06700, CDMX</p>
+              <p><i class="fas fa-phone"></i> 01 800 314 159 265</p>
+              <p><i class="fas fa-envelope"></i> info@point-steam.com</p>
+            </div>
+    
+    
           </div>
-          <p><br>
-
-            Es un proyecto que busca entrelazar personas que comparten el amor por la Ciencia, la Tecnología, la
-            Ingeniería, las Artes y las Matemáticas.</p>
-
-
         </div>
-
-        <div class="col s12 center m6 l6">
-
-          <br>
-          <p><i class="fas fa-map-marker-alt"></i> Tonalá 10, Roma Sur, 06700, CDMX</p>
-          <p><i class="fas fa-phone"></i> 01 800 314 159 265</p>
-          <p><i class="fas fa-envelope"></i> info@point-steam.com</p>
-
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="col offset-s4 offset-l4 offset-m4 copyright-size">
+              <p>© .STEAM | 2019
+                <br>
+                Todos los derechos reservados.
+              </p>
+              <a class="btn-floating btn-sm waves-effect waves-yellow github-button"
+                href="https://github.com/jaurinu/CDMX007-social-network" target=”_blank” title="Github Point STEAM"><i
+                  class="fab fa-github"></i></a>
+              <a href="" title="Instagram Point Steam"
+                class="btn-floating btn-sm waves-effect waves-yellow instagram-button"><i class="fab fa-instagram"></i>
+              </a>
+              <a href="" title="Twiter Point Steam " class="btn-floating btn-sm waves-effect waves-yellow twitter-button"><i
+                  class="fab fa-twitter"></i></a>
+            </div>
+    
+          </div>
         </div>
-
-
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <div class="col offset-s4 offset-l4 offset-m4 copyright-size">
-          <p>© .STEAM | 2019
-            <br>
-            Todos los derechos reservados.
-          </p>
-
-
-          <a class="btn-floating btn-sm waves-effect waves-yellow github-button"
-            href="https://github.com/jaurinu/CDMX007-social-network" target=”_blank” title="Github Point STEAM"><i
-              class="fab fa-github"></i></a>
-          <a href="" title="Instagram Point Steam"
-            class="btn-floating btn-sm waves-effect waves-yellow instagram-button"><i class="fab fa-instagram"></i>
-          </a>
-          <a href="" title="Twiter Point Steam " class="btn-floating btn-sm waves-effect waves-yellow twitter-button"><i
-
-              class="fab fa-twitter"></i></a>
-        </div>
-
-      </div>
-    </div>
-  </footer>
+      </footer>
 
 
 
-  <!-- Compiled and minified JavaScript -->
+<!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <script src="./firebase.js"></script>
   <script src="./app.js"></script>
-  <script src="./js/libreria.js"></script>
-  <script src="./js/controlador.js"></script>
+  <script src="./js/library.js"></script>
+  <script src="./js/controller.js"></script>
   <script src="./js/router.js"></script>
 
 </body>
