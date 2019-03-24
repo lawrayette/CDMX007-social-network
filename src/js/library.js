@@ -6,25 +6,32 @@ const startLibrary = function () {
         controllers = {},
         currentCtrl = null,
         library = {
+
             getId: function (id) {
                 elementLibrary = document.getElementById(id)
                 return this
             },
+
             get: function (id) {
                 return document.getElementById(id)
             },
-            controller: function (nombre, ctrl) {
-                controllers[nombre] = {
+
+            controller: function (name, ctrl) {
+                controllers[name] = {
                     'controller': ctrl
                 }
             },
+
             getCtrl: function () {
                 return currentCtrl
             },
+
+            //Asigna al lugar donde se cargan las vistas el elemento seleccionado
             routing: function () {
                 framework = elementLibrary
                 return this
             },
+
             route: function (route, template, controller, loadFunction) {
                 routes[route] = {
                     template,
@@ -33,6 +40,7 @@ const startLibrary = function () {
                 }
                 return this
             },
+
             routeController: function () {
                 var hash = window.location.hash.substring(1) || '/',
                     destiny = routes[hash],

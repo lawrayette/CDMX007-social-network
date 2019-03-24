@@ -1,4 +1,4 @@
-library.controller('miControlador', {
+library.controller('myController', {
 
 
   firstViewFunction: () => {
@@ -33,20 +33,20 @@ library.controller('miControlador', {
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
-        //Provedores que queremos ofrecer a nuestros usuarios
+          //Provedores que queremos ofrecer a nuestros usuarios
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
         ],
         //Condiciones del servicio Url
         tosUrl: 'index.html#/forum',
       };
-       //El método de inicio esperará hasta que se cargue el DOM
+      //El método de inicio esperará hasta que se cargue el DOM
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
 
 
 
-//Oculta el botón de login del menú
+    //Oculta el botón de login del menú
     const hideLoginButton = () => {
       loginButton.classList.add('hide');
       loginButtonsideNav.classList.add('hide');
@@ -87,7 +87,7 @@ library.controller('miControlador', {
 
     const generalTable = document.getElementById('state-user');
 
-//Imprime en el foro la colección "state" de firebase
+    //Imprime en el foro la colección "state" de firebase
     let db = firebase.firestore();
     db.collection("state").onSnapshot((querySnapshot) => {
       generalTable.innerHTML = '';
@@ -104,7 +104,7 @@ library.controller('miControlador', {
                 <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
                 <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
                 <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-                  <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+                  <img  src="https://simplesharebuttons.com/images/somacro/twitter.png" width="40" height="40" style="position:relative; top:15.5px"  alt="Twitter" /></a>
                   <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
                   <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
                   </div>
@@ -144,7 +144,7 @@ library.controller('miControlador', {
       generalTable.style.display = "none";
     };
 
-// Después de seleccionar una opción de filtrado permite volver a visualizar todos los post
+    // Después de seleccionar una opción de filtrado permite volver a visualizar todos los post
 
     const refreshPost = document.getElementById('refreshPost')
     refreshPost.addEventListener("click", () => {
@@ -177,7 +177,7 @@ library.controller('miControlador', {
     })()
 
 
-  //Permite elegir publicar como privado o público
+    //Permite elegir publicar como privado o público
     let selectPrivacy = document.getElementById('select-Privacy')
     selectPrivacy.addEventListener('change', () => {
       console.log(selectPrivacy.value)
@@ -206,7 +206,7 @@ library.controller('miControlador', {
   printComunity: () => {
     db = firebase.firestore();
 
-//Imprime la data de la collección "members" de firebase
+    //Imprime la data de la collección "members" de firebase
     const table = document.getElementById('table');
 
     db.collection("members").get().then((querySnapshot) => {
@@ -287,14 +287,7 @@ library.controller('miControlador', {
 
   },
 
- 
+
 
 
 })
-
-
-
-
-
-
-

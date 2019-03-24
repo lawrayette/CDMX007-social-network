@@ -1,326 +1,290 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
 
-/*----Estilos Generales----*/
 
-* {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/*Estilos generales*/
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body {
+body
+{
     background-color: rgb(219, 208, 219);
-  }
-  
-  blockquote {
+}
+
+blockquote
+{
     margin: 20px 0;
     padding-left: 1.5rem;
-    border-left: 5px solid rgba(0,0,0,.87);
+
+    border-left: 5px solid rgba(0, 0, 0, .87);
 }
+
 
 /*----Materialize Navbar----*/
-nav{
+nav
+{
     background-color: #212529;
 }
-#refreshPost{
- position: relative;
- top:15px;
+
+
+
+#refreshPost
+{
+    position: relative;
+    top: 15px;
 }
-.view-height{
-    min-height: 1000px;
+#applause-container
+{
+    position: relative;
+    right: -85%;
+    bottom: 40px;
+    width: 30px;
 }
 
-.font-style-area{
+
+.view-height
+{
+    min-height: 800px;
+}
+
+.responsive-img
+{
+    width: 35%;
+}
+
+.font-style-area
+{
     font-size: 20px;
 }
-.logo-login{
+
+.logo-login
+{
     width: 150px;
     margin-top: 12px;
 }
 
-.wrapper{
+.wrapper
+{
     width: 20px;
 }
 
-.titulo-merriweather-sans{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: .5rem 0 .5rem 0;
-    text-align: center;
-}
 
 
 /*----Cards----*/
 
-.card .card-content {
+.card .card-content
+{
     padding: 20px;
+
     border-radius: 0 0 2px 2px;
 }
-.cc-card1{
+
+.cc-card1
+{
     background-color: #89dbde;
 }
 
-.cc-card2{
+.cc-card2
+{
     background-color: #66adaf;
 }
 
-.cc-card3{
+.cc-card3
+{
     background-color: #b8db67;
 }
 
-.cc-card4{
+.cc-card4
+{
     background-color: #c3afe0;
 }
 
-.news-title{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 2rem;
-    padding: 1.5rem;
-    margin: 0;
-    font-weight: bold;
-    justify-content: center; 
-}
-
-/*----LoginPage----*/
-.login-position{
-    position: relative;
-    top: 240px;
-}
-.firebaseui-card-content {
-    padding: 80px 24px;
-}
-
-.firebaseui-idp-list {
-    margin: 1em 25px;
-    padding: 31px 0 20px;
- } 
-
-.inicia-sesion{
-    color: #5A6978;
-    text-align: center;
-    border-top: 100px;
-    margin: 40% auto;
-}
-
-.texto-azul{
-   color: #6247AA;
-    text-align: center;
-    border-top: 100px;
-}
-
-.firebaseui-container {
-    background-color: white;
-}
-
-.mdl-button--raised.mdl-button--colored {
-    background: #6247AA;
-    color: #fff;
-} 
-
-.mdl-button--primary.mdl-button--primary {
-    color: #6247AA;
-}
-
-.mdl-button--raised.mdl-button--colored:hover {
-    background-color: #6247AA;
-}
-
-/*----wall forum----*/
-.nav-bar-avatar {
-    margin-top: 14px;
-  }
-
-  .aside-style{
-    background-color: rgba(97, 71, 170, 0.411);
-  }
-
-.post-wall{
-    background-color: antiquewhite;
-}
-
-.post-text{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    text-align: left;
-    padding: 0;
-    }
-
-    .photo-post-style{
-        margin: 10px;
-        padding: 15px;
-    }
 
 
-    .responsive-img{
-        width: 35%;
-    
-    }
+/*----Footer----*/
 
-    .align-content-post{
-        display: inline-block;
-    }
-  
-      .form-control-textarea {
-          border:none;
-        width: 200%;
-    padding: 5%;
-    height: 6rem;
-      }
-
-      .tweet{
-          position: relative;
-          top: 15.5px;
-      }
-
- /*----Footer----*/
-
-.page-footer {
+.page-footer
+{
     padding-top: 20px;
+
     color: #fff;
     background-color: #212529;
 }
 
-.logo-login-footer{
+.logo-login-footer
+{
     width: 100px;
     margin-top: 12px;
 }
 
-.footer-text{
+.footer-text
+{
     font-family: 'Merriweather Sans', sans-serif;
     font-size: .8rem;
 }
-.contact-information{
-    position:relative;
-    top:18px;
-}
 
-
-.fab .fa{
-    display: inline-block;
-    text-decoration: none;
-    width: 32px;
-    height: 32px;
-    line-height: 57px;
-    border-radius: 50%;
-    background: #AD29B6;
-    color: white;
+.contact-information
+{
+    position: relative;
+    top: 18px;
 }
-
-/*---comunity table-*/
-
-.font-size-on-subtitle-members{
-    font-size:16px;
-}
-table.highlight tbody tr:hover {
-    background-color: black !important;
-    color: whitesmoke !important;
-}
-.text-on-table{
-    font-size: 9px;
-}
-.propierty-on-columns{
-    font-size: 11px;
-}
-.nav-bar-avatar {
-    margin-top: 14px;
-  }
- 
-  .aside-style{
-    background-color: rgba(97, 71, 170, 0.411);
-  }
- 
- .post-wall{
-    background-color: antiquewhite;
- }
- 
- .post-text{
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    text-align: left;
-    padding: 0;
-    }
- 
-    .photo-post-style{
-        margin: 10px;
-        padding: 15px;
-    }
- 
-    .align-content-post{
-        display: inline-block;
-    }
- 
-      .form-control-textarea {
-          border:none;
-        width: 200%;
-    padding: 5%;
-    height: 6rem;
-      }
-.footer-copyright{
+.footer-copyright
+{
     position: relative;
     text-align: center;
 }
-.github-button{
+
+.github-button
+{
     background-color: #181717;
-   size: 0ch;
 }
 
-.instagram-button{
-    background-color:#D291FF;
+.instagram-button
+{
+    background-color: #d291ff;
 }
 
-.twitter-button{
-    background-color: #1DA1F2;
+.twitter-button
+{
+    background-color: #1da1f2;
 }
 
-.copyright-size{
+.copyright-size
+{
     font-size: 12px;
 }
 
+.fab .fa
+{
+    line-height: 57px;
+
+    display: inline-block;
+
+    width: 32px;
+    height: 32px;
+
+    text-decoration: none;
+
+    color: white;
+    border-radius: 50%;
+    background: #ad29b6;
+}
+
+/*----LoginPage----*/
+.login-position
+{
+    position: relative;
+    top: 240px;
+}
+
+/*--NewsPage---*/
+
+.news-title
+{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin: 0;
+    padding: 1.5rem;
+
+    justify-content: center;
+}
+.post-text
+{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/*---comunity page-*/
+
+.font-size-on-subtitle-members
+{
+    font-size: 16px;
+}
+
+table.highlight tbody tr:hover
+{
+    color: whitesmoke !important;
+    background-color: black !important;
+}
+
+.text-on-table
+{
+    font-size: 9px;
+}
+
+.propierty-on-columns
+{
+    font-size: 11px;
+}
+
+.post-text
+{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+
 /*--applause--*/
-.clap-button{
+.clap-button
+{
     width: 40px !important;
     height: 40px !important;
 }
-#applause-container{
-    position: relative;
-    bottom: 40px;
-    right: -90%;
-    width: 30px;    
-}
 
 
-@media (min-width: 767px) {
+
+@media (min-width: 767px){
 
 
-    .font-size-on-subtitle-members{
-        font-size:20px;
+    #applause-container
+    {
+        position: relative;
+        right: -90%;
+        bottom: 40px;
+
+        width: 30px;
     }
-    .text-on-table{
+
+
+    .font-size-on-subtitle-members
+    {
+        font-size: 20px;
+    }
+
+    .text-on-table
+    {
         font-size: 16px;
     }
 
-   .propierty-on-columns{
-       font-size: 18px;
-   }
-.contact-information{
-    position:relative;
-    top:40px;
-}
-.clap-button{
-    width: 40px !important;
-    height: 40px !important;
-   }
-   #applause-container{
-    position: relative;
-    bottom: 40px;
-    right: -76%;
-    width: 30px;    
-}
+    .propierty-on-columns
+    {
+        font-size: 18px;
+    }
+
+    .contact-information
+    {
+        position: relative;
+        top: 40px;
+    }
+
+    .clap-button
+    {
+        width: 40px !important;
+        height: 40px !important;
+    }
 
 }
-
-

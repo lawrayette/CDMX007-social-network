@@ -1,6 +1,6 @@
 let app_fireBase = {};
 (function(){
-  // Initialize Firebase
+  // Inicializar Firebase
   var config = {
     apiKey: "AIzaSyCckaF20jG2kPIzpahf3_8P6trQmFf5yq0",
     authDomain: "steam-3b4ca.firebaseapp.com",

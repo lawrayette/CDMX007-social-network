@@ -1,4 +1,4 @@
-//funcion para desloguear
+//Función para desloguear
 
 let mainApp = {};
 
@@ -24,8 +24,6 @@ function send() {
       first: textInput,
       uid: userPost.uid,
       private: privateMsgChecked,
-
-
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -38,7 +36,7 @@ function send() {
     });
 }
 
-//función para el sidenav
+//Función para el sidenav
 let sideNavMenu =
   (function () {
     document.addEventListener('DOMContentLoaded', function () {
@@ -49,7 +47,7 @@ let sideNavMenu =
     })
   })()
 
-// elimina los datos del muro
+// Elimina los datos del muro
 function deleteData(id) {
   if (confirm('¿Realmente deseas eliminar tu mensaje?')) {
     db.collection("state").doc(id).delete().then(function () {
