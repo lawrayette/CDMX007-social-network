@@ -23,7 +23,10 @@ body {
 nav{
     background-color: #212529;
 }
-
+#refreshPost{
+ position: relative;
+ top:15px;
+}
 .view-height{
     min-height: 1000px;
 }

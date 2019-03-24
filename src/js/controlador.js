@@ -88,8 +88,9 @@ libreria.controlador('miControlador', {
 
 
     const generalTable = document.getElementById('state-user');
-
     let db = firebase.firestore();
+
+printPostOnForum = ()=>{
     db.collection("state").onSnapshot((querySnapshot) => {
       generalTable.innerHTML = '';
       querySnapshot.forEach((doc) => {
@@ -115,9 +116,16 @@ libreria.controlador('miControlador', {
             `
       });
     });
+
+  }  
+  printPostOnForum()
+
+
+ 
+
+ const filteredTable = document.getElementById('state-user-filter');
     //imprime los datos del filtro
     const printData = (querySnapshot) => {
-      let filteredTable = document.getElementById('state-user-filter');
       filteredTable.style.display = "block";
       filteredTable.innerHTML = "";
       querySnapshot.forEach((doc) => {
@@ -143,8 +151,15 @@ libreria.controlador('miControlador', {
       });
       generalTable.style.display = "none";
     };
-
-
+    
+    const refreshPost = document.getElementById ('refreshPost')
+    refreshPost.addEventListener("click", ()=>{
+    
+      filteredTable.style.display = "none";
+  generalTable.style.display= "block";
+     
+     
+     });
 
     // Función para guardar datos de usuario logueado en imprimirlas en el foro
     (function () {
