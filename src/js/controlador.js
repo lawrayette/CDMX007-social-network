@@ -1,9 +1,7 @@
 libreria.controlador('miControlador', {
 
-
   login: () => {
     (function () {
-      // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       var uiConfig = {
         callbacks: {
@@ -12,30 +10,20 @@ libreria.controlador('miControlador', {
             return true;
           },
           uiShown: function () {
-            // The widget is rendered.
-            // Hide the loader.
             document.getElementById('loader').style.display = 'none';
           }
         },
-        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
 
-        // Terms of service url.
+
         tosUrl: 'index.html#/forum',
-        // Privacy policy url.
-        //privacyPolicyUrl: '<your-privacy-policy-url>'
+
       };
-      // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
   },
@@ -78,8 +66,8 @@ libreria.controlador('miControlador', {
               <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
               <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
               <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-                <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25" height="25" alt="Twitter" /></a>
+                <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
                 <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
                 </div>
           </blockquote>
@@ -106,7 +94,7 @@ const printData = (querySnapshot) => {
         <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
         <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-          <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+          <div id="applause-container"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" color="Purple"></div>
           <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
           </div>
     </blockquote>
@@ -182,7 +170,7 @@ if (selectPrivacy.value == 'private') {
                 <td>${doc.data().first}</td>
                 <td>${doc.data().user}</td>
                 <td>${doc.data().interest}</td>
-                <td>${doc.data().contactEmail}</td>
+                <td class="email">${doc.data().contactEmail}</td>
               </tr>`
       });
     });
