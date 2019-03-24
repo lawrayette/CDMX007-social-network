@@ -282,8 +282,8 @@ table.highlight tbody tr:hover {
 
 /*--applause--*/
 .clap-button{
-    width: 30px !important;
-    height: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
 }
 #applause-container{
     position: relative;
@@ -310,7 +310,17 @@ table.highlight tbody tr:hover {
     position:relative;
     top:40px;
 }
-
+.clap-button{
+    width: 40px !important;
+    height: 40px !important;
+   }
+   #applause-container{
+    position: relative;
+    bottom: 40px;
+    right: -76%;
+    width: 30px;    
+}
 
 }
+
 

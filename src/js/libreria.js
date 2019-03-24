@@ -1,4 +1,5 @@
-var inicio = function (){
+
+const startLibrary = function (){
     var elemento = null,
     marco = null,
     rutas = {},
@@ -58,7 +59,7 @@ var inicio = function (){
     return libreria
 }
 if(typeof window.libreria === 'undefined'){
-    window.libreria = inicio()
+    window.libreria = startLibrary()
     window.addEventListener('load', libreria.manejadorRutas, false)
     window.addEventListener('hashchange',libreria.manejadorRutas, false)
 }else{
