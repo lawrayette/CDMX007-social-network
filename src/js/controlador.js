@@ -1,26 +1,27 @@
 libreria.controlador('miControlador', {
   firstViewFunction: () => {
 
-    
+
     const loginButton = document.getElementById('loginButton');
-    const loginButtonsideNav = document.getElementById('loginButtonsideNav')
+    const loginButtonsideNav = document.getElementById('loginButtonsideNav');
+
+    //Función para desocultar el login en la primera pantalla
     const showLoginButton = () => {
       loginButton.classList.remove('hide')
       loginButtonsideNav.classList.remove('hide')
-
-
     }
     showLoginButton();
 
   },
 
   login: () => {
+
+    //Configuración firebase de autenticación
     (function () {
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       var uiConfig = {
         callbacks: {
           signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-
             return true;
           },
           uiShown: function () {
@@ -30,39 +31,34 @@ libreria.controlador('miControlador', {
         signInFlow: 'popup',
         signInSuccessUrl: 'index.html#/forum',
         signInOptions: [
+          //Provedores que queremos ofrecer a nuestros usuarios
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
         ],
-
-
-        // Terms of service url.
+        //Condiciones del servicio Url
         tosUrl: 'index.html#/forum',
-        // Privacy policy url.
-        //privacyPolicyUrl: '<your-privacy-policy-url>'
-
       };
+      //El método de inicio esperará hasta que se cargue el DOM
       ui.start('#firebaseui-auth-container', uiConfig);
     })()
 
 
-
+    //Función para ocultar el botón de login del menú
     const hideLoginButton = () => {
       loginButton.classList.add('hide');
       loginButtonsideNav.classList.add('hide');
     }
     hideLoginButton();
 
-
-
-
-
-
   },
+
+
   forumFunctions: () => {
 
+
+    //La función desoculta el resto de los botones del menú que debe de visualizar el usuario
+
     const removeHideMenu = document.getElementsByClassName('menuButtons');
-
-
     const navButtonsforUser = () => {
       for (let i = 0; i < removeHideMenu.length; i++) {
         removeHideMenu[i].classList.remove('hide');
@@ -74,8 +70,8 @@ libreria.controlador('miControlador', {
 
 
     //Función para filtrar por tema
-    let areaSelection = document.getElementsByClassName('area-name');
 
+    let areaSelection = document.getElementsByClassName('area-name');
 
     for (let i = 0; i < areaSelection.length; i++) {
       areaSelection[i].addEventListener('click', () => {
@@ -87,22 +83,25 @@ libreria.controlador('miControlador', {
 
 
 
-    const generalTable = document.getElementById('state-user');
-    let db = firebase.firestore();
 
-printPostOnForum = ()=>{
-    db.collection("state").onSnapshot((querySnapshot) => {
-      generalTable.innerHTML = '';
-      querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().first}`);
-        generalTable.innerHTML += `
+
+    printPostOnForum = () => {
+
+
+      const generalTable = document.getElementById('state-user');
+      let db = firebase.firestore();
+
+     //Imprime los post del foro
+      db.collection("state").onSnapshot((querySnapshot) => {
+        generalTable.innerHTML = '';
+        querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data().first}`);
+          generalTable.innerHTML += `
           <div class="row white">
             <blockquote >
             <div class="section">
-
             <p class="flow-text">${doc.data().first}</p>
-            <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
-            </div>
+            <li class="area" value="${doc.data().area}">${doc.data().area}</li></div>  
               <div class="section">
                 <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
                 <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
@@ -112,19 +111,20 @@ printPostOnForum = ()=>{
                   <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
                   </div>
             </blockquote>
-            </div>
-            `
+            </div> `
+        });
       });
-    });
 
-  }  
-  printPostOnForum()
+    }
+    printPostOnForum()
 
 
- 
+
+
+   
+    //Imprime los datos del filtro
 
  const filteredTable = document.getElementById('state-user-filter');
-    //imprime los datos del filtro
     const printData = (querySnapshot) => {
       filteredTable.style.display = "block";
       filteredTable.innerHTML = "";
@@ -133,7 +133,6 @@ printPostOnForum = ()=>{
       <div class="row white">
       <blockquote >
       <div class="section">
-
       <p class="flow-text">${doc.data().first}</p>
       <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
       </div>
@@ -146,28 +145,24 @@ printPostOnForum = ()=>{
             <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
             </div>
       </blockquote>
-      </div>
-      `
+      </div>`     
       });
       generalTable.style.display = "none";
     };
-    
-    const refreshPost = document.getElementById ('refreshPost')
-    refreshPost.addEventListener("click", ()=>{
-    
-      filteredTable.style.display = "none";
-  generalTable.style.display= "block";
-     
-     
-     });
 
-    // Función para guardar datos de usuario logueado en imprimirlas en el foro
+ //Después de seleccionar una opción de filtrado permite volver a visualizar todos los post
+
+    const refreshPost = document.getElementById('refreshPost')
+    refreshPost.addEventListener("click", () => {
+      filteredTable.style.display = "none";
+      generalTable.style.display = "block";
+    });
+
+    // Función para guardar datos de usuario logueado e imprimirlos en el foro
     (function () {
       let firebase = app_fireBase;
-      //let uid = null;
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-          // User is signed in.
           localStorage.setItem('user', JSON.stringify(user))
           name = user.displayName;
           eMail = user.email;
@@ -178,7 +173,7 @@ printPostOnForum = ()=>{
           let photo = user.photoURL
           printPhoto.innerHTML = `<img src="${photo}" alt="FotoPerfil" style="width: 100px; border-radius:50%"></img>`
 
-          let nameCurrent = document.getElementById('name-input').innerHTML = ` ${name}`
+          let nameCurrent = document.getElementById('name-input').innerHTML = `${name}`
 
           console.log(nameCurrent)
           console.log(uid)
@@ -186,7 +181,8 @@ printPostOnForum = ()=>{
       });
     })()
 
-    //---------------mensajes privados y publicos-------------------//
+    //Permite elegir entre mensajes privados y públicos
+
     let selectPrivacy = document.getElementById('select-Privacy')
     selectPrivacy.addEventListener('change', () => {
       console.log(selectPrivacy.value)
@@ -198,7 +194,7 @@ printPostOnForum = ()=>{
             console.log("Error getting documents: ", error);
           });
       } else {
-        console.log('son publicos')
+        console.log('son públicos')
         db.collection("state").where("uid", "==", uid).where("private", "==", false)
           .get()
           .then(printData)
@@ -207,7 +203,7 @@ printPostOnForum = ()=>{
           });
       }
     });
-    //--------------- termina mensajes privados y publicos-------------------//
+   
 
   },
 
