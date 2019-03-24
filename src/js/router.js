@@ -17,3 +17,4 @@ window.libreria.getId('view').enrutar()
         .ruta('/myProfile', './views/myProfile.html', 'miControlador', function () {
                 libreria.getCtrl().profileFunctions()
         })
+
