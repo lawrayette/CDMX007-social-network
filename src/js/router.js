@@ -8,9 +8,8 @@ window.libreria.getId('vista').enrutar()
         .ruta('/forum', './views/forum.html', 'miControlador', function () {
                 libreria.getCtrl().forumFunctions()
         })
-        .ruta('/news', './views/news.html', 'miControlador', function () {
-                libreria.getCtrl().functionOnNews()
-        })
+        .ruta('/news', './views/news.html', 'miControlador', null, null)
+   
         .ruta('/comunity', './views/comunity.html', 'miControlador', function () {
                 libreria.getCtrl().printComunity()
         })

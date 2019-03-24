@@ -1,82 +1,86 @@
 libreria.controlador('miControlador', {
-firstViewFunction:()=>{
- const loginButton = document.getElementById('loginButton');
- 
- const showLoginButton = ()=>{
-   loginButton.classList.remove('hide')
- }
-showLoginButton();
+  firstViewFunction: () => {
+    const loginButton = document.getElementById('loginButton');
+    const loginButtonsideNav = document.getElementById('loginButtonsideNav')
+    const showLoginButton = () => {
+      loginButton.classList.remove('hide')
+      loginButtonsideNav.classList.remove('hide')
 
-},
-login: () => {
-  (function () {
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    var uiConfig = {
-      callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-          // User successfully signed in.
-          // Return type determines whether we continue the redirect automatically
-          // or whether we leave that to developer to handle.
-          return true;
-        },
-        uiShown: function () {
-          // The widget is rendered.
-          // Hide the loader.
-          document.getElementById('loader').style.display = 'none';
-        }
-      },
-      // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-      signInFlow: 'popup',
-      signInSuccessUrl: 'index.html#/forum',
-      signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-        //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-      ],
-
-      // Terms of service url.
-      tosUrl: 'index.html#/forum',
-      // Privacy policy url.
-      //privacyPolicyUrl: '<your-privacy-policy-url>'
-    };
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
-  })()
-
-
-
-
-    let loginButton = document.getElementById('loginButton');
- 
-    const hideLoginButton = ()=>{
-      loginButton.classList.add('hide')
     }
-   hideLoginButton();
+    showLoginButton();
+
+  },
+  login: () => {
+    (function () {
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      var uiConfig = {
+        callbacks: {
+          signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            // User successfully signed in.
+            // Return type determines whether we continue the redirect automatically
+            // or whether we leave that to developer to handle.
+            return true;
+          },
+          uiShown: function () {
+            // The widget is rendered.
+            // Hide the loader.
+            document.getElementById('loader').style.display = 'none';
+          }
+        },
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: 'index.html#/forum',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+
+        // Terms of service url.
+        tosUrl: 'index.html#/forum',
+        // Privacy policy url.
+        //privacyPolicyUrl: '<your-privacy-policy-url>'
+      };
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    })()
 
 
 
-  
+
+    // let loginButton = document.getElementById('loginButton');
+
+    const hideLoginButton = () => {
+      loginButton.classList.add('hide');
+      loginButtonsideNav.classList.add('hide');
+    }
+    hideLoginButton();
 
 
-},
+
+
+
+
+  },
   forumFunctions: () => {
 
     const removeHideMenu = document.getElementsByClassName('menuButtons');
-    
- const navButtonsforUser =()=>{
-   for (let i= 0; i< removeHideMenu.length; i++){
-     removeHideMenu[i].classList.remove('hide');
-   }
-   loginButton.classList.add('hide');
 
- }
- navButtonsforUser()
-   
+
+    const navButtonsforUser = () => {
+      for (let i = 0; i < removeHideMenu.length; i++) {
+        removeHideMenu[i].classList.remove('hide');
+      }
+      loginButton.classList.add('hide');
+      loginButtonsideNav.classList.add('hide');
+    }
+    navButtonsforUser()
+
 
     //Función para filtrar por tema
     let areaSelection = document.getElementsByClassName('area-name');
@@ -100,26 +104,25 @@ login: () => {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
         generalTable.innerHTML += `
-        <div class="row white">
-          <blockquote >
-          <div class="section">
-          <p class="flow-text">${doc.data().first}</p>
-          <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
-          </div>
+          <div class="row white">
+            <blockquote >
             <div class="section">
-              <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-              <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-              <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-                <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-                <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
-                <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
-                </div>
-          </blockquote>
-          </div>
-          `
+            <p class="flow-text">${doc.data().first}</p>
+            <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
+            </div>
+              <div class="section">
+                <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+                <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+                <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+                  <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+                  <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+                  <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+                  </div>
+            </blockquote>
+            </div>
+            `
       });
     });
-
     //imprime los datos del filtro
     const printData = (querySnapshot) => {
       let filteredTable = document.getElementById('state-user-filter');
@@ -127,23 +130,23 @@ login: () => {
       filteredTable.innerHTML = "";
       querySnapshot.forEach((doc) => {
         filteredTable.innerHTML += `
-    <div class="row white">
-    <blockquote >
-    <div class="section">
-    <p class="flow-text">${doc.data().first}</p>
-    <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
-    </div>
+      <div class="row white">
+      <blockquote >
       <div class="section">
-        <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
-        <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
-        <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
-          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
-          <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
-          <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
-          </div>
-    </blockquote>
-    </div>
-    `
+      <p class="flow-text">${doc.data().first}</p>
+      <li class="area" value="${doc.data().area}">${doc.data().area}</li>  
+      </div>
+        <div class="section">
+          <button class = "btn-floating red accent-3" onclick = "deleteData('${doc.id}')"><i class="fas fa-trash-alt"></i></button>
+          <button id = "edit-button" class = "btn-floating orange accent-3" data-toggle="modal" data-target="#exampleModal" onclick = "editState('${doc.id}','${doc.data().first}','${doc.data().name}','${doc.data().area}')"><i class="fas fa-pen-nib"></i></button>
+          <a href="https://twitter.com/share?url=https://jaurinu.github.io/CDMX007-social-network/src/&amp;text=Punto%20STEAM%20&amp;hashtags=puntosteam" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" width="25 height="25" alt="Twitter" /></a>
+            <div id="applause-container" class="right"><applause-button id="applause-${doc.id}" class="clap-button" url="http://localhost:8887/${doc.id}" multiclap="true" class="applause-clase" color="Purple"></div>
+            <p class="col offset-s9"><i class="fas fa-user-astronaut"></i> ${doc.data().name}</p>
+            </div>
+      </blockquote>
+      </div>
+      `
       });
       generalTable.style.display = "none";
     };
@@ -210,12 +213,12 @@ login: () => {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         table.innerHTML += `
-              <tr class="text-on-table">
-                <td>${doc.data().first}</td>
-                <td>${doc.data().user}</td>
-                <td>${doc.data().interest}</td>
-                <td>${doc.data().contactEmail}</td>
-              </tr>`
+                <tr class="text-on-table">
+                  <td>${doc.data().first}</td>
+                  <td>${doc.data().user}</td>
+                  <td>${doc.data().interest}</td>
+                  <td>${doc.data().contactEmail}</td>
+                </tr>`
       });
     });
   },
@@ -284,10 +287,11 @@ login: () => {
 
 
   },
-  functionOnNews:() =>{
-    navButtonsforUser()
-  },
 
-  
+  // functionOnNews:() =>{
+  //  navButtonsforUser()
+  // },
+
+
 
 })
